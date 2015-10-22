@@ -10,11 +10,12 @@
 		0E132D471BD94FA2006C99EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D461BD94FA2006C99EC /* main.m */; };
 		0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D491BD94FA2006C99EC /* AppDelegate.m */; };
 		0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */; };
-		0E132D501BD94FA2006C99EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D4F1BD94FA2006C99EC /* ViewController.m */; };
 		0E132D531BD94FA2006C99EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D511BD94FA2006C99EC /* Main.storyboard */; };
 		0E132D551BD94FA2006C99EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D541BD94FA2006C99EC /* Images.xcassets */; };
 		0E132D581BD94FA2006C99EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D561BD94FA2006C99EC /* LaunchScreen.xib */; };
 		0E132D641BD94FA2006C99EC /* TinyDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D631BD94FA2006C99EC /* TinyDoTests.m */; };
+		0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D721BD955A7006C99EC /* ToDoListViewController.m */; };
+		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +35,16 @@
 		0E132D481BD94FA2006C99EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E132D491BD94FA2006C99EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E132D4C1BD94FA2006C99EC /* TinyDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinyDo.xcdatamodel; sourceTree = "<group>"; };
-		0E132D4E1BD94FA2006C99EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0E132D4F1BD94FA2006C99EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0E132D521BD94FA2006C99EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E132D541BD94FA2006C99EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E132D571BD94FA2006C99EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0E132D5D1BD94FA2006C99EC /* TinyDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E132D621BD94FA2006C99EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E132D631BD94FA2006C99EC /* TinyDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyDoTests.m; sourceTree = "<group>"; };
+		0E132D711BD955A7006C99EC /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
+		0E132D721BD955A7006C99EC /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
+		0E132D741BD955B7006C99EC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0E132D751BD955B7006C99EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +86,10 @@
 		0E132D431BD94FA2006C99EC /* TinyDo */ = {
 			isa = PBXGroup;
 			children = (
-				0E132D481BD94FA2006C99EC /* AppDelegate.h */,
-				0E132D491BD94FA2006C99EC /* AppDelegate.m */,
-				0E132D4E1BD94FA2006C99EC /* ViewController.h */,
-				0E132D4F1BD94FA2006C99EC /* ViewController.m */,
-				0E132D511BD94FA2006C99EC /* Main.storyboard */,
-				0E132D541BD94FA2006C99EC /* Images.xcassets */,
-				0E132D561BD94FA2006C99EC /* LaunchScreen.xib */,
-				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
+				0E132D6E1BD95034006C99EC /* Model */,
+				0E132D6F1BD95034006C99EC /* Tool */,
+				0E132D701BD95034006C99EC /* View */,
+				0E132D6D1BD9502A006C99EC /* Controller */,
 				0E132D441BD94FA2006C99EC /* Supporting Files */,
 			);
 			path = TinyDo;
@@ -99,6 +98,10 @@
 		0E132D441BD94FA2006C99EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E132D481BD94FA2006C99EC /* AppDelegate.h */,
+				0E132D491BD94FA2006C99EC /* AppDelegate.m */,
+				0E132D541BD94FA2006C99EC /* Images.xcassets */,
+				0E132D561BD94FA2006C99EC /* LaunchScreen.xib */,
 				0E132D451BD94FA2006C99EC /* Info.plist */,
 				0E132D461BD94FA2006C99EC /* main.m */,
 			);
@@ -120,6 +123,40 @@
 				0E132D621BD94FA2006C99EC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E132D6D1BD9502A006C99EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E132D711BD955A7006C99EC /* ToDoListViewController.h */,
+				0E132D721BD955A7006C99EC /* ToDoListViewController.m */,
+				0E132D741BD955B7006C99EC /* AboutViewController.h */,
+				0E132D751BD955B7006C99EC /* AboutViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0E132D6E1BD95034006C99EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E132D6F1BD95034006C99EC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		0E132D701BD95034006C99EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E132D511BD94FA2006C99EC /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
+				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
-				0E132D501BD94FA2006C99EC /* ViewController.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +292,7 @@
 				0E132D521BD94FA2006C99EC /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0E132D561BD94FA2006C99EC /* LaunchScreen.xib */ = {
@@ -438,7 +477,8 @@
 				0E132D4C1BD94FA2006C99EC /* TinyDo.xcdatamodel */,
 			);
 			currentVersion = 0E132D4C1BD94FA2006C99EC /* TinyDo.xcdatamodel */;
-			path = TinyDo.xcdatamodeld;
+			name = TinyDo.xcdatamodeld;
+			path = ../TinyDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
