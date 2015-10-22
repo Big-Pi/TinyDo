@@ -16,6 +16,8 @@
 		0E132D641BD94FA2006C99EC /* TinyDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D631BD94FA2006C99EC /* TinyDoTests.m */; };
 		0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D721BD955A7006C99EC /* ToDoListViewController.m */; };
 		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
+		0EBAC38D1BD95C0F00DE561A /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAC38B1BD95C0F00DE561A /* EditableCell.m */; };
+		0EBAC38E1BD95C0F00DE561A /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		0E132D721BD955A7006C99EC /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 		0E132D741BD955B7006C99EC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		0E132D751BD955B7006C99EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0EBAC38A1BD95C0F00DE561A /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditableCell.h; path = TinyDo/View/EditableCell.h; sourceTree = SOURCE_ROOT; };
+		0EBAC38B1BD95C0F00DE561A /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditableCell.m; path = TinyDo/View/EditableCell.m; sourceTree = SOURCE_ROOT; };
+		0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableCell.xib; path = TinyDo/View/EditableCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +91,9 @@
 		0E132D431BD94FA2006C99EC /* TinyDo */ = {
 			isa = PBXGroup;
 			children = (
+				0EBAC3891BD95BB800DE561A /* View */,
 				0E132D6E1BD95034006C99EC /* Model */,
 				0E132D6F1BD95034006C99EC /* Tool */,
-				0E132D701BD95034006C99EC /* View */,
 				0E132D6D1BD9502A006C99EC /* Controller */,
 				0E132D441BD94FA2006C99EC /* Supporting Files */,
 			);
@@ -151,12 +156,16 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		0E132D701BD95034006C99EC /* View */ = {
+		0EBAC3891BD95BB800DE561A /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0E132D511BD94FA2006C99EC /* Main.storyboard */,
+				0EBAC38A1BD95C0F00DE561A /* EditableCell.h */,
+				0EBAC38B1BD95C0F00DE561A /* EditableCell.m */,
+				0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */,
 			);
-			path = View;
+			name = View;
+			path = Tool/View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +251,7 @@
 				0E132D531BD94FA2006C99EC /* Main.storyboard in Resources */,
 				0E132D581BD94FA2006C99EC /* LaunchScreen.xib in Resources */,
 				0E132D551BD94FA2006C99EC /* Images.xcassets in Resources */,
+				0EBAC38E1BD95C0F00DE561A /* EditableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +272,7 @@
 				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
 				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
+				0EBAC38D1BD95C0F00DE561A /* EditableCell.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
 			);
@@ -292,7 +303,7 @@
 				0E132D521BD94FA2006C99EC /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		0E132D561BD94FA2006C99EC /* LaunchScreen.xib */ = {
@@ -459,6 +470,7 @@
 				0E132D691BD94FA2006C99EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E132D6A1BD94FA2006C99EC /* Build configuration list for PBXNativeTarget "TinyDoTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +479,7 @@
 				0E132D6C1BD94FA2006C99EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
