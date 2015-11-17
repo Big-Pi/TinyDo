@@ -10,14 +10,26 @@
 		0E132D471BD94FA2006C99EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D461BD94FA2006C99EC /* main.m */; };
 		0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D491BD94FA2006C99EC /* AppDelegate.m */; };
 		0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */; };
-		0E132D531BD94FA2006C99EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D511BD94FA2006C99EC /* Main.storyboard */; };
 		0E132D551BD94FA2006C99EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D541BD94FA2006C99EC /* Images.xcassets */; };
 		0E132D581BD94FA2006C99EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E132D561BD94FA2006C99EC /* LaunchScreen.xib */; };
 		0E132D641BD94FA2006C99EC /* TinyDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D631BD94FA2006C99EC /* TinyDoTests.m */; };
 		0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D721BD955A7006C99EC /* ToDoListViewController.m */; };
 		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
-		0EBAC38D1BD95C0F00DE561A /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAC38B1BD95C0F00DE561A /* EditableCell.m */; };
-		0EBAC38E1BD95C0F00DE561A /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */; };
+		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
+		0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E219D1BDCC200006B442B /* HelpViewController.m */; };
+		0E3E21A11BDCE13C006B442B /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E21A01BDCE13C006B442B /* Note.m */; };
+		0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */; };
+		0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */; };
+		0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */; };
+		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
+		0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */; };
+		0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */; };
+		0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */; };
+		0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */; };
+		0EBD6FAB1BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA61BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib */; };
+		0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */; };
+		0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E51BE7D15E00BC685D /* ThemeManager.m */; };
+		0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E81BE7D1A300BC685D /* ColorTheme.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +49,6 @@
 		0E132D481BD94FA2006C99EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E132D491BD94FA2006C99EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0E132D4C1BD94FA2006C99EC /* TinyDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinyDo.xcdatamodel; sourceTree = "<group>"; };
-		0E132D521BD94FA2006C99EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E132D541BD94FA2006C99EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E132D571BD94FA2006C99EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0E132D5D1BD94FA2006C99EC /* TinyDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,9 +58,32 @@
 		0E132D721BD955A7006C99EC /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 		0E132D741BD955B7006C99EC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		0E132D751BD955B7006C99EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		0EBAC38A1BD95C0F00DE561A /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditableCell.h; path = TinyDo/View/EditableCell.h; sourceTree = SOURCE_ROOT; };
-		0EBAC38B1BD95C0F00DE561A /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditableCell.m; path = TinyDo/View/EditableCell.m; sourceTree = SOURCE_ROOT; };
-		0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableCell.xib; path = TinyDo/View/EditableCell.xib; sourceTree = SOURCE_ROOT; };
+		0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
+		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		0E3E219C1BDCC200006B442B /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		0E3E219D1BDCC200006B442B /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		0E3E219F1BDCE13C006B442B /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		0E3E21A01BDCE13C006B442B /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerToolbar.xib; sourceTree = "<group>"; };
+		0E96AFF81BF647A9007FE61C /* ImageBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBarButtonItem.h; path = ../View/ImageBarButtonItem.h; sourceTree = "<group>"; };
+		0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBarButtonItem.m; path = ../View/ImageBarButtonItem.m; sourceTree = "<group>"; };
+		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
+		0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerToolbar.m; sourceTree = "<group>"; };
+		0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableCell.h; sourceTree = "<group>"; };
+		0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableCell.m; sourceTree = "<group>"; };
+		0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableCell.xib; sourceTree = "<group>"; };
+		0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0EBD6FA41BEB2BCA00000C99 /* NoNotePlaceHolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNotePlaceHolderCell.h; sourceTree = "<group>"; };
+		0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNotePlaceHolderCell.m; sourceTree = "<group>"; };
+		0EBD6FA61BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoNotePlaceHolderCell.xib; sourceTree = "<group>"; };
+		0ED13FE51BF05E77007E9A97 /* MagicTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTransitionAnimator.h; sourceTree = "<group>"; };
+		0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTransitionAnimator.m; sourceTree = "<group>"; };
+		0EE480E41BE7D15E00BC685D /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		0EE480E51BE7D15E00BC685D /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		0EE480E71BE7D1A300BC685D /* ColorTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTheme.h; sourceTree = "<group>"; };
+		0EE480E81BE7D1A300BC685D /* ColorTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTheme.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +125,9 @@
 		0E132D431BD94FA2006C99EC /* TinyDo */ = {
 			isa = PBXGroup;
 			children = (
-				0EBAC3891BD95BB800DE561A /* View */,
+				0E68A8041BF75D24005B6538 /* Deprecated */,
+				0ED13FE41BF05E77007E9A97 /* Anim */,
+				0EBD6F9F1BEB2BCA00000C99 /* View */,
 				0E132D6E1BD95034006C99EC /* Model */,
 				0E132D6F1BD95034006C99EC /* Tool */,
 				0E132D6D1BD9502A006C99EC /* Controller */,
@@ -137,6 +173,10 @@
 				0E132D721BD955A7006C99EC /* ToDoListViewController.m */,
 				0E132D741BD955B7006C99EC /* AboutViewController.h */,
 				0E132D751BD955B7006C99EC /* AboutViewController.m */,
+				0E3E219C1BDCC200006B442B /* HelpViewController.h */,
+				0E3E219D1BDCC200006B442B /* HelpViewController.m */,
+				0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */,
+				0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,7 +184,11 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E3E219F1BDCE13C006B442B /* Note.h */,
+				0E3E21A01BDCE13C006B442B /* Note.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
+				0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */,
+				0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,20 +196,47 @@
 		0E132D6F1BD95034006C99EC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0EE480E41BE7D15E00BC685D /* ThemeManager.h */,
+				0EE480E51BE7D15E00BC685D /* ThemeManager.m */,
+				0EE480E71BE7D1A300BC685D /* ColorTheme.h */,
+				0EE480E81BE7D1A300BC685D /* ColorTheme.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		0EBAC3891BD95BB800DE561A /* View */ = {
+		0E68A8041BF75D24005B6538 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				0E132D511BD94FA2006C99EC /* Main.storyboard */,
-				0EBAC38A1BD95C0F00DE561A /* EditableCell.h */,
-				0EBAC38B1BD95C0F00DE561A /* EditableCell.m */,
-				0EBAC38C1BD95C0F00DE561A /* EditableCell.xib */,
+				0E96AFF81BF647A9007FE61C /* ImageBarButtonItem.h */,
+				0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */,
 			);
-			name = View;
-			path = Tool/View;
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		0EBD6F9F1BEB2BCA00000C99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */,
+				0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */,
+				0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */,
+				0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */,
+				0EBD6FA41BEB2BCA00000C99 /* NoNotePlaceHolderCell.h */,
+				0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */,
+				0EBD6FA61BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib */,
+				0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */,
+				0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */,
+				0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0ED13FE41BF05E77007E9A97 /* Anim */ = {
+			isa = PBXGroup;
+			children = (
+				0ED13FE51BF05E77007E9A97 /* MagicTransitionAnimator.h */,
+				0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */,
+			);
+			path = Anim;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,10 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E132D531BD94FA2006C99EC /* Main.storyboard in Resources */,
 				0E132D581BD94FA2006C99EC /* LaunchScreen.xib in Resources */,
+				0EBD6FAB1BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib in Resources */,
 				0E132D551BD94FA2006C99EC /* Images.xcassets in Resources */,
-				0EBAC38E1BD95C0F00DE561A /* EditableCell.xib in Resources */,
+				0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */,
+				0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */,
+				0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +344,20 @@
 			files = (
 				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
 				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
+				0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */,
+				0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */,
+				0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */,
+				0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
-				0EBAC38D1BD95C0F00DE561A /* EditableCell.m in Sources */,
+				0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */,
+				0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */,
+				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,
+				0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
+				0E3E21A11BDCE13C006B442B /* Note.m in Sources */,
+				0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */,
+				0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,15 +380,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E132D511BD94FA2006C99EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E132D521BD94FA2006C99EC /* Base */,
-			);
-			name = Main.storyboard;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		0E132D561BD94FA2006C99EC /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

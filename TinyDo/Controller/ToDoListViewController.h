@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class EditableCell;
 @interface ToDoListViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property(nonatomic,weak)EditableCell *headCell;
 @end
