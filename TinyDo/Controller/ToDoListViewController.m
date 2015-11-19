@@ -46,18 +46,18 @@
         self.notes=[[NSMutableArray alloc]initWithCapacity:10];
     }
     
-    //drawerToolbar constraints bugFix 在storyboard设置的约束在自定义view不生效？
-    self.drawerToolbar.delegate=self;
-    self.drawerToolbar.translatesAutoresizingMaskIntoConstraints=NO;
-    NSDictionary *dic=@{@"drawerToolbar":self.drawerToolbar};
-    NSArray *constaintH=[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[drawerToolbar]|" options:0 metrics:nil views:dic];
-    NSArray *constaintV=[NSLayoutConstraint constraintsWithVisualFormat:@"V:[drawerToolbar(==44)]-0-|" options:0 metrics:nil views:dic];
-    
-    //ios 8+ 用active 不用加到父view中
-    [NSLayoutConstraint activateConstraints:constaintV];
-    [NSLayoutConstraint activateConstraints:constaintH];
-//    [self.view addConstraints:constaintH];
-//    [self.view addConstraints:constaintV];
+//    //drawerToolbar constraints bugFix 在storyboard设置的约束在自定义view不生效？
+//    self.drawerToolbar.delegate=self;
+//    self.drawerToolbar.translatesAutoresizingMaskIntoConstraints=NO;
+//    NSDictionary *dic=@{@"drawerToolbar":self.drawerToolbar};
+//    NSArray *constaintH=[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[drawerToolbar]|" options:0 metrics:nil views:dic];
+//    NSArray *constaintV=[NSLayoutConstraint constraintsWithVisualFormat:@"V:[drawerToolbar(==44)]-0-|" options:0 metrics:nil views:dic];
+//    
+//    //ios 8+ 用active 不用加到父view中
+//    [NSLayoutConstraint activateConstraints:constaintV];
+//    [NSLayoutConstraint activateConstraints:constaintH];
+////    [self.view addConstraints:constaintH];
+////    [self.view addConstraints:constaintV];
     //
     EditableCell *cell= [[[NSBundle mainBundle]loadNibNamed:@"EditableCell" owner:nil options:nil]lastObject];
             cell.textField.text=@"";

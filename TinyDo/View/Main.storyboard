@@ -25,19 +25,19 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adW-JH-zks" customClass="DrawerToolbar">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="536" width="600" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" placeholder="YES" id="bd9-ww-o4C"/>
+                                    <constraint firstAttribute="height" constant="64" id="bd9-ww-o4C"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="adW-JH-zks" secondAttribute="bottom" id="3sq-n3-C7B"/>
                             <constraint firstItem="BDF-Tr-3BB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ghi-IC-Fjs"/>
-                            <constraint firstAttribute="trailing" secondItem="adW-JH-zks" secondAttribute="trailing" placeholder="YES" id="NxY-9o-xEG"/>
-                            <constraint firstItem="adW-JH-zks" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" placeholder="YES" id="Oen-Rk-0kr"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="adW-JH-zks" secondAttribute="bottom" placeholder="YES" id="Vt8-kR-YDs"/>
+                            <constraint firstAttribute="trailing" secondItem="adW-JH-zks" secondAttribute="trailing" id="NxY-9o-xEG"/>
+                            <constraint firstItem="adW-JH-zks" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Oen-Rk-0kr"/>
                             <constraint firstItem="BDF-Tr-3BB" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="klN-mt-jhg"/>
                             <constraint firstItem="BDF-Tr-3BB" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="nWn-QS-OYh"/>
                             <constraint firstAttribute="trailing" secondItem="BDF-Tr-3BB" secondAttribute="trailing" id="p9I-K1-6Fi"/>
