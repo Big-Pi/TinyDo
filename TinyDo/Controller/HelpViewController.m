@@ -7,11 +7,13 @@
 //
 
 #import "HelpViewController.h"
+#import "Helper.h"
 
 @interface HelpViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong,nonatomic) NSArray *imageNames;
 @property (strong,nonatomic) NSArray *imageMessage;
+@property (weak, nonatomic) IBOutlet UIButton *dismissBtn;
 @end
 
 @implementation HelpViewController
@@ -32,8 +34,11 @@
 }
 
 
+//也可以用collectionView
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dismissBtn.alpha=0.0;
+    //
     CGSize screenSize= [UIScreen mainScreen].bounds.size;
     CGFloat scale= [UIScreen mainScreen].scale;
     
@@ -58,16 +63,43 @@
     self.scrollView.pagingEnabled=true;
 }
 
-
-#pragma mark - UIScrollViewDelegate
-
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
-    CGFloat dismissOffset= [UIScreen mainScreen].bounds.size.width *(self.imageNames.count-1);
-//    NSLog(@"%@------%f",NSStringFromCGPoint(scrollView.contentOffset),dismissOffset );
-    if(scrollView.contentOffset.x>=dismissOffset){
+- (IBAction)dismissSelf:(id)sender {
+    //如果是被model的。。就dismiss
+    if(self.presentingViewController){
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        //如果是被addchildViewController的就removeFromParentViewcontroller
+        [UIView animateWithDuration:0.65 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.view.alpha=0.0;
+            self.view.transform=CGAffineTransformMakeTranslation(-[Helper screenWidth], 0);
+        } completion:^(BOOL finished) {
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+            [self didMoveToParentViewController:nil];
+        }];
         
     }
 }
+
+#pragma mark - UIScrollViewDelegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat dismissOffset= [UIScreen mainScreen].bounds.size.width *(self.imageNames.count-1);
+    if(scrollView.contentOffset.x>=dismissOffset){
+        [UIView animateWithDuration:0.225 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.dismissBtn.alpha=1.0;
+        } completion:nil];
+    }
+}
+
+//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    CGFloat dismissOffset= [UIScreen mainScreen].bounds.size.width *(self.imageNames.count-1);
+////    NSLog(@"%@------%f",NSStringFromCGPoint(scrollView.contentOffset),dismissOffset );
+//    if(scrollView.contentOffset.x>=dismissOffset){
+//        if(self.presentingViewController){
+//            NSLog(@"baba");
+//        }
+//    }
+//}
 
 @end

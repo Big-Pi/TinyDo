@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="66" id="0lT-4E-GWx" customClass="SwipeableCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0lT-4E-GWx" id="Ghi-EL-WAE">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-Fy-mIF" customClass="DeleteLineContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-ty-uNx" userLabel="RightDeleteImage">
+                                <rect key="frame" x="340" y="0.0" width="26" height="65"/>
+                                <animations/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-R3-R99" userLabel="LeftDeleteImage">
+                                <rect key="frame" x="-46" y="0.0" width="26" height="65"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L99-3J-vY8" customClass="EditableContent">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU1-Og-rQa">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="1"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ITq-sN-xxb"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-QN-yDl">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="65"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEJ-lH-GWp">
+                                        <rect key="frame" x="272" y="13" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ATH-R5-66Y"/>
+                                            <constraint firstAttribute="width" constant="40" id="Fdm-A2-0Qf"/>
+                                        </constraints>
+                                        <state key="normal" image="Priority"/>
+                                        <connections>
+                                            <action selector="priorityClick:" destination="L99-3J-vY8" eventType="touchUpInside" id="jIU-Xo-L3e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79b-9Q-F1S">
+                                        <rect key="frame" x="224" y="13" width="40" height="40"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="S2f-sD-9oG"/>
+                                            <constraint firstAttribute="height" constant="40" id="nd5-at-763"/>
+                                        </constraints>
+                                        <state key="normal" image="Alarm"/>
+                                        <connections>
+                                            <action selector="alarmClick:" destination="L99-3J-vY8" eventType="touchUpInside" id="KCk-IY-ydT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="79b-9Q-F1S" firstAttribute="leading" secondItem="PJ3-QN-yDl" secondAttribute="trailing" constant="8" id="1qS-ml-lYN"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEJ-lH-GWp" secondAttribute="trailing" constant="8" id="8h1-vt-ShS"/>
+                                    <constraint firstItem="WU1-Og-rQa" firstAttribute="leading" secondItem="L99-3J-vY8" secondAttribute="leading" id="GsV-0l-8aD"/>
+                                    <constraint firstItem="QEJ-lH-GWp" firstAttribute="leading" secondItem="79b-9Q-F1S" secondAttribute="trailing" constant="8" id="Rxd-vd-yBo"/>
+                                    <constraint firstItem="PJ3-QN-yDl" firstAttribute="top" secondItem="L99-3J-vY8" secondAttribute="top" id="fFe-UI-4U3"/>
+                                    <constraint firstAttribute="bottom" secondItem="PJ3-QN-yDl" secondAttribute="bottom" id="mo2-t6-vQ8"/>
+                                    <constraint firstAttribute="bottom" secondItem="WU1-Og-rQa" secondAttribute="bottom" id="pd4-JR-bZk"/>
+                                    <constraint firstAttribute="trailing" secondItem="WU1-Og-rQa" secondAttribute="trailing" id="qG6-Sl-Ylp"/>
+                                    <constraint firstItem="QEJ-lH-GWp" firstAttribute="centerY" secondItem="L99-3J-vY8" secondAttribute="centerY" id="rLU-xl-3Bp"/>
+                                    <constraint firstItem="79b-9Q-F1S" firstAttribute="centerY" secondItem="L99-3J-vY8" secondAttribute="centerY" id="ryc-dY-DQ0"/>
+                                    <constraint firstItem="PJ3-QN-yDl" firstAttribute="leading" secondItem="L99-3J-vY8" secondAttribute="leading" id="sHN-1H-ASM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="alarm" destination="79b-9Q-F1S" id="0IB-f4-Opg"/>
+                                    <outlet property="priority" destination="QEJ-lH-GWp" id="Vbw-Ru-Bbf"/>
+                                    <outlet property="seprateLine" destination="WU1-Og-rQa" id="b9m-yx-0qo"/>
+                                    <outlet property="textField" destination="PJ3-QN-yDl" id="kP7-rN-DCH"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Jdz-ty-uNx" secondAttribute="bottom" id="11t-Et-ziG"/>
+                            <constraint firstItem="YhQ-R3-R99" firstAttribute="trailing" secondItem="tgc-Fy-mIF" secondAttribute="leading" constant="-20" id="1zo-4P-oCM"/>
+                            <constraint firstItem="L99-3J-vY8" firstAttribute="top" secondItem="tgc-Fy-mIF" secondAttribute="top" id="H1n-H8-cv6"/>
+                            <constraint firstItem="Jdz-ty-uNx" firstAttribute="top" secondItem="tgc-Fy-mIF" secondAttribute="top" id="Llr-wt-YxB"/>
+                            <constraint firstItem="L99-3J-vY8" firstAttribute="leading" secondItem="tgc-Fy-mIF" secondAttribute="leading" id="O6R-cL-JvQ"/>
+                            <constraint firstAttribute="trailing" secondItem="L99-3J-vY8" secondAttribute="trailing" id="QAi-9F-GFA"/>
+                            <constraint firstItem="YhQ-R3-R99" firstAttribute="top" secondItem="tgc-Fy-mIF" secondAttribute="top" id="gvb-5p-qWv"/>
+                            <constraint firstAttribute="bottom" secondItem="YhQ-R3-R99" secondAttribute="bottom" id="lbb-XA-skh"/>
+                            <constraint firstAttribute="trailing" secondItem="Jdz-ty-uNx" secondAttribute="leading" constant="-20" id="lfw-D9-TEd"/>
+                            <constraint firstAttribute="bottom" secondItem="L99-3J-vY8" secondAttribute="bottom" id="zWU-76-1XF"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="leftDeleteImage" destination="YhQ-R3-R99" id="6Ft-pC-7zL"/>
+                            <outlet property="rightDeleteImage" destination="Jdz-ty-uNx" id="Rrd-f6-Wd7"/>
+                        </connections>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="tgc-Fy-mIF" secondAttribute="trailing" id="EaM-Cz-GZ8"/>
+                    <constraint firstItem="tgc-Fy-mIF" firstAttribute="top" secondItem="Ghi-EL-WAE" secondAttribute="top" id="QQL-BI-FXz"/>
+                    <constraint firstItem="tgc-Fy-mIF" firstAttribute="leading" secondItem="Ghi-EL-WAE" secondAttribute="leading" id="ja5-Lq-JXg"/>
+                    <constraint firstAttribute="trailing" secondItem="tgc-Fy-mIF" secondAttribute="trailing" id="osR-qc-qbq"/>
+                    <constraint firstAttribute="bottom" secondItem="tgc-Fy-mIF" secondAttribute="bottom" id="t37-yQ-Ee5"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="EaM-Cz-GZ8"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="editableContent" destination="L99-3J-vY8" id="wdf-74-By9"/>
+                <outlet property="myContentView" destination="tgc-Fy-mIF" id="4Bi-q4-o9o"/>
+            </connections>
+            <point key="canvasLocation" x="352" y="239"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Alarm" width="42" height="42"/>
+        <image name="Priority" width="42" height="42"/>
+        <image name="delete" width="100" height="100"/>
+    </resources>
+</document>

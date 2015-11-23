@@ -14,6 +14,8 @@
 #import "NoNotePlaceHolderCell.h"
 #import "MagicTransitionAnimator.h"
 #import "DrawerToolbar.h"
+#import "Helper.h"
+#import "HelpViewController.h"
 
 @import CoreData;
 
@@ -68,6 +70,18 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"EditableCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.tableView.contentInset=UIEdgeInsetsMake(-66+20, 0, 0, 0);
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //启动时检查一次是否第一次进入app
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [Helper checkFirstLaunch:self presentSplashVC:@"HelpViewController"];
+    });
+    
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -192,7 +206,7 @@
     if (mode==Edit) {
         NSUInteger row=[self.notes indexOfObjectIdenticalTo:note];
         NSIndexPath *indexPath=[NSIndexPath indexPathForRow:row inSection:0];
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }else if(mode==Insert){
         //如果将要添加第一个note,则添加之前notes为空 reloadRowAtIndex隐藏占位cell
         if(self.notes.count==0) {
@@ -212,6 +226,7 @@
     self.animator.isShowUp=NO;
     return self.animator;
 }
+
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     self.animator.isShowUp=YES;
     return self.animator;
@@ -221,7 +236,6 @@
 -(void)onDrawerToolbar:(DrawerToolbar *)toolbar barButtonItemClick:(ImageBarButtonItemType)type{
     NSLog(@"%ld",type);
 }
-
 
 -(void)dealloc{
     NSLog(@"%@ ___dealloc",[self class] );

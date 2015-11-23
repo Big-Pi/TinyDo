@@ -9,29 +9,63 @@
 #import "AboutViewController.h"
 
 @interface AboutViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *emailBtn;
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+@property (weak, nonatomic) IBOutlet UIButton *helpBtn;
 
 @end
 
 @implementation AboutViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self animBtnAppear];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.shareBtn.hidden=YES;
+    self.emailBtn.hidden=YES;
+    self.helpBtn.hidden=YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//也可以用layer animation fromValue toValue
+-(void)animBtnAppear{
+    self.emailBtn.hidden=NO;
+    [self animateViewSlideLeftIn:self.emailBtn left:YES completion:^{
+        self.shareBtn.hidden=NO;
+        [self animateViewSlideLeftIn:self.shareBtn left:NO completion:^{
+            self.helpBtn.hidden=NO;
+            [self animateViewSlideLeftIn:self.helpBtn left:YES completion:nil];
+        }];
+    }];
 }
-*/
+
+-(void)animateViewSlideLeftIn:(UIView *)view left:(BOOL)animLeftToRight completion:(void (^)())completion{
+    CGFloat screenWidth_2=[UIScreen mainScreen].bounds.size.width/2;
+    CGAffineTransform transform=CGAffineTransformMakeTranslation(animLeftToRight ? -screenWidth_2 : screenWidth_2, 0);
+    view.transform=transform;
+    [UIView animateWithDuration:0.225 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        view.transform=CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        if(completion){
+            completion();
+        }
+    }];
+}
+
+- (IBAction)email:(id)sender {
+    
+}
+
+- (IBAction)share:(id)sender {
+    
+}
+
+- (IBAction)help:(id)sender {
+    UIViewController *controller= [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    [self presentViewController:controller animated:YES completion:nil];
+}
 
 @end

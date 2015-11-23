@@ -16,10 +16,23 @@
 		0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D721BD955A7006C99EC /* ToDoListViewController.m */; };
 		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
 		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
+		0E3046341C02ECBE00147430 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046331C02ECBE00147430 /* Helper.m */; };
+		0E30463D1C02FC8A00147430 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463B1C02FC8A00147430 /* Note.m */; };
+		0E3046401C030B5700147430 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463F1C030B5700147430 /* Colours.m */; };
+		0E3046441C03171A00147430 /* TimePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046421C03171A00147430 /* TimePickerCell.m */; };
+		0E3046451C03171A00147430 /* TimePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3046431C03171A00147430 /* TimePickerCell.xib */; };
+		0E3046491C0317E800147430 /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046471C0317E800147430 /* AlarmCell.m */; };
+		0E30464A1C0317E800147430 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3046481C0317E800147430 /* AlarmCell.xib */; };
+		0E30464D1C03270600147430 /* DateBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30464C1C03270600147430 /* DateBtn.m */; };
+		0E30464F1C0328AD00147430 /* DateBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E30464E1C0328AD00147430 /* DateBtn.xib */; };
 		0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E219D1BDCC200006B442B /* HelpViewController.m */; };
-		0E3E21A11BDCE13C006B442B /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E21A01BDCE13C006B442B /* Note.m */; };
 		0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */; };
 		0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */; };
+		0E7C82AF1C0377CC00E6A96B /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */; };
+		0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B31C037D5400E6A96B /* DeleteLineContainerView.m */; };
+		0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B51C037D5400E6A96B /* SwipeableCell.m */; };
+		0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */; };
+		0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82BB1C03845500E6A96B /* EditableContent.m */; };
 		0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */; };
 		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
 		0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */; };
@@ -60,13 +73,35 @@
 		0E132D751BD955B7006C99EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		0E3046321C02ECBE00147430 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		0E3046331C02ECBE00147430 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		0E30463A1C02FC8A00147430 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		0E30463B1C02FC8A00147430 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		0E30463E1C030B5600147430 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		0E30463F1C030B5700147430 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		0E3046411C03171A00147430 /* TimePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerCell.h; sourceTree = "<group>"; };
+		0E3046421C03171A00147430 /* TimePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerCell.m; sourceTree = "<group>"; };
+		0E3046431C03171A00147430 /* TimePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerCell.xib; sourceTree = "<group>"; };
+		0E3046461C0317E800147430 /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
+		0E3046471C0317E800147430 /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
+		0E3046481C0317E800147430 /* AlarmCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
+		0E30464B1C03270600147430 /* DateBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateBtn.h; sourceTree = "<group>"; };
+		0E30464C1C03270600147430 /* DateBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateBtn.m; sourceTree = "<group>"; };
+		0E30464E1C0328AD00147430 /* DateBtn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateBtn.xib; sourceTree = "<group>"; };
 		0E3E219C1BDCC200006B442B /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		0E3E219D1BDCC200006B442B /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		0E3E219F1BDCE13C006B442B /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		0E3E21A01BDCE13C006B442B /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerToolbar.xib; sourceTree = "<group>"; };
+		0E7C82AD1C0377CC00E6A96B /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0E7C82B21C037D5400E6A96B /* DeleteLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteLineContainerView.h; sourceTree = "<group>"; };
+		0E7C82B31C037D5400E6A96B /* DeleteLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteLineContainerView.m; sourceTree = "<group>"; };
+		0E7C82B41C037D5400E6A96B /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
+		0E7C82B51C037D5400E6A96B /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; };
+		0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeableCell.xib; sourceTree = "<group>"; };
+		0E7C82BA1C03845500E6A96B /* EditableContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableContent.h; sourceTree = "<group>"; };
+		0E7C82BB1C03845500E6A96B /* EditableContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableContent.m; sourceTree = "<group>"; };
 		0E96AFF81BF647A9007FE61C /* ImageBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBarButtonItem.h; path = ../View/ImageBarButtonItem.h; sourceTree = "<group>"; };
 		0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBarButtonItem.m; path = ../View/ImageBarButtonItem.m; sourceTree = "<group>"; };
 		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
@@ -184,8 +219,10 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E3E219F1BDCE13C006B442B /* Note.h */,
-				0E3E21A01BDCE13C006B442B /* Note.m */,
+				0E7C82AD1C0377CC00E6A96B /* Note+CoreDataProperties.h */,
+				0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */,
+				0E30463A1C02FC8A00147430 /* Note.h */,
+				0E30463B1C02FC8A00147430 /* Note.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
 				0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */,
 				0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */,
@@ -196,10 +233,14 @@
 		0E132D6F1BD95034006C99EC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0E30463E1C030B5600147430 /* Colours.h */,
+				0E30463F1C030B5700147430 /* Colours.m */,
 				0EE480E41BE7D15E00BC685D /* ThemeManager.h */,
 				0EE480E51BE7D15E00BC685D /* ThemeManager.m */,
 				0EE480E71BE7D1A300BC685D /* ColorTheme.h */,
 				0EE480E81BE7D1A300BC685D /* ColorTheme.m */,
+				0E3046321C02ECBE00147430 /* Helper.h */,
+				0E3046331C02ECBE00147430 /* Helper.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -213,9 +254,24 @@
 			path = Deprecated;
 			sourceTree = "<group>";
 		};
+		0E7C82B11C037D5400E6A96B /* SwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E7C82B21C037D5400E6A96B /* DeleteLineContainerView.h */,
+				0E7C82B31C037D5400E6A96B /* DeleteLineContainerView.m */,
+				0E7C82B41C037D5400E6A96B /* SwipeableCell.h */,
+				0E7C82B51C037D5400E6A96B /* SwipeableCell.m */,
+				0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */,
+				0E7C82BA1C03845500E6A96B /* EditableContent.h */,
+				0E7C82BB1C03845500E6A96B /* EditableContent.m */,
+			);
+			path = SwipeCell;
+			sourceTree = "<group>";
+		};
 		0EBD6F9F1BEB2BCA00000C99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E7C82B11C037D5400E6A96B /* SwipeCell */,
 				0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */,
 				0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */,
 				0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */,
@@ -226,6 +282,15 @@
 				0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */,
 				0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */,
 				0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */,
+				0E3046411C03171A00147430 /* TimePickerCell.h */,
+				0E3046421C03171A00147430 /* TimePickerCell.m */,
+				0E3046431C03171A00147430 /* TimePickerCell.xib */,
+				0E3046461C0317E800147430 /* AlarmCell.h */,
+				0E3046471C0317E800147430 /* AlarmCell.m */,
+				0E3046481C0317E800147430 /* AlarmCell.xib */,
+				0E30464B1C03270600147430 /* DateBtn.h */,
+				0E30464C1C03270600147430 /* DateBtn.m */,
+				0E30464E1C0328AD00147430 /* DateBtn.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,8 +386,12 @@
 			files = (
 				0E132D581BD94FA2006C99EC /* LaunchScreen.xib in Resources */,
 				0EBD6FAB1BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib in Resources */,
+				0E30464F1C0328AD00147430 /* DateBtn.xib in Resources */,
 				0E132D551BD94FA2006C99EC /* Images.xcassets in Resources */,
+				0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */,
+				0E30464A1C0317E800147430 /* AlarmCell.xib in Resources */,
 				0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */,
+				0E3046451C03171A00147430 /* TimePickerCell.xib in Resources */,
 				0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */,
 				0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */,
 			);
@@ -345,19 +414,28 @@
 				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
 				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
 				0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */,
+				0E7C82AF1C0377CC00E6A96B /* Note+CoreDataProperties.m in Sources */,
 				0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */,
+				0E3046441C03171A00147430 /* TimePickerCell.m in Sources */,
 				0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */,
+				0E3046341C02ECBE00147430 /* Helper.m in Sources */,
 				0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */,
+				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
 				0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */,
+				0E30463D1C02FC8A00147430 /* Note.m in Sources */,
+				0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */,
 				0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */,
 				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,
 				0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
+				0E30464D1C03270600147430 /* DateBtn.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
-				0E3E21A11BDCE13C006B442B /* Note.m in Sources */,
+				0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */,
 				0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */,
 				0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */,
+				0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */,
+				0E3046401C030B5700147430 /* Colours.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import "ToDoListViewController.h"
 #import "EditNoteViewController.h"
 #import "EditableCell.h"
+#import "Note.h"
 
 
 
@@ -77,8 +78,27 @@
 //            }];
             
 //
+            
+            
             [containerView addSubview:editVC.view];
             [editVC.view layoutIfNeeded];
+            
+            for (UITableViewCell *cell in toDoVC.tableView.visibleCells) {
+                //snapshotViewAfterScreenUpdates:NO
+                //Snapshotting a view that has not been rendered results in an empty snapshot. Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates.
+                //
+                UIView *snapShot= [cell snapshotViewAfterScreenUpdates:NO];
+                //偏移tableView中scrollView的y轴偏移量
+                snapShot.frame=CGRectMake(cell.frame.origin.x, cell.frame.origin.y-toDoVC.tableView.contentOffset.y, cell.frame.size.width, cell.frame.size.height);
+                [containerView addSubview:snapShot];
+                [UIView animateWithDuration:self.duration animations:^{
+                    snapShot.transform=CGAffineTransformMakeTranslation(0, 150);
+                    snapShot.alpha=0.0;
+                } completion:^(BOOL finished) {
+                    [snapShot removeFromSuperview];
+                }];
+            }
+            
             
             CGRect fromFrame=[containerView convertRect:toDoVC.tableView.tableHeaderView.frame fromView:toDoVC.tableView.tableHeaderView.superview];
             
@@ -133,6 +153,20 @@
             [containerView addSubview:editVC.view];
             [editVC.view layoutIfNeeded];
             
+            for (UITableViewCell *cell in toDoVC.tableView.visibleCells) {
+                //snapshotViewAfterScreenUpdates:NO
+                //Snapshotting a view that has not been rendered results in an empty snapshot. Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates.
+                //
+                UIView *snapShot= [cell snapshotViewAfterScreenUpdates:NO];
+                snapShot.frame=CGRectMake(cell.frame.origin.x, cell.frame.origin.y-toDoVC.tableView.contentOffset.y, cell.frame.size.width, cell.frame.size.height);
+                [containerView addSubview:snapShot];
+                [UIView animateWithDuration:self.duration animations:^{
+                    snapShot.alpha=0.0;
+                } completion:^(BOOL finished) {
+                    [snapShot removeFromSuperview];
+                }];
+            }
+            
             EditableCell *cell2Anim=(EditableCell*)[editVC.tableView cellForRowAtIndexPath:[self indexPathForEditCell]];
             cell2Anim.textField.text=editVC.note.content;
             
@@ -161,9 +195,23 @@
             [transitionContext completeTransition:YES];
             
         }else{
-//            EditableCell *fromCell= (EditableCell*)[editVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-//            [fromCell setInsertOrEdit:NO anim:YES];
-//            
+            
+            EditableCell *fromCell= (EditableCell*)[editVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            __weak EditableCell *weakFromCell=fromCell;
+            [fromCell setInsertOrEdit:NO anim:YES completion:^{
+                [containerView addSubview:toDoVC.view];
+                UITableViewCell *cell2Anim= [toDoVC.tableView cellForRowAtIndexPath:self.selectedCellIndex];
+                [cell2Anim.superview bringSubviewToFront:cell2Anim];
+                CGRect oldFrame=cell2Anim.frame;
+                cell2Anim.frame=weakFromCell.frame;
+                [UIView animateWithDuration:self.duration animations:^{
+                    cell2Anim.frame=oldFrame;
+                } completion:^(BOOL finished) {
+                    [transitionContext completeTransition:YES];
+                }];
+            }];
+            
+//
 //            [UIView animateWithDuration:0.4 animations:^{
 //                fromCell.textField.alpha=0.0;
 //            } completion:^(BOOL finished) {
@@ -191,8 +239,6 @@
 //                    [transitionContext completeTransition:YES];
 //                }];
 //            });
-            
-            [transitionContext completeTransition:YES];
         }
     }
 }

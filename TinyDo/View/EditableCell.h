@@ -12,8 +12,8 @@
 
 @protocol EditableCellDelegate <NSObject>
 @required
--(void)editableCellDidAlarmClick:(EditableCell *)cell;
--(void)editableCellDidPriorityClick:(EditableCell *)cell;
+-(void)editableCellDidAlarmClick:(EditableCell *)cell selected:(BOOL)selected;
+-(void)editableCellDidPriorityClick:(EditableCell *)cell selected:(BOOL)selected;
 -(void)editableCellDidEndEditNote:(EditableCell *)cell;
 
 @end
@@ -24,4 +24,5 @@
 @property(nonatomic) BOOL setInsertOrEdit;
 @property(nonatomic,weak)id<EditableCellDelegate> delegate;
 -(void)setInsertOrEdit:(BOOL)insertOrEdit anim:(BOOL)anim;
+-(void)setInsertOrEdit:(BOOL)insertOrEdit anim:(BOOL)anim completion:(void (^)())completion;
 @end

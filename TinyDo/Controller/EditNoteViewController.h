@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Note.h"
+@class Note;
 
 typedef NS_ENUM(NSInteger, EditMode){
     Insert,

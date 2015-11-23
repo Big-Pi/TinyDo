@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateBtn">
+            <connections>
+                <outlet property="dateBtn" destination="YK9-69-fop" id="dOI-QL-Ec5"/>
+                <outlet property="indicator" destination="IbG-4n-prp" id="xZC-SA-Ybh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-rs-guX">
+            <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK9-69-fop">
+                    <rect key="frame" x="0.0" y="9" width="66" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="周一"/>
+                    <connections>
+                        <action selector="click:" destination="-1" eventType="touchUpInside" id="4wU-5X-gur"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-4n-prp">
+                    <rect key="frame" x="10" y="0.0" width="46" height="6"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="6" id="9mg-tr-YKz"/>
+                        <constraint firstAttribute="height" constant="6" id="pcS-Ks-J4f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YK9-69-fop" firstAttribute="top" secondItem="m6c-rs-guX" secondAttribute="top" constant="9" id="BfD-xv-URK"/>
+                <constraint firstItem="IbG-4n-prp" firstAttribute="leading" secondItem="m6c-rs-guX" secondAttribute="leading" constant="10" id="Ji8-3n-Xtb"/>
+                <constraint firstItem="YK9-69-fop" firstAttribute="leading" secondItem="m6c-rs-guX" secondAttribute="leading" id="NIX-6B-MmK"/>
+                <constraint firstAttribute="trailing" secondItem="IbG-4n-prp" secondAttribute="trailing" constant="10" id="ZB7-tY-fbr"/>
+                <constraint firstItem="IbG-4n-prp" firstAttribute="top" secondItem="m6c-rs-guX" secondAttribute="top" id="ZBe-jM-X8X"/>
+                <constraint firstAttribute="bottom" secondItem="YK9-69-fop" secondAttribute="bottom" constant="1" id="kw5-s9-Tve"/>
+                <constraint firstAttribute="trailing" secondItem="YK9-69-fop" secondAttribute="trailing" id="sgo-zx-dRU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-34" y="224.5"/>
+        </view>
+    </objects>
+</document>
