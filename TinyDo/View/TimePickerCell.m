@@ -18,5 +18,4 @@
         [self.delegate timePickerCell:self didTimeChanged:sender.date];
     }
 }
-
 @end

@@ -13,7 +13,10 @@ extern NSString *const kIsFristLaunch;
 
 @interface Helper : NSObject
 +(CGFloat)screenWidth;
++(NSString*)shortTimeStringFromDate:(NSDate*)date;
++(NSString*)repeatMsgFromRaw:(NSArray *)rawArray;
 //
 +(void)checkFirstLaunch:(UIViewController *)controller presentSplashVC:(NSString *)storyBoardIdentifier;
 +(void)checkFirstLaunch:(UIViewController *)controller storyboardName:(NSString *)storyboardName presentSplashVC:(NSString *)storyBoardIdentifier;
+
 @end

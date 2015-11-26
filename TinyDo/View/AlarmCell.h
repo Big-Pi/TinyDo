@@ -16,4 +16,5 @@
 @interface AlarmCell : UITableViewCell
 @property(nonatomic,weak) id<AlarmCellDelegate> delegate;
 -(void)setTimeMsg:(NSString*)timeMsg;
+-(void)setRepeatMsg:(NSString*)repeatMsg;
 @end

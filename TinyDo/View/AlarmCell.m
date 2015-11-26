@@ -55,6 +55,10 @@
     [self.timeLabel setTitle:timeMsg forState:UIControlStateNormal];
 }
 
+-(void)setRepeatMsg:(NSString*)repeatMsg{
+    [self.repeatLabel setTitle:repeatMsg forState:UIControlStateNormal];
+}
+
 -(NSDictionary*)dataDict{
     static NSDictionary *dic;
     if(!dic){

@@ -7,7 +7,6 @@
 //
 
 #import "ToDoListViewController.h"
-#import "EditableCell.h"
 #import "Note.h"
 #import "CoreDataStack.h"
 #import "EditNoteViewController.h"
@@ -16,10 +15,12 @@
 #import "DrawerToolbar.h"
 #import "Helper.h"
 #import "HelpViewController.h"
+#import "SwipeableCell.h"
+#import "NotifyUtil.h"
 
 @import CoreData;
 
-@interface ToDoListViewController ()<UITableViewDataSource,UITableViewDelegate,EditNoteViewControllerDelegate,UIViewControllerTransitioningDelegate,DrawerToolbarDelegate>
+@interface ToDoListViewController ()<UITableViewDataSource,UITableViewDelegate,EditNoteViewControllerDelegate,UIViewControllerTransitioningDelegate,DrawerToolbarDelegate,DeleteLineContainerViewDelegate>
 
 @property(nonatomic,strong)NSMutableArray *notes;
 @property (weak, nonatomic) IBOutlet DrawerToolbar *drawerToolbar;
@@ -48,6 +49,7 @@
         self.notes=[[NSMutableArray alloc]initWithCapacity:10];
     }
     
+    self.drawerToolbar.delegate=self;
 //    //drawerToolbar constraints bugFix 在storyboard设置的约束在自定义view不生效？
 //    self.drawerToolbar.delegate=self;
 //    self.drawerToolbar.translatesAutoresizingMaskIntoConstraints=NO;
@@ -61,14 +63,14 @@
 ////    [self.view addConstraints:constaintH];
 ////    [self.view addConstraints:constaintV];
     //
-    EditableCell *cell= [[[NSBundle mainBundle]loadNibNamed:@"EditableCell" owner:nil options:nil]lastObject];
-            cell.textField.text=@"";
-            cell.textField.enabled=YES;
-            cell.textField.placeholder=@"我想。。。。";
-            cell.seprateLine.hidden=YES;
+    SwipeableCell *cell= [[[NSBundle mainBundle]loadNibNamed:@"SwipeableCell" owner:nil options:nil]lastObject];
+            cell.editableContent.textField.text=@"";
+            cell.editableContent.textField.enabled=YES;
+            cell.editableContent.textField.placeholder=@"我想。。。。";
+            cell.editableContent.seprateLine.hidden=YES;
     self.tableView.tableHeaderView=cell.contentView;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"EditableCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
     self.tableView.contentInset=UIEdgeInsetsMake(-66+20, 0, 0, 0);
     
     
@@ -108,6 +110,10 @@
 //}
 
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [NotifyUtil scheduleWeekRepeatAlarmWithDate:[NSDate date] alertBody:@"baba"];
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -129,19 +135,18 @@
         return cell;
     }
     Note *note=self.notes[indexPath.row];
-    EditableCell *cell= [self.tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textField.placeholder=@"";
-    cell.seprateLine.alpha=0.3;
-    cell.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    SwipeableCell *cell= [self.tableView dequeueReusableCellWithIdentifier:@"SwipeableCell"];
+    cell.editableContent.textField.placeholder=@"";
+    cell.editableContent.seprateLine.alpha=0.3;
+    cell.editableContent.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    cell.myContainerView.delegate=self;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.notes.count==0) return;
-    EditNoteViewController *editNoteVC=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"EditNoteViewController"];
-    editNoteVC.transitioningDelegate=self;
-    editNoteVC.delegate=self;
     
+    EditNoteViewController *editNoteVC= [self configEditNoteViewController];
     editNoteVC.note=self.notes[indexPath.row];
     self.animator.isInsert=NO;
     self.animator.selectedCellIndex=indexPath;
@@ -159,12 +164,17 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    NSLog(@"%f",scrollView.contentOffset.y);
     if(scrollView.contentOffset.y<-66*1.3){
-        EditNoteViewController *editNoteVC= [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EditNoteViewController"];
-        editNoteVC.transitioningDelegate=self;
-        editNoteVC.delegate=self;
+        EditNoteViewController *editNoteVC=[self configEditNoteViewController];
         self.animator.isInsert=YES;
         [self presentViewController:editNoteVC animated:YES completion:nil];
     }
+}
+
+-(EditNoteViewController*)configEditNoteViewController{
+    EditNoteViewController *editNoteVC=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"EditNoteViewController"];
+    editNoteVC.transitioningDelegate=self;
+    editNoteVC.delegate=self;
+    return editNoteVC;
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -172,21 +182,21 @@
 }
 
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(editingStyle==UITableViewCellEditingStyleDelete){
-        //如果将要删除最后一个note,则notes为空 显示占位cell 提醒用户下拉创建新note
-        if(self.notes.count==1){
-            [[CoreDataStack sharedStack]deleteNote:[self.notes lastObject]];
-            [self.notes removeAllObjects];
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-        }else{
-            Note *note2Remove=[self.notes objectAtIndex:indexPath.row];
-            [[CoreDataStack sharedStack]deleteNote:note2Remove];
-            [self.notes removeObjectIdenticalTo:note2Remove];
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        }
-    }
-}
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if(editingStyle==UITableViewCellEditingStyleDelete){
+//        //如果将要删除最后一个note,则notes为空 显示占位cell 提醒用户下拉创建新note
+//        if(self.notes.count==1){
+//            [[CoreDataStack sharedStack]deleteNote:[self.notes lastObject]];
+//            [self.notes removeAllObjects];
+//            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        }else{
+//            Note *note2Remove=[self.notes objectAtIndex:indexPath.row];
+//            [[CoreDataStack sharedStack]deleteNote:note2Remove];
+//            [self.notes removeObjectIdenticalTo:note2Remove];
+//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        }
+//    }
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.notes.count>0){
@@ -234,11 +244,54 @@
 
 #pragma mark - DrawerToolbarDelegate
 -(void)onDrawerToolbar:(DrawerToolbar *)toolbar barButtonItemClick:(ImageBarButtonItemType)type{
-    NSLog(@"%ld",type);
+//    NSLog(@"%ld",type);
+    switch (type) {
+        case ImageBarButtonItemTypePin: {
+            
+            break;
+        }
+        case ImageBarButtonItemTypeLike: {
+            
+            break;
+        }
+        case ImageBarButtonItemTypeSetting: {
+            UIViewController *controller=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"SettingViewController"];
+            [self presentViewController:controller animated:YES completion:nil];
+            break;
+        }
+        case ImageBarButtonItemTypeAbout: {
+            UIViewController *controller=[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"AboutViewController"];
+            [self presentViewController:controller animated:YES completion:nil];
+            break;
+        }
+    }
+}
+
+#pragma mark - DeleteLineContainerViewDelegate
+-(void)deleteLineContainerView:(DeleteLineContainerView *)contentView onStateChanged:(DeleteLineContainerViewState)state{
+    UITableViewCell *cell= (UITableViewCell*)contentView.superview;
+    NSIndexPath *indexPath= [self.tableView indexPathForCell:cell];
+    Note *note=self.notes[indexPath.row];
+    switch (state) {
+        case DeleteLineContainerViewStateNormal: {
+            note.deleted=@NO;
+            note.deperacted=@NO;
+            break;
+        }
+        case DeleteLineContainerViewStateDeprecated: {
+            note.deperacted=@YES;
+            note.deleted=@NO;
+            break;
+        }
+        case DeleteLineContainerViewStateDeleted: {
+            note.deleted=@YES;
+            break;
+        }
+    }
 }
 
 -(void)dealloc{
-    NSLog(@"%@ ___dealloc",[self class] );
+    NSLog(@"%@ ___dealloc",[self class]);
 }
 
 @end

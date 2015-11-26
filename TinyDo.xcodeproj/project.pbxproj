@@ -27,19 +27,28 @@
 		0E30464F1C0328AD00147430 /* DateBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E30464E1C0328AD00147430 /* DateBtn.xib */; };
 		0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E219D1BDCC200006B442B /* HelpViewController.m */; };
 		0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */; };
+		0E56D10F1C062F2D007375BD /* RubbishBinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E56D10E1C062F2D007375BD /* RubbishBinViewController.m */; };
+		0E56D1121C062F5A007375BD /* SyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E56D1111C062F5A007375BD /* SyncViewController.m */; };
+		0E56D1151C063190007375BD /* ThemePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E56D1141C063190007375BD /* ThemePickerView.m */; };
+		0E56D1171C06319F007375BD /* ThemePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E56D1161C06319F007375BD /* ThemePickerView.xib */; };
+		0E5DC0C41C0632E200726A50 /* UIColor+PiRandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5DC0C31C0632E200726A50 /* UIColor+PiRandomColor.m */; };
 		0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */; };
-		0E7C82AF1C0377CC00E6A96B /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */; };
+		0E73C99B1C048517005E339F /* NotifyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E73C99A1C048517005E339F /* NotifyUtil.m */; };
+		0E7903A81C04D9EF007C6D8D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7903A71C04D9EF007C6D8D /* SettingViewController.m */; };
 		0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B31C037D5400E6A96B /* DeleteLineContainerView.m */; };
 		0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B51C037D5400E6A96B /* SwipeableCell.m */; };
 		0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */; };
 		0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82BB1C03845500E6A96B /* EditableContent.m */; };
 		0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */; };
 		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
+		0EA4BDBC1C05AD20008E54BB /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */; };
 		0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */; };
 		0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */; };
 		0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */; };
 		0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */; };
 		0EBD6FAB1BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA61BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib */; };
+		0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF5FB51C06EF3C0051E871 /* CustomIOSAlertView.m */; };
+		0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF5FB81C06F53F0051E871 /* ThemePickerViewAlert.m */; };
 		0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */; };
 		0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E51BE7D15E00BC685D /* ThemeManager.m */; };
 		0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E81BE7D1A300BC685D /* ColorTheme.m */; };
@@ -92,9 +101,20 @@
 		0E3E219D1BDCC200006B442B /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		0E56D10D1C062F2D007375BD /* RubbishBinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubbishBinViewController.h; sourceTree = "<group>"; };
+		0E56D10E1C062F2D007375BD /* RubbishBinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubbishBinViewController.m; sourceTree = "<group>"; };
+		0E56D1101C062F5A007375BD /* SyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncViewController.h; sourceTree = "<group>"; };
+		0E56D1111C062F5A007375BD /* SyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncViewController.m; sourceTree = "<group>"; };
+		0E56D1131C063190007375BD /* ThemePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemePickerView.h; path = ../ThemePickerView.h; sourceTree = "<group>"; };
+		0E56D1141C063190007375BD /* ThemePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemePickerView.m; path = ../ThemePickerView.m; sourceTree = "<group>"; };
+		0E56D1161C06319F007375BD /* ThemePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThemePickerView.xib; path = ../ThemePickerView.xib; sourceTree = "<group>"; };
+		0E5DC0C21C0632E200726A50 /* UIColor+PiRandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PiRandomColor.h"; sourceTree = "<group>"; };
+		0E5DC0C31C0632E200726A50 /* UIColor+PiRandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PiRandomColor.m"; sourceTree = "<group>"; };
 		0E68A8021BF7513E005B6538 /* DrawerToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerToolbar.xib; sourceTree = "<group>"; };
-		0E7C82AD1C0377CC00E6A96B /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0E73C9991C048517005E339F /* NotifyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyUtil.h; sourceTree = "<group>"; };
+		0E73C99A1C048517005E339F /* NotifyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyUtil.m; sourceTree = "<group>"; };
+		0E7903A61C04D9EF007C6D8D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		0E7903A71C04D9EF007C6D8D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		0E7C82B21C037D5400E6A96B /* DeleteLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteLineContainerView.h; sourceTree = "<group>"; };
 		0E7C82B31C037D5400E6A96B /* DeleteLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteLineContainerView.m; sourceTree = "<group>"; };
 		0E7C82B41C037D5400E6A96B /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
@@ -106,6 +126,8 @@
 		0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBarButtonItem.m; path = ../View/ImageBarButtonItem.m; sourceTree = "<group>"; };
 		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
 		0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerToolbar.m; sourceTree = "<group>"; };
+		0EA4BDBA1C05AD20008E54BB /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableCell.h; sourceTree = "<group>"; };
 		0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableCell.m; sourceTree = "<group>"; };
 		0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableCell.xib; sourceTree = "<group>"; };
@@ -113,6 +135,10 @@
 		0EBD6FA41BEB2BCA00000C99 /* NoNotePlaceHolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNotePlaceHolderCell.h; sourceTree = "<group>"; };
 		0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNotePlaceHolderCell.m; sourceTree = "<group>"; };
 		0EBD6FA61BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoNotePlaceHolderCell.xib; sourceTree = "<group>"; };
+		0ECF5FB41C06EF3C0051E871 /* CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOSAlertView.h; sourceTree = "<group>"; };
+		0ECF5FB51C06EF3C0051E871 /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
+		0ECF5FB71C06F53F0051E871 /* ThemePickerViewAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemePickerViewAlert.h; sourceTree = "<group>"; };
+		0ECF5FB81C06F53F0051E871 /* ThemePickerViewAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemePickerViewAlert.m; sourceTree = "<group>"; };
 		0ED13FE51BF05E77007E9A97 /* MagicTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTransitionAnimator.h; sourceTree = "<group>"; };
 		0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTransitionAnimator.m; sourceTree = "<group>"; };
 		0EE480E41BE7D15E00BC685D /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
@@ -212,6 +238,12 @@
 				0E3E219D1BDCC200006B442B /* HelpViewController.m */,
 				0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */,
 				0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */,
+				0E7903A61C04D9EF007C6D8D /* SettingViewController.h */,
+				0E7903A71C04D9EF007C6D8D /* SettingViewController.m */,
+				0E56D10D1C062F2D007375BD /* RubbishBinViewController.h */,
+				0E56D10E1C062F2D007375BD /* RubbishBinViewController.m */,
+				0E56D1101C062F5A007375BD /* SyncViewController.h */,
+				0E56D1111C062F5A007375BD /* SyncViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,8 +251,8 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E7C82AD1C0377CC00E6A96B /* Note+CoreDataProperties.h */,
-				0E7C82AE1C0377CC00E6A96B /* Note+CoreDataProperties.m */,
+				0EA4BDBA1C05AD20008E54BB /* Note+CoreDataProperties.h */,
+				0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */,
 				0E30463A1C02FC8A00147430 /* Note.h */,
 				0E30463B1C02FC8A00147430 /* Note.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
@@ -233,6 +265,8 @@
 		0E132D6F1BD95034006C99EC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0E5DC0C21C0632E200726A50 /* UIColor+PiRandomColor.h */,
+				0E5DC0C31C0632E200726A50 /* UIColor+PiRandomColor.m */,
 				0E30463E1C030B5600147430 /* Colours.h */,
 				0E30463F1C030B5700147430 /* Colours.m */,
 				0EE480E41BE7D15E00BC685D /* ThemeManager.h */,
@@ -241,6 +275,8 @@
 				0EE480E81BE7D1A300BC685D /* ColorTheme.m */,
 				0E3046321C02ECBE00147430 /* Helper.h */,
 				0E3046331C02ECBE00147430 /* Helper.m */,
+				0E73C9991C048517005E339F /* NotifyUtil.h */,
+				0E73C99A1C048517005E339F /* NotifyUtil.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -271,6 +307,7 @@
 		0EBD6F9F1BEB2BCA00000C99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0ECF5FB31C06EF3C0051E871 /* CustomIOSAlertView */,
 				0E7C82B11C037D5400E6A96B /* SwipeCell */,
 				0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */,
 				0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */,
@@ -293,6 +330,20 @@
 				0E30464E1C0328AD00147430 /* DateBtn.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0ECF5FB31C06EF3C0051E871 /* CustomIOSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF5FB41C06EF3C0051E871 /* CustomIOSAlertView.h */,
+				0ECF5FB51C06EF3C0051E871 /* CustomIOSAlertView.m */,
+				0ECF5FB71C06F53F0051E871 /* ThemePickerViewAlert.h */,
+				0ECF5FB81C06F53F0051E871 /* ThemePickerViewAlert.m */,
+				0E56D1131C063190007375BD /* ThemePickerView.h */,
+				0E56D1141C063190007375BD /* ThemePickerView.m */,
+				0E56D1161C06319F007375BD /* ThemePickerView.xib */,
+			);
+			path = CustomIOSAlertView;
 			sourceTree = "<group>";
 		};
 		0ED13FE41BF05E77007E9A97 /* Anim */ = {
@@ -393,6 +444,7 @@
 				0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */,
 				0E3046451C03171A00147430 /* TimePickerCell.xib in Resources */,
 				0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */,
+				0E56D1171C06319F007375BD /* ThemePickerView.xib in Resources */,
 				0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,18 +466,23 @@
 				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
 				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
 				0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */,
-				0E7C82AF1C0377CC00E6A96B /* Note+CoreDataProperties.m in Sources */,
 				0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */,
+				0E7903A81C04D9EF007C6D8D /* SettingViewController.m in Sources */,
 				0E3046441C03171A00147430 /* TimePickerCell.m in Sources */,
 				0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */,
 				0E3046341C02ECBE00147430 /* Helper.m in Sources */,
+				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
+				0EA4BDBC1C05AD20008E54BB /* Note+CoreDataProperties.m in Sources */,
+				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
 				0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
+				0E56D1151C063190007375BD /* ThemePickerView.m in Sources */,
 				0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */,
 				0E30463D1C02FC8A00147430 /* Note.m in Sources */,
 				0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */,
 				0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */,
+				0E56D1121C062F5A007375BD /* SyncViewController.m in Sources */,
 				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,
 				0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
@@ -433,6 +490,9 @@
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
 				0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */,
 				0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */,
+				0E5DC0C41C0632E200726A50 /* UIColor+PiRandomColor.m in Sources */,
+				0E73C99B1C048517005E339F /* NotifyUtil.m in Sources */,
+				0E56D10F1C062F2D007375BD /* RubbishBinViewController.m in Sources */,
 				0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */,
 				0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */,
 				0E3046401C030B5700147430 /* Colours.m in Sources */,

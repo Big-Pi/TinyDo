@@ -10,7 +10,7 @@
 #import "MagicTransitionAnimator.h"
 #import "ToDoListViewController.h"
 #import "EditNoteViewController.h"
-#import "EditableCell.h"
+#import "SwipeableCell.h"
 #import "Note.h"
 
 
@@ -160,18 +160,18 @@
                 UIView *snapShot= [cell snapshotViewAfterScreenUpdates:NO];
                 snapShot.frame=CGRectMake(cell.frame.origin.x, cell.frame.origin.y-toDoVC.tableView.contentOffset.y, cell.frame.size.width, cell.frame.size.height);
                 [containerView addSubview:snapShot];
-                [UIView animateWithDuration:self.duration animations:^{
+                [UIView animateWithDuration:self.duration/3*2 animations:^{
                     snapShot.alpha=0.0;
                 } completion:^(BOOL finished) {
                     [snapShot removeFromSuperview];
                 }];
             }
             
-            EditableCell *cell2Anim=(EditableCell*)[editVC.tableView cellForRowAtIndexPath:[self indexPathForEditCell]];
-            cell2Anim.textField.text=editVC.note.content;
+            SwipeableCell *cell2Anim=(SwipeableCell*)[editVC.tableView cellForRowAtIndexPath:[self indexPathForEditCell]];
+            cell2Anim.editableContent.textField.text=editVC.note.content;
             
             UITableViewCell *selectedCell= [toDoVC.tableView cellForRowAtIndexPath:[toDoVC.tableView indexPathForSelectedRow]];
-            CGRect fromFrame=[containerView convertRect:selectedCell.contentView.frame fromView:selectedCell.contentView.superview];
+            CGRect fromFrame=[containerView convertRect:selectedCell.frame fromView:selectedCell.superview];
             
             CGRect toFrame=cell2Anim.frame;
             
@@ -196,9 +196,9 @@
             
         }else{
             
-            EditableCell *fromCell= (EditableCell*)[editVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            __weak EditableCell *weakFromCell=fromCell;
-            [fromCell setInsertOrEdit:NO anim:YES completion:^{
+            SwipeableCell *fromCell= (SwipeableCell*)[editVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            __weak SwipeableCell *weakFromCell=fromCell;
+            [fromCell.editableContent setInsertOrEdit:NO anim:YES completion:^{
                 [containerView addSubview:toDoVC.view];
                 UITableViewCell *cell2Anim= [toDoVC.tableView cellForRowAtIndexPath:self.selectedCellIndex];
                 [cell2Anim.superview bringSubviewToFront:cell2Anim];

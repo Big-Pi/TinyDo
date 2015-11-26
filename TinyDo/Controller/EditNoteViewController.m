@@ -7,15 +7,16 @@
 //
 
 #import "EditNoteViewController.h"
-#import "EditableCell.h"
+#import "SwipeableCell.h"
 #import "CoreDataStack.h"
 #import "AlarmCell.h"
 #import "TimePickerCell.h"
 #import "Note.h"
+#import "Helper.h"
 
-@interface EditNoteViewController ()<UITableViewDelegate,UITableViewDataSource,EditableCellDelegate,AlarmCellDelegate,TimePickerCellDelegate>
+@interface EditNoteViewController ()<UITableViewDelegate,UITableViewDataSource,AlarmCellDelegate,TimePickerCellDelegate,EditableContentDelegate>
 
-@property(strong,nonatomic)EditableCell *editCell;
+@property(strong,nonatomic)SwipeableCell *editCell;
 @property(nonatomic)EditMode mode;
 @property (strong, nonatomic) AlarmCell *alarmCell;
 
@@ -25,19 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"EditableCell" bundle:nil] forCellReuseIdentifier:@"EditableCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"AlarmCell" bundle:nil] forCellReuseIdentifier:@"AlarmCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TimePickerCell" bundle:nil] forCellReuseIdentifier:@"TimePickerCell"];
     
     //如果note!=nil 是编辑 否则是插入
     if(self.note!=nil){
-        self.editCell.textField.text=self.note.content;
+        self.editCell.editableContent.textField.text=self.note.content;
         self.mode=Edit;
     }else{
         self.note=[[CoreDataStack sharedStack]insertNote];
     }
-    self.editCell.delegate=self;
 }
+#pragma mark - Getter Setter
 
 -(EditMode)mode{
     if (!_mode) {
@@ -48,29 +49,46 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.editCell.textField becomeFirstResponder];
+    [self.editCell.editableContent.textField becomeFirstResponder];
     //如果是修改note内容,则直接显示button动画
     if(self.note.content&&self.note.content.length>0){
-        [self.editCell setInsertOrEdit:YES anim:YES];
+        [self.editCell.editableContent setInsertOrEdit:YES anim:YES];
     }
 }
+#pragma mark - UITableViewDelegate UITableViewDataSource
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row==0){
-        self.editCell=[tableView dequeueReusableCellWithIdentifier:@"EditableCell"];
-        self.editCell.textField.text=@"";
-        self.editCell.textField.enabled=YES;
-        self.editCell.textField.placeholder=@"我想。。。。";
-        return self.editCell;
+        SwipeableCell *swipeCell=[tableView dequeueReusableCellWithIdentifier:@"SwipeableCell"];
+        
+        swipeCell.editableContent.delegate=self;
+        [swipeCell setSwipeable:NO];
+        //
+        swipeCell.editableContent.textField.text=@"";
+        swipeCell.editableContent.textField.enabled=YES;
+        swipeCell.editableContent.textField.placeholder=@"我想。。。。";
+        //
+        return swipeCell;
     }
     if(indexPath.row==1){
         AlarmCell *alarmCell= [tableView dequeueReusableCellWithIdentifier:@"AlarmCell"];
         alarmCell.delegate=self;
+        if(self.note.remindDate!=nil){
+            [alarmCell setTimeMsg:[Helper shortTimeStringFromDate:self.note.remindDate]];
+        }
+        if(self.note.remindRepeat!=nil){
+            [alarmCell setRepeatMsg:[Helper repeatMsgFromRaw:self.note.remindRepeat]];
+        }
         self.alarmCell=alarmCell;
         return alarmCell;
     }else if(indexPath.row==2){
         TimePickerCell *timePickerCell= [tableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
         timePickerCell.delegate=self;
+        if(self.note.remindDate){
+            timePickerCell.timePicker.date=self.note.remindDate;
+        }else{
+            timePickerCell.timePicker.date=[NSDate date];
+        }
         return timePickerCell;
     }
     return nil;
@@ -84,29 +102,19 @@
     return [self tableView:tableView cellForRowAtIndexPath:indexPath].contentView.frame.size.height;
 }
 
-#pragma mark - EditableCellDelegate
--(void)editableCellDidAlarmClick:(EditableCell *)cell selected:(BOOL)selected{
-    self.note.needRemind=@(selected);
-}
-
--(void)editableCellDidPriorityClick:(EditableCell *)cell selected:(BOOL)selected{
-    self.note.pirority=@(selected);
-}
-
--(void)editableCellDidEndEditNote:(EditableCell *)cell{
-    [self.view endEditing:YES];
-    self.note.content=self.editCell.textField.text;
-    [self.delegate editNoteViewControllerDidEndEdit:self withNote:self.note editMode:self.mode];
-}
-
--(void)dealloc{
-    NSLog(@"EditNoteViewController___dealloc");
-}
 
 //-(UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier{
 //    NSLog(@"segueForUnwindingToViewController");
 //    return [super segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
 //}
+
+#pragma mark - hack method
+-(SwipeableCell *)editCell{
+    if(!_editCell){
+        _editCell= [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    }
+    return _editCell;
+}
 
 #pragma mark - AlarmCellDelegate
 -(void)alarmCell:(AlarmCell *)cell didSelectedBtnChanged:(NSSet *)selectedIndex msgString:(NSString *)msg{
@@ -118,8 +126,26 @@
 -(void)timePickerCell:(TimePickerCell *)cell didTimeChanged:(NSDate *)date{
     NSLog(@"%@",date);
     AlarmCell *alarmCell =[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    [alarmCell setTimeMsg:[date description]];
-    self.note.remindDate=date;
+    [alarmCell setTimeMsg:[Helper shortTimeStringFromDate:date]];
+        self.note.remindDate=date;
 }
 
+#pragma mark - EditableContentDelegate
+-(void)editableContentDidPriorityClick:(EditableContent *)content selected:(BOOL)isSelected{
+    self.note.pirority=@(isSelected);
+}
+
+-(void)editableContentDidEndEditNote:(EditableContent *)content{
+    [self.view endEditing:YES];
+    self.note.content=self.editCell.editableContent.textField.text;
+    [self.delegate editNoteViewControllerDidEndEdit:self withNote:self.note editMode:self.mode];
+}
+
+-(void)editableContentDidAlarmClick:(EditableContent *)content selected:(BOOL)isSelected{
+    self.note.needRemind=@(isSelected);
+}
+
+-(void)dealloc{
+    NSLog(@"EditNoteViewController___dealloc");
+}
 @end

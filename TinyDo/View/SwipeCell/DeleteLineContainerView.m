@@ -7,6 +7,7 @@
 //
 
 #import "DeleteLineContainerView.h"
+#import "EditableContent.h"
 
 
 static CGFloat const kDeleteLineFactor=1.35;
@@ -17,7 +18,6 @@ static CGFloat const kDeleteLineFactor=1.35;
 @property(weak,nonatomic)IBOutlet UIImageView *leftDeleteImage;
 @property(weak,nonatomic)IBOutlet UIImageView *rightDeleteImage;
 @property(nonatomic)DeleteLineContainerViewState currentState;
-@property(weak,nonatomic)IBOutlet UIView *editableContent;
 @end
 
 @implementation DeleteLineContainerView

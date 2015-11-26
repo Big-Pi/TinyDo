@@ -7,19 +7,16 @@
 //
 
 #import "SwipeableCell.h"
-#import "DeleteLineContainerView.h"
-#import "EditableContent.h"
+
 
 static CGFloat const kanimDurationFactor = 600.0;
 
 @interface SwipeableCell ()<UIGestureRecognizerDelegate,DeleteLineContainerViewDelegate>
-@property(nonatomic,copy)NSString *itemText;
 //
 @property(nonatomic,strong)UIPanGestureRecognizer *pan;
 @property(nonatomic)CGPoint panStartPoint;
 //
-@property (weak, nonatomic) IBOutlet DeleteLineContainerView *myContainerView;
-@property (weak, nonatomic) IBOutlet EditableContent *editableContent;
+
 
 @end
 
@@ -28,7 +25,7 @@ static CGFloat const kanimDurationFactor = 600.0;
 -(void)awakeFromNib{
     [super awakeFromNib];
     [self setSwipeable:YES];
-    self.myContainerView.delegate=self;
+//    self.myContainerView.delegate=self;
 }
 -(void)setSwipeable:(BOOL)canSwipe{
     if(canSwipe){
@@ -108,13 +105,11 @@ static CGFloat const kanimDurationFactor = 600.0;
 //}
 
 #pragma mark - UIGestureRecognizerDelegate
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    return YES;
-}
+//-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+//    return YES;
+//}
 
 #pragma mark - DeleteLineContainerViewDelegate
-
-
 -(void)deleteLineContainerView:(DeleteLineContainerView *)contentView onStateChanged:(DeleteLineContainerViewState)state{
     NSLog(@"state : %ld",state);
 }
