@@ -65,7 +65,7 @@
     NSString *uuid=[self uuid];
     alarm.userInfo=@{@"alarmID":uuid};
     [[UIApplication sharedApplication]scheduleLocalNotification:alarm];
-//    NSLog(@"scheduleAlarm");
+    NSLog(@"scheduleAlarm :%@ ",alarm);
     return uuid;
 }
 

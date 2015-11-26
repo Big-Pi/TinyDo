@@ -7,8 +7,10 @@
 //
 
 #import "AboutViewController.h"
+#import <MessageUI/MessageUI.h>
+#import "UMSocial.h"
 
-@interface AboutViewController ()
+@interface AboutViewController ()<MFMailComposeViewControllerDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *emailBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (weak, nonatomic) IBOutlet UIButton *helpBtn;
@@ -61,11 +63,30 @@
 }
 
 - (IBAction)email:(id)sender {
+    // Email Subject
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
     
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
 }
 
 - (IBAction)share:(id)sender {
-    
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5656c533e0f55a07d8000330"
+                                      shareText:@"TinyDo 协助您更有效的搞定日常事务～"
+                                     shareImage:[UIImage imageNamed:@"ApplicationIcon"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,nil]
+                                       delegate:self];
 }
 
 - (IBAction)help:(id)sender {
@@ -73,4 +94,28 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+
+#pragma mark - MFMailComposeViewControllerDelegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    switch (result) {
+        case MFMailComposeResultCancelled: {
+            
+            break;
+        }
+        case MFMailComposeResultSaved: {
+            
+            break;
+        }
+        case MFMailComposeResultSent: {
+            
+            break;
+        }
+        case MFMailComposeResultFailed: {
+            
+            break;
+        }
+            
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

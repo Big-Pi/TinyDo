@@ -112,7 +112,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [NotifyUtil scheduleWeekRepeatAlarmWithDate:[NSDate date] alertBody:@"baba"];
 }
 
 #pragma mark - UITableViewDataSource

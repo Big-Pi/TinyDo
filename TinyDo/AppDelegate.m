@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ToDoListViewController.h"
 #import "CoreDataStack.h"
+#import "UMSocial.h"
 
 
 @interface AppDelegate ()
@@ -28,6 +29,7 @@
     if (localNotif) {
         NSLog(@"didFinishLaunchingWithOptions : %@",localNotif);
     }
+    [UMSocialData setAppKey:@"5656c533e0f55a07d8000330"];
     return YES;
 }
 

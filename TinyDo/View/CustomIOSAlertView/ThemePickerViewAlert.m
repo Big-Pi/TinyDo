@@ -13,8 +13,11 @@
 @implementation ThemePickerViewAlert
 +(instancetype)sharedAlert{
     CustomIOSAlertView *alert=[[CustomIOSAlertView alloc]init];
+//    alert.layer.masksToBounds=YES;
     [alert setButtonTitles:@[@"确定"]];
     ThemePickerView *picker=[[ThemePickerView alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
+//    picker.clipsToBounds=YES;
+    picker.layer.masksToBounds=YES;
     [alert setContainerView:picker];
     [alert show];
     return (ThemePickerViewAlert*)alert;
