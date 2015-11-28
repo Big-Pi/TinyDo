@@ -8,6 +8,10 @@
 
 #import "CustomIOSAlertView.h"
 
+
 @interface ThemePickerViewAlert : CustomIOSAlertView
-+(instancetype)sharedAlert;
+#warning 用delegate 和父类重复怎办？
+//@property(nonatomic,weak) id<ThemePickerViewAlertDelegate> alertDelegate; //用delegate 和父类重复怎办？
++(instancetype)alert;
+-(UIColor*)selectedColor;
 @end

@@ -11,7 +11,7 @@
 
 static CGFloat const kanimDurationFactor = 600.0;
 
-@interface SwipeableCell ()<UIGestureRecognizerDelegate,DeleteLineContainerViewDelegate>
+@interface SwipeableCell ()<UIGestureRecognizerDelegate>
 //
 @property(nonatomic,strong)UIPanGestureRecognizer *pan;
 @property(nonatomic)CGPoint panStartPoint;
@@ -105,12 +105,10 @@ static CGFloat const kanimDurationFactor = 600.0;
 //}
 
 #pragma mark - UIGestureRecognizerDelegate
-//-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-//    return YES;
-//}
 
-#pragma mark - DeleteLineContainerViewDelegate
--(void)deleteLineContainerView:(DeleteLineContainerView *)contentView onStateChanged:(DeleteLineContainerViewState)state{
-    NSLog(@"state : %ld",state);
+#warning tableview的下拉和cell横向滑动可以同时触发
+//tableview的下拉和cell横向滑动可以同时触发 如果不加不能下拉
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
 }
 @end

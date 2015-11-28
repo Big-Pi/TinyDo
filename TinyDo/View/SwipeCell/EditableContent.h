@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @class EditableContent;
 
 @protocol EditableContentDelegate <NSObject>
 -(void)editableContentDidAlarmClick:(EditableContent*)content selected:(BOOL)isSelected;
-
 -(void)editableContentDidPriorityClick:(EditableContent*)content selected:(BOOL)isSelected;
 -(void)editableContentDidEndEditNote:(EditableContent *)content;
 @end
@@ -21,6 +22,8 @@
 @property(nonatomic,weak) id<EditableContentDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIView *seprateLine;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *alarm;
+@property (weak, nonatomic) IBOutlet UIButton *priority;
 //
 @property(nonatomic) BOOL setInsertOrEdit;
 -(void)setInsertOrEdit:(BOOL)insertOrEdit anim:(BOOL)anim;

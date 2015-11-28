@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Images\\Alarm.png"
+      "filename" : "Images\\Alarm.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

@@ -15,6 +15,6 @@
     return colors[arc4random()%(colors.count-1)];
 }
 +(NSArray*)themeColors{
-    return @[[UIColor pinkLipstickColor], [UIColor infoBlueColor],[UIColor successColor],[UIColor grapeColor],[UIColor skyBlueColor],[UIColor pastelPurpleColor],[UIColor pastelOrangeColor]];
+    return @[[UIColor blackColor],[UIColor pinkLipstickColor], [UIColor infoBlueColor],[UIColor successColor],[UIColor grapeColor],[UIColor skyBlueColor],[UIColor pastelPurpleColor],[UIColor pastelOrangeColor]];
 }
 @end

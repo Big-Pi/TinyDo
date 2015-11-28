@@ -15,6 +15,7 @@
 
 @interface AlarmCell : UITableViewCell
 @property(nonatomic,weak) id<AlarmCellDelegate> delegate;
+@property (strong,nonatomic) NSMutableSet *selectedRepeatedWeek;
 -(void)setTimeMsg:(NSString*)timeMsg;
 -(void)setRepeatMsg:(NSString*)repeatMsg;
 @end

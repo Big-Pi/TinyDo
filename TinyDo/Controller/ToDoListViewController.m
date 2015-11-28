@@ -83,7 +83,6 @@
     dispatch_once(&onceToken, ^{
         [Helper checkFirstLaunch:self presentSplashVC:@"HelpViewController"];
     });
-    
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -268,22 +267,28 @@
 
 #pragma mark - DeleteLineContainerViewDelegate
 -(void)deleteLineContainerView:(DeleteLineContainerView *)contentView onStateChanged:(DeleteLineContainerViewState)state{
-    UITableViewCell *cell= (UITableViewCell*)contentView.superview;
+    UITableViewCell *cell= (UITableViewCell*)contentView.superview.superview;
     NSIndexPath *indexPath= [self.tableView indexPathForCell:cell];
     Note *note=self.notes[indexPath.row];
+    
     switch (state) {
         case DeleteLineContainerViewStateNormal: {
-            note.deleted=@NO;
-            note.deperacted=@NO;
+            [note setNoteState:NoteStateNormal];
             break;
         }
         case DeleteLineContainerViewStateDeprecated: {
-            note.deperacted=@YES;
-            note.deleted=@NO;
+            [note setNoteState:NoteStateDeprecated];
             break;
         }
         case DeleteLineContainerViewStateDeleted: {
-            note.deleted=@YES;
+            [note setNoteState:NoteStateDeleted];
+            [self.notes removeObject:note];
+            [[CoreDataStack sharedStack]deleteNote:note];
+            if(self.notes.count==0){
+                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+            }else{
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
             break;
         }
     }

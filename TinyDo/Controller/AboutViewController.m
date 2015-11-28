@@ -22,7 +22,6 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self animBtnAppear];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -62,13 +61,14 @@
     }
 }
 
+//not work on simulator
 - (IBAction)email:(id)sender {
     // Email Subject
-    NSString *emailTitle = @"Test Email";
+    NSString *emailTitle = @"TinyDo 反馈";
     // Email Content
-    NSString *messageBody = @"iOS programming is so fun!";
+    NSString *messageBody = @"TinyDo 协助您更有效的搞定日常事务～";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"wangdapishuai@163.com"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;

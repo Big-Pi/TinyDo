@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0FF5C71C087A1C002F7623 /* NotificationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF5C61C087A1C002F7623 /* NotificationUtil.m */; };
+		0E0FF5CA1C087FC8002F7623 /* DissmissKeyBoardWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */; };
+		0E0FF65C1C08D068002F7623 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF6591C08D068002F7623 /* Note.m */; };
+		0E0FF65D1C08D068002F7623 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */; };
 		0E132D471BD94FA2006C99EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D461BD94FA2006C99EC /* main.m */; };
 		0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D491BD94FA2006C99EC /* AppDelegate.m */; };
 		0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */; };
@@ -17,7 +21,6 @@
 		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
 		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
 		0E3046341C02ECBE00147430 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046331C02ECBE00147430 /* Helper.m */; };
-		0E30463D1C02FC8A00147430 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463B1C02FC8A00147430 /* Note.m */; };
 		0E3046401C030B5700147430 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463F1C030B5700147430 /* Colours.m */; };
 		0E3046441C03171A00147430 /* TimePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046421C03171A00147430 /* TimePickerCell.m */; };
 		0E3046451C03171A00147430 /* TimePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3046431C03171A00147430 /* TimePickerCell.xib */; };
@@ -39,9 +42,13 @@
 		0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B51C037D5400E6A96B /* SwipeableCell.m */; };
 		0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */; };
 		0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82BB1C03845500E6A96B /* EditableContent.m */; };
+		0E7FDC621C07833200B3AD2E /* DefaultWhiteTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7FDC611C07833200B3AD2E /* DefaultWhiteTheme.m */; };
+		0E7FDC651C07836B00B3AD2E /* NightTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7FDC641C07836B00B3AD2E /* NightTheme.m */; };
 		0E96AFFA1BF647A9007FE61C /* ImageBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */; };
 		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
-		0EA4BDBC1C05AD20008E54BB /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */; };
+		0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D279B1C0977E9002DCF21 /* UmengInit.m */; };
+		0E9D279F1C099C81002DCF21 /* UIViewController+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D279E1C099C81002DCF21 /* UIViewController+Theme.m */; };
+		0EAC8E3F1C0741C2002E81F2 /* EasyThemer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC8E3E1C0741C2002E81F2 /* EasyThemer.m */; };
 		0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */; };
 		0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */; };
 		0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */; };
@@ -61,9 +68,13 @@
 		0ECF5FE11C06FD000051E871 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FD51C06FD000051E871 /* UMSShareListController.xib */; };
 		0ECF5FE21C06FD000051E871 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FD61C06FD000051E871 /* UMSocialSDKResourcesNew.bundle */; };
 		0ECF5FE41C06FD440051E871 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECF5FE31C06FD440051E871 /* SystemConfiguration.framework */; };
+		0ECF5FEC1C0710DA0051E871 /* cet4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FE71C0710DA0051E871 /* cet4.jpg */; };
+		0ECF5FED1C0710DA0051E871 /* cet6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FE81C0710DA0051E871 /* cet6.jpg */; };
+		0ECF5FEE1C0710DA0051E871 /* computer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FE91C0710DA0051E871 /* computer2.jpg */; };
+		0ECF5FEF1C0710DA0051E871 /* qr_share.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FEA1C0710DA0051E871 /* qr_share.jpg */; };
+		0ECF5FF01C0710DA0051E871 /* scholarship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5FEB1C0710DA0051E871 /* scholarship.jpg */; };
 		0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */; };
 		0EE480E61BE7D15E00BC685D /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E51BE7D15E00BC685D /* ThemeManager.m */; };
-		0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE480E81BE7D1A300BC685D /* ColorTheme.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E0FF5C51C087A1C002F7623 /* NotificationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationUtil.h; path = ../Tool/NotificationUtil.h; sourceTree = "<group>"; };
+		0E0FF5C61C087A1C002F7623 /* NotificationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationUtil.m; path = ../Tool/NotificationUtil.m; sourceTree = "<group>"; };
+		0E0FF5C81C087FC8002F7623 /* DissmissKeyBoardWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DissmissKeyBoardWindow.h; sourceTree = "<group>"; };
+		0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissmissKeyBoardWindow.m; sourceTree = "<group>"; };
+		0E0FF6581C08D068002F7623 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		0E0FF6591C08D068002F7623 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		0E0FF65A1C08D068002F7623 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E132D411BD94FA2006C99EC /* TinyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E132D451BD94FA2006C99EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E132D461BD94FA2006C99EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,8 +115,6 @@
 		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		0E3046321C02ECBE00147430 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		0E3046331C02ECBE00147430 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
-		0E30463A1C02FC8A00147430 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		0E30463B1C02FC8A00147430 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		0E30463E1C030B5600147430 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		0E30463F1C030B5700147430 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		0E3046411C03171A00147430 /* TimePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerCell.h; sourceTree = "<group>"; };
@@ -134,15 +151,23 @@
 		0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeableCell.xib; sourceTree = "<group>"; };
 		0E7C82BA1C03845500E6A96B /* EditableContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableContent.h; sourceTree = "<group>"; };
 		0E7C82BB1C03845500E6A96B /* EditableContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableContent.m; sourceTree = "<group>"; };
+		0E7FDC601C07833200B3AD2E /* DefaultWhiteTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultWhiteTheme.h; path = ../Tool/DefaultWhiteTheme.h; sourceTree = "<group>"; };
+		0E7FDC611C07833200B3AD2E /* DefaultWhiteTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DefaultWhiteTheme.m; path = ../Tool/DefaultWhiteTheme.m; sourceTree = "<group>"; };
+		0E7FDC631C07836B00B3AD2E /* NightTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NightTheme.h; path = ../Tool/NightTheme.h; sourceTree = "<group>"; };
+		0E7FDC641C07836B00B3AD2E /* NightTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NightTheme.m; path = ../Tool/NightTheme.m; sourceTree = "<group>"; };
 		0E96AFF81BF647A9007FE61C /* ImageBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBarButtonItem.h; path = ../View/ImageBarButtonItem.h; sourceTree = "<group>"; };
 		0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBarButtonItem.m; path = ../View/ImageBarButtonItem.m; sourceTree = "<group>"; };
 		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
 		0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerToolbar.m; sourceTree = "<group>"; };
-		0EA4BDBA1C05AD20008E54BB /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
-		0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableCell.h; sourceTree = "<group>"; };
-		0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableCell.m; sourceTree = "<group>"; };
-		0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableCell.xib; sourceTree = "<group>"; };
+		0E9D279A1C0977E9002DCF21 /* UmengInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmengInit.h; sourceTree = "<group>"; };
+		0E9D279B1C0977E9002DCF21 /* UmengInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UmengInit.m; sourceTree = "<group>"; };
+		0E9D279D1C099C81002DCF21 /* UIViewController+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Theme.h"; path = "../Tool/UIViewController+Theme.h"; sourceTree = "<group>"; };
+		0E9D279E1C099C81002DCF21 /* UIViewController+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Theme.m"; path = "../Tool/UIViewController+Theme.m"; sourceTree = "<group>"; };
+		0EAC8E3D1C0741C2002E81F2 /* EasyThemer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyThemer.h; sourceTree = "<group>"; };
+		0EAC8E3E1C0741C2002E81F2 /* EasyThemer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyThemer.m; sourceTree = "<group>"; };
+		0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditableCell.h; path = ../View/EditableCell.h; sourceTree = "<group>"; };
+		0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditableCell.m; path = ../View/EditableCell.m; sourceTree = "<group>"; };
+		0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableCell.xib; path = ../View/EditableCell.xib; sourceTree = "<group>"; };
 		0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0EBD6FA41BEB2BCA00000C99 /* NoNotePlaceHolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNotePlaceHolderCell.h; sourceTree = "<group>"; };
 		0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNotePlaceHolderCell.m; sourceTree = "<group>"; };
@@ -175,12 +200,15 @@
 		0ECF5FD61C06FD000051E871 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		0ECF5FD71C06FD000051E871 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		0ECF5FE31C06FD440051E871 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0ECF5FE71C0710DA0051E871 /* cet4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cet4.jpg; sourceTree = "<group>"; };
+		0ECF5FE81C0710DA0051E871 /* cet6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cet6.jpg; sourceTree = "<group>"; };
+		0ECF5FE91C0710DA0051E871 /* computer2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = computer2.jpg; sourceTree = "<group>"; };
+		0ECF5FEA1C0710DA0051E871 /* qr_share.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qr_share.jpg; sourceTree = "<group>"; };
+		0ECF5FEB1C0710DA0051E871 /* scholarship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scholarship.jpg; sourceTree = "<group>"; };
 		0ED13FE51BF05E77007E9A97 /* MagicTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicTransitionAnimator.h; sourceTree = "<group>"; };
 		0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTransitionAnimator.m; sourceTree = "<group>"; };
-		0EE480E41BE7D15E00BC685D /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
-		0EE480E51BE7D15E00BC685D /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
-		0EE480E71BE7D1A300BC685D /* ColorTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTheme.h; sourceTree = "<group>"; };
-		0EE480E81BE7D1A300BC685D /* ColorTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTheme.m; sourceTree = "<group>"; };
+		0EE480E41BE7D15E00BC685D /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeManager.h; path = ../Tool/ThemeManager.h; sourceTree = "<group>"; };
+		0EE480E51BE7D15E00BC685D /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeManager.m; path = ../Tool/ThemeManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +234,6 @@
 		0E132D381BD94FA2006C99EC = {
 			isa = PBXGroup;
 			children = (
-				0ECF5FE31C06FD440051E871 /* SystemConfiguration.framework */,
 				0E132D431BD94FA2006C99EC /* TinyDo */,
 				0E132D601BD94FA2006C99EC /* TinyDoTests */,
 				0E132D421BD94FA2006C99EC /* Products */,
@@ -239,6 +266,8 @@
 		0E132D441BD94FA2006C99EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0ECF5FE31C06FD440051E871 /* SystemConfiguration.framework */,
+				0ECF5FE51C0710DA0051E871 /* Resources */,
 				0ECF5FBD1C06FD000051E871 /* UMSocial_Sdk_4.3 */,
 				0E132D481BD94FA2006C99EC /* AppDelegate.h */,
 				0E132D491BD94FA2006C99EC /* AppDelegate.m */,
@@ -246,6 +275,8 @@
 				0E132D561BD94FA2006C99EC /* LaunchScreen.xib */,
 				0E132D451BD94FA2006C99EC /* Info.plist */,
 				0E132D461BD94FA2006C99EC /* main.m */,
+				0E9D279A1C0977E9002DCF21 /* UmengInit.h */,
+				0E9D279B1C0977E9002DCF21 /* UmengInit.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,10 +322,10 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0EA4BDBA1C05AD20008E54BB /* Note+CoreDataProperties.h */,
-				0EA4BDBB1C05AD20008E54BB /* Note+CoreDataProperties.m */,
-				0E30463A1C02FC8A00147430 /* Note.h */,
-				0E30463B1C02FC8A00147430 /* Note.m */,
+				0E0FF6581C08D068002F7623 /* Note.h */,
+				0E0FF6591C08D068002F7623 /* Note.m */,
+				0E0FF65A1C08D068002F7623 /* Note+CoreDataProperties.h */,
+				0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
 				0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */,
 				0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */,
@@ -305,18 +336,17 @@
 		0E132D6F1BD95034006C99EC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0E7FDC5C1C07749300B3AD2E /* Theme */,
 				0E5DC0C21C0632E200726A50 /* UIColor+PiRandomColor.h */,
 				0E5DC0C31C0632E200726A50 /* UIColor+PiRandomColor.m */,
 				0E30463E1C030B5600147430 /* Colours.h */,
 				0E30463F1C030B5700147430 /* Colours.m */,
-				0EE480E41BE7D15E00BC685D /* ThemeManager.h */,
-				0EE480E51BE7D15E00BC685D /* ThemeManager.m */,
-				0EE480E71BE7D1A300BC685D /* ColorTheme.h */,
-				0EE480E81BE7D1A300BC685D /* ColorTheme.m */,
 				0E3046321C02ECBE00147430 /* Helper.h */,
 				0E3046331C02ECBE00147430 /* Helper.m */,
 				0E73C9991C048517005E339F /* NotifyUtil.h */,
 				0E73C99A1C048517005E339F /* NotifyUtil.m */,
+				0E0FF5C81C087FC8002F7623 /* DissmissKeyBoardWindow.h */,
+				0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -324,6 +354,12 @@
 		0E68A8041BF75D24005B6538 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				0E9D27A01C09D168002DCF21 /* Theme */,
+				0E0FF5C51C087A1C002F7623 /* NotificationUtil.h */,
+				0E0FF5C61C087A1C002F7623 /* NotificationUtil.m */,
+				0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */,
+				0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */,
+				0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */,
 				0E96AFF81BF647A9007FE61C /* ImageBarButtonItem.h */,
 				0E96AFF91BF647A9007FE61C /* ImageBarButtonItem.m */,
 			);
@@ -344,14 +380,35 @@
 			path = SwipeCell;
 			sourceTree = "<group>";
 		};
+		0E7FDC5C1C07749300B3AD2E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0EAC8E3D1C0741C2002E81F2 /* EasyThemer.h */,
+				0EAC8E3E1C0741C2002E81F2 /* EasyThemer.m */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		0E9D27A01C09D168002DCF21 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0EE480E41BE7D15E00BC685D /* ThemeManager.h */,
+				0EE480E51BE7D15E00BC685D /* ThemeManager.m */,
+				0E7FDC601C07833200B3AD2E /* DefaultWhiteTheme.h */,
+				0E7FDC611C07833200B3AD2E /* DefaultWhiteTheme.m */,
+				0E7FDC631C07836B00B3AD2E /* NightTheme.h */,
+				0E7FDC641C07836B00B3AD2E /* NightTheme.m */,
+				0E9D279D1C099C81002DCF21 /* UIViewController+Theme.h */,
+				0E9D279E1C099C81002DCF21 /* UIViewController+Theme.m */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		0EBD6F9F1BEB2BCA00000C99 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0ECF5FB31C06EF3C0051E871 /* CustomIOSAlertView */,
 				0E7C82B11C037D5400E6A96B /* SwipeCell */,
-				0EBD6FA01BEB2BCA00000C99 /* EditableCell.h */,
-				0EBD6FA11BEB2BCA00000C99 /* EditableCell.m */,
-				0EBD6FA21BEB2BCA00000C99 /* EditableCell.xib */,
 				0EBD6FA31BEB2BCA00000C99 /* Main.storyboard */,
 				0EBD6FA41BEB2BCA00000C99 /* NoNotePlaceHolderCell.h */,
 				0EBD6FA51BEB2BCA00000C99 /* NoNotePlaceHolderCell.m */,
@@ -429,6 +486,26 @@
 				0ECF5FD51C06FD000051E871 /* UMSShareListController.xib */,
 			);
 			path = SocialSDKXib;
+			sourceTree = "<group>";
+		};
+		0ECF5FE51C0710DA0051E871 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF5FE61C0710DA0051E871 /* Prize */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0ECF5FE61C0710DA0051E871 /* Prize */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF5FE71C0710DA0051E871 /* cet4.jpg */,
+				0ECF5FE81C0710DA0051E871 /* cet6.jpg */,
+				0ECF5FE91C0710DA0051E871 /* computer2.jpg */,
+				0ECF5FEA1C0710DA0051E871 /* qr_share.jpg */,
+				0ECF5FEB1C0710DA0051E871 /* scholarship.jpg */,
+			);
+			path = Prize;
 			sourceTree = "<group>";
 		};
 		0ED13FE41BF05E77007E9A97 /* Anim */ = {
@@ -526,6 +603,7 @@
 				0EBD6FAB1BEB2BCA00000C99 /* NoNotePlaceHolderCell.xib in Resources */,
 				0ECF5FE01C06FD000051E871 /* UMSnsAccountViewController.xib in Resources */,
 				0ECF5FDC1C06FD000051E871 /* UMSCommentInputControlleriPad.xib in Resources */,
+				0ECF5FEF1C0710DA0051E871 /* qr_share.jpg in Resources */,
 				0ECF5FD81C06FD000051E871 /* UMSocialLocalizable.strings in Resources */,
 				0ECF5FE21C06FD000051E871 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				0E30464F1C0328AD00147430 /* DateBtn.xib in Resources */,
@@ -534,13 +612,17 @@
 				0ECF5FDD1C06FD000051E871 /* UMShareEditViewController.xib in Resources */,
 				0E30464A1C0317E800147430 /* AlarmCell.xib in Resources */,
 				0EBD6FA81BEB2BCA00000C99 /* EditableCell.xib in Resources */,
+				0ECF5FED1C0710DA0051E871 /* cet6.jpg in Resources */,
 				0ECF5FDA1C06FD000051E871 /* UMSCommentDetailController.xib in Resources */,
 				0E3046451C03171A00147430 /* TimePickerCell.xib in Resources */,
+				0ECF5FEC1C0710DA0051E871 /* cet4.jpg in Resources */,
 				0ECF5FDE1C06FD000051E871 /* UMShareEditViewControlleriPad.xib in Resources */,
 				0ECF5FE11C06FD000051E871 /* UMSShareListController.xib in Resources */,
 				0ECF5FDF1C06FD000051E871 /* UMSLoginViewController.xib in Resources */,
 				0E68A8031BF7513E005B6538 /* DrawerToolbar.xib in Resources */,
+				0ECF5FEE1C0710DA0051E871 /* computer2.jpg in Resources */,
 				0E56D1171C06319F007375BD /* ThemePickerView.xib in Resources */,
+				0ECF5FF01C0710DA0051E871 /* scholarship.jpg in Resources */,
 				0EBD6FA91BEB2BCA00000C99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,22 +650,28 @@
 				0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */,
 				0E3046341C02ECBE00147430 /* Helper.m in Sources */,
 				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
-				0EA4BDBC1C05AD20008E54BB /* Note+CoreDataProperties.m in Sources */,
 				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
 				0EBD6FA71BEB2BCA00000C99 /* EditableCell.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
+				0E0FF65D1C08D068002F7623 /* Note+CoreDataProperties.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
 				0E56D1151C063190007375BD /* ThemePickerView.m in Sources */,
+				0E7FDC621C07833200B3AD2E /* DefaultWhiteTheme.m in Sources */,
 				0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */,
-				0E30463D1C02FC8A00147430 /* Note.m in Sources */,
+				0E9D279F1C099C81002DCF21 /* UIViewController+Theme.m in Sources */,
+				0EAC8E3F1C0741C2002E81F2 /* EasyThemer.m in Sources */,
+				0E7FDC651C07836B00B3AD2E /* NightTheme.m in Sources */,
 				0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */,
-				0EE480E91BE7D1A300BC685D /* ColorTheme.m in Sources */,
+				0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */,
 				0E56D1121C062F5A007375BD /* SyncViewController.m in Sources */,
+				0E0FF5C71C087A1C002F7623 /* NotificationUtil.m in Sources */,
 				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,
 				0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
+				0E0FF5CA1C087FC8002F7623 /* DissmissKeyBoardWindow.m in Sources */,
 				0E30464D1C03270600147430 /* DateBtn.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
+				0E0FF65C1C08D068002F7623 /* Note.m in Sources */,
 				0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */,
 				0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */,
 				0E5DC0C41C0632E200726A50 /* UIColor+PiRandomColor.m in Sources */,

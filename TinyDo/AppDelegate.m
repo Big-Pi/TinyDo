@@ -10,6 +10,8 @@
 #import "ToDoListViewController.h"
 #import "CoreDataStack.h"
 #import "UMSocial.h"
+#import "EasyThemer.h"
+#import "DissmissKeyBoardWindow.h"
 
 
 @interface AppDelegate ()
@@ -29,7 +31,7 @@
     if (localNotif) {
         NSLog(@"didFinishLaunchingWithOptions : %@",localNotif);
     }
-    [UMSocialData setAppKey:@"5656c533e0f55a07d8000330"];
+    [EasyThemer applyTheme];
     return YES;
 }
 
@@ -45,7 +47,16 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    NSLog(@"alarm : %@",notification);
+//    NSLog(@"alarm : %@",notification);
+}
+
+//http://stackoverflow.com/questions/11274119/dismiss-keyboard-on-touch-anywhere-outside-uitextfield
+//当点击除textField和textView以外的view时 dismisskeyboard
+- (UIWindow *)window{
+    static DissmissKeyBoardWindow *customWindow = nil;
+    if (!customWindow)
+        customWindow = [[DissmissKeyBoardWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    return customWindow;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

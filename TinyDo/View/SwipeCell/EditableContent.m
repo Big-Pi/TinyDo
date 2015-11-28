@@ -10,9 +10,9 @@
 #import "Note.h"
 #import "CoreDataStack.h"
 
+
 @interface EditableContent ()<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *alarm;
-@property (weak, nonatomic) IBOutlet UIButton *priority;
+
 
 @end
 
@@ -37,12 +37,12 @@
     [self.alarm setImage:[[UIImage imageNamed:@"Alarm"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
 }
 - (IBAction)alarmClick:(UIButton *)sender {
-    [self.alarm setSelected:!self.alarm.selected];
+    self.alarm.selected=!self.alarm.selected;
     [self.delegate editableContentDidAlarmClick:self selected:self.alarm.selected];
 }
 
 - (IBAction)priorityClick:(UIButton *)sender {
-    [self.priority setSelected:!self.priority.selected];
+    self.priority.selected=!self.priority.selected;
     [self.delegate editableContentDidPriorityClick:self selected:self.priority.selected];
 }
 
@@ -81,6 +81,7 @@
     }
 }
 
+
 //-(void)setInsertOrEdit:(BOOL)insertOrEdit
 //{
 //    if(insertOrEdit){
@@ -117,6 +118,7 @@
 #pragma mark - UITextFieldDelegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
     if(textField.text.length ==0 && string.length>0){
         //begin editing
         [self setInsertOrEdit:YES anim:YES];

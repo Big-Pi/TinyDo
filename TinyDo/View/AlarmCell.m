@@ -11,7 +11,7 @@
 
 
 @interface AlarmCell ()<DateBtnDelegate>
-@property (strong,nonatomic) NSMutableSet *selectedIndex;
+
 @property (strong,nonatomic) NSMutableSet *dateBtnSet;
 @property (weak, nonatomic) IBOutlet UIButton *repeatLabel;
 @property (weak, nonatomic) IBOutlet UIButton *timeLabel;
@@ -44,13 +44,6 @@
     return _dateBtnSet;
 }
 
--(NSSet *)selectedIndex{
-    if(!_selectedIndex){
-        _selectedIndex=[NSMutableSet set];
-    }
-    return _selectedIndex;
-}
-
 -(void)setTimeMsg:(NSString *)timeMsg{
     [self.timeLabel setTitle:timeMsg forState:UIControlStateNormal];
 }
@@ -72,31 +65,41 @@
     }
     return dic;
 }
+-(NSMutableSet *)selectedRepeatedWeek{
+    _selectedRepeatedWeek=[NSMutableSet set];
+    for(DateBtn *btn in self.dateBtnSet){
+        if(btn.isDateBtnSelected){
+            [_selectedRepeatedWeek addObject:@(btn.tag)];
+        }
+    }
+    return _selectedRepeatedWeek;
+}
 
 #pragma mark - DateBtnDelegate
 -(void)dateBtn:(UIButton *)btn didSelectionChanged:(BOOL)selected{
-    if(selected){
-        [self.selectedIndex addObject:@(btn.tag)];
-    }else{
-        [self.selectedIndex removeObject:@(btn.tag)];
-    }
     NSMutableString *msg=[NSMutableString string];
-    
-    NSArray *sortedBtns=[self.dateBtnSet sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"tag" ascending:YES]]];
-    
-    for (DateBtn *btn in sortedBtns) {
-        if(btn.isDateBtnSelected){
-            NSNumber *key=@(btn.tag);
-            [msg appendString:[self dataDict][key]];
-            [msg appendString:@", "];
+    NSMutableSet *selectedRepeatedWeek=[self selectedRepeatedWeek];
+    if(selectedRepeatedWeek.count==0){
+        [msg appendString:@"仅一次"];
+    }else if(selectedRepeatedWeek.count==[self dataDict].count){
+        [msg appendString:@"每天"];
+    }else{
+        NSArray *sortedBtns=[self.dateBtnSet sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"tag" ascending:YES]]];
+        
+        for (DateBtn *btn in sortedBtns) {
+            if(btn.isDateBtnSelected){
+                NSNumber *key=@(btn.tag);
+                [msg appendString:[self dataDict][key]];
+                [msg appendString:@", "];
+            }
+        }
+        //删掉最后一个逗号和空格
+        if(msg.length>0){
+            [msg deleteCharactersInRange:NSMakeRange(msg.length-2, 2)];
         }
     }
-    //删掉最后一个逗号和空格
-    if(msg.length>0){
-        [msg deleteCharactersInRange:NSMakeRange(msg.length-2, 2)];
-    }
     [self.repeatLabel setTitle:msg forState:UIControlStateNormal];
-    [self.delegate alarmCell:self didSelectedBtnChanged:[self.selectedIndex copy] msgString:msg];
+    [self.delegate alarmCell:self didSelectedBtnChanged:selectedRepeatedWeek msgString:msg];
 }
 
 @end

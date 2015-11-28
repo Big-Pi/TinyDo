@@ -50,6 +50,9 @@
     return _colors;
 }
 
+-(UIColor *)selectedColor{
+    return self.colors[[self.themePicker selectedRowInComponent:0]];
+}
 
 #pragma mark - UIPickerViewDelegate UIPickerViewDataSource
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

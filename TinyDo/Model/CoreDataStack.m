@@ -66,6 +66,7 @@
     Note *note= [[Note alloc]initWithEntity:noteDescription insertIntoManagedObjectContext:self.context];
     return note;
 }
+
 -(void)deleteNote:(Note *)note{
     [self.context deleteObject:note];
 }

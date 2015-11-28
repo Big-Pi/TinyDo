@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ThemePickerView : UIView
-
+@property (strong,nonatomic,readonly) UIColor *selectedColor;
 @end

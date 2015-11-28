@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="216" height="65"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEJ-lH-GWp">
                                         <rect key="frame" x="272" y="13" width="40" height="40"/>
@@ -92,7 +92,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Jdz-ty-uNx" secondAttribute="bottom" id="11t-Et-ziG"/>
                             <constraint firstItem="YhQ-R3-R99" firstAttribute="trailing" secondItem="tgc-Fy-mIF" secondAttribute="leading" constant="-20" id="1zo-4P-oCM"/>

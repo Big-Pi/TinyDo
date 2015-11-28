@@ -21,32 +21,33 @@
     NSArray *repeatWeek= note.remindRepeat;
     NSString *alertBody=note.content;
     
-    NSString *alarmId;
-    if(repeatWeek!=nil&&repeatWeek.count>1){
+    if(repeatWeek!=nil&&repeatWeek.count>0){
         //如果需要重复闹钟 生成一周的date
         for(int i=0;i<7;i++){
             aday.day=1*i;
             NSDate *weekDay= [calendar dateByAddingComponents:aday toDate:note.remindDate options:0];
             [oneWeek addObject:weekDay];
         }
+        note.alarmIDs=[NSMutableArray arrayWithCapacity:7];
         for(NSDate *date in oneWeek){
             //判断周几需要重复闹钟
+            NSString *alarmID;
             NSInteger week= [calendar component:NSCalendarUnitWeekday fromDate:date];
             if([repeatWeek containsObject:@(week)]){
-                alarmId=[self scheduleWeekRepeatAlarmWithDate:date alertBody:alertBody];
+                alarmID=[self scheduleWeekRepeatAlarmWithDate:date alertBody:alertBody];
+                [note.alarmIDs addObject:alarmID];
             }
         }
     }else{
         //一次性闹钟
-        alarmId=[self scheduleOnceAlarmWithDate:note.remindDate alertBody:alertBody];
+        note.alarmIDs=[self scheduleOnceAlarmWithDate:note.remindDate alertBody:alertBody];
     }
-    note.alarmID=alarmId;
-    
+    NSLog(@"%@",note.alarmIDs);
 }
 
-+(NSString*)scheduleOnceAlarmWithDate:(NSDate*)date alertBody:(NSString*)bodyStr{
++(NSArray*)scheduleOnceAlarmWithDate:(NSDate*)date alertBody:(NSString*)bodyStr{
     //0 不重复
-    return [self scheduleAlarmWithDate:date repeat:0 alertBody:bodyStr];
+    return @[[self scheduleAlarmWithDate:date repeat:0 alertBody:bodyStr]];
 }
 
 +(NSString*)scheduleWeekRepeatAlarmWithDate:(NSDate*)date alertBody:(NSString*)bodyStr{
@@ -70,14 +71,15 @@
 }
 
 +(void)cancelAlarm:(Note *)note{
+    NSLog(@"%@",note.alarmIDs);
     NSArray *localAlarms= [UIApplication sharedApplication].scheduledLocalNotifications;
-
     for (UILocalNotification *localAlarm in localAlarms) {
-        if([note.alarmID isEqualToString:localAlarm.userInfo[@"alarmID"]]) {
+        if([note.alarmIDs containsObject:localAlarm.userInfo[@"alarmID"]]){
             [[UIApplication sharedApplication]cancelLocalNotification:localAlarm];
-            break;
+            NSLog(@"cancelAlarm :%@ ",localAlarm);
         }
     }
+    note.alarmIDs=nil;
 }
 
 +(NSString*) uuid {
