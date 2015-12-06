@@ -128,6 +128,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    //当没有note时显示占为cell
     if(self.notes.count==0){
         NoNotePlaceHolderCell *cell=[[[NSBundle mainBundle]loadNibNamed:@"NoNotePlaceHolderCell" owner:nil options:nil]lastObject];
         return cell;
@@ -137,6 +138,9 @@
     cell.editableContent.textField.placeholder=@"";
     cell.editableContent.seprateLine.alpha=0.3;
     cell.editableContent.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    if([note.pirority boolValue]){
+        cell.editableContent.textField.textColor=self.view.tintColor ;
+    }
     cell.myContainerView.delegate=self;
     return cell;
 }
@@ -204,9 +208,9 @@
     }
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//}
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 66;
+}
 
 #pragma mark - EditNoteViewControllerDelegate
 -(void)editNoteViewControllerDidEndEdit:(EditNoteViewController *)controller withNote:(Note *)note editMode:(EditMode)mode{

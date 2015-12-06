@@ -28,8 +28,6 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"AlarmCell" bundle:nil] forCellReuseIdentifier:@"AlarmCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"TimePickerCell" bundle:nil] forCellReuseIdentifier:@"TimePickerCell"];
     
-    
-    
     //如果note!=nil 是编辑 否则是插入
     if(self.note!=nil){
         self.editCell.editableContent.textField.text=self.note.content;
@@ -55,6 +53,14 @@
     //如果是修改note内容,则直接显示button动画
     if(self.note.content&&self.note.content.length>0){
         [self.editCell.editableContent setInsertOrEdit:YES anim:YES];
+    }
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //config alarm
+    if([self.note.needRemind boolValue]){
+        [NotifyUtil cancelAlarm:self.note];
+        [NotifyUtil scheduleAlarm:self.note];
     }
 }
 
@@ -111,6 +117,7 @@
 //}
 
 #pragma mark - hack method
+//i use self.editCell=editCell in cellForRowAtIndexPath but self.editCell always nil ?
 -(SwipeableCell *)editCell{
     return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
@@ -129,7 +136,7 @@
     NSLog(@"%@",date);
     AlarmCell *alarmCell =[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     [alarmCell setTimeMsg:[Helper shortTimeStringFromDate:date]];
-        self.note.remindDate=date;
+    self.note.remindDate=date;
 }
 
 #pragma mark - EditableContentDelegate
@@ -148,12 +155,12 @@
     self.note.needRemind=@(isSelected);
     if(isSelected){
         self.note.remindRepeat = [self alarmCell].selectedRepeatedWeek;
-        [NotifyUtil scheduleAlarm:self.note];
+//        [NotifyUtil scheduleAlarm:self.note];
     }else{
         self.note.remindRepeat=nil;
-        [NotifyUtil cancelAlarm:self.note];
+//        [NotifyUtil cancelAlarm:self.note];
     }
-    [[CoreDataStack sharedStack]saveContext];
+//    [[CoreDataStack sharedStack]saveContext];
 }
 
 -(void)dealloc{

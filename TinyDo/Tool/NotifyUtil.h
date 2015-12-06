@@ -13,5 +13,5 @@
 +(void)scheduleAlarm:(Note*)note;
 +(void)cancelAlarm:(Note *)note;
 //debug
-+(NSString*)scheduleWeekRepeatAlarmWithDate:(NSDate*)date alertBody:(NSString*)bodyStr;
+//+(NSString*)scheduleWeekRepeatAlarmWithDate:(NSDate*)date alertBody:(NSString*)bodyStr;
 @end
