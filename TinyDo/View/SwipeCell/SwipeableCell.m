@@ -27,6 +27,9 @@ static CGFloat const kanimDurationFactor = 600.0;
     [self setSwipeable:YES];
 //    self.myContainerView.delegate=self;
 }
++(NSInteger)cellHeight{
+    return 66;
+}
 -(void)setSwipeable:(BOOL)canSwipe{
     if(canSwipe){
         self.pan=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panThisCell:)];
@@ -79,6 +82,7 @@ static CGFloat const kanimDurationFactor = 600.0;
 
 - (void)prepareForReuse {
     [super prepareForReuse];
+    self.editableContent.textField.textColor=nil;
 }
 
 

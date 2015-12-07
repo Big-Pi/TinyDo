@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet DeleteLineContainerView *myContainerView;
 @property (weak, nonatomic) IBOutlet EditableContent *editableContent;
 -(void)setSwipeable:(BOOL)canSwipe;
++(NSInteger)cellHeight;
 @end

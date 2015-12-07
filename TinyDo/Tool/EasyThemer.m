@@ -14,7 +14,7 @@ NSString *const kThemeColor=@"kThemeColor";
 @implementation EasyThemer
 
 +(void)initialize{
-    [[NSUserDefaults standardUserDefaults]registerDefaults:@{kThemeColor:[[UIColor orangeColor]hexString]}];
+    [[NSUserDefaults standardUserDefaults]registerDefaults:@{kThemeColor:[[UIColor orangeColor] hexString]}];
 }
 
 +(void)applyTheme:(UIColor *)color{
@@ -35,6 +35,7 @@ NSString *const kThemeColor=@"kThemeColor";
 
 +(void)saveThemeColor:(UIColor *)color{
     [[NSUserDefaults standardUserDefaults]setObject:[color hexString] forKey:kThemeColor];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 +(UIColor*)getValueFromUserDefault:(NSString *)key{

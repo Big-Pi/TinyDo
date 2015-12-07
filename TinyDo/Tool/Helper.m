@@ -79,8 +79,10 @@ NSString *const kIsFristLaunch=@"kIsFristLaunch";
     //删掉最后一个逗号和空格
     if(msg.length>0){
         [msg deleteCharactersInRange:NSMakeRange(msg.length-2, 2)];
+        return msg;
+    }else{
+        return @"仅一次";
     }
-    return msg;
 }
 
 @end

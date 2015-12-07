@@ -7,11 +7,13 @@
 //  Copyright (c) 2015年 pi. All rights reserved.
 //
 
+@import UIKit;
 #import "MagicTransitionAnimator.h"
 #import "ToDoListViewController.h"
 #import "EditNoteViewController.h"
 #import "SwipeableCell.h"
 #import "Note.h"
+
 
 
 
@@ -99,11 +101,10 @@
                 }];
             }
             
-            
             CGRect fromFrame=[containerView convertRect:toDoVC.tableView.tableHeaderView.frame fromView:toDoVC.tableView.tableHeaderView.superview];
             
-            UIView *cell2Anim= [editVC.tableView cellForRowAtIndexPath:[self indexPathForEditCell]];
-            
+            UIView *cell2Anim= editVC.editCell;
+            //
             CGRect toFrame=cell2Anim.frame;
             
             cell2Anim.frame=fromFrame;
@@ -167,7 +168,7 @@
                 }];
             }
             
-            SwipeableCell *cell2Anim=(SwipeableCell*)[editVC.tableView cellForRowAtIndexPath:[self indexPathForEditCell]];
+            SwipeableCell *cell2Anim=editVC.editCell;
             cell2Anim.editableContent.textField.text=editVC.note.content;
             
             UITableViewCell *selectedCell= [toDoVC.tableView cellForRowAtIndexPath:[toDoVC.tableView indexPathForSelectedRow]];
@@ -176,7 +177,7 @@
             CGRect toFrame=cell2Anim.frame;
             
             cell2Anim.frame=fromFrame;
-            
+
             [UIView animateWithDuration:self.duration animations:^{
                 cell2Anim.frame=toFrame;
             } completion:^(BOOL finished) {
@@ -186,18 +187,30 @@
         }
         
     }else{
+//FIXME 下面2个方法代码重复 ～！
         if(self.isInsert){
-//            [UIView animateWithDuration:self.duration animations:^{
-//                toDoVC.view.alpha=0.0;
-//            } completion:^(BOOL finished) {
-//                [transitionContext completeTransition:YES];
-//            }];
-            [transitionContext completeTransition:YES];
+
+            SwipeableCell *fromCell= editVC.editCell;
+            __weak SwipeableCell *weakFromCell=fromCell;
+            [editVC fadeOutSelf];
+            [fromCell.editableContent setInsertOrEdit:NO anim:YES completion:^{
+                [containerView addSubview:toDoVC.view];
+                UITableViewCell *cell2Anim= [toDoVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                [cell2Anim.superview bringSubviewToFront:cell2Anim];
+                CGRect oldFrame=cell2Anim.frame;
+                cell2Anim.frame=weakFromCell.frame;
+                [UIView animateWithDuration:self.duration animations:^{
+                    cell2Anim.frame=oldFrame;
+                } completion:^(BOOL finished) {
+                    [transitionContext completeTransition:YES];
+                }];
+            }];
             
         }else{
             
-            SwipeableCell *fromCell= (SwipeableCell*)[editVC.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            SwipeableCell *fromCell= editVC.editCell;
             __weak SwipeableCell *weakFromCell=fromCell;
+            [editVC fadeOutSelf];
             [fromCell.editableContent setInsertOrEdit:NO anim:YES completion:^{
                 [containerView addSubview:toDoVC.view];
                 UITableViewCell *cell2Anim= [toDoVC.tableView cellForRowAtIndexPath:self.selectedCellIndex];
@@ -241,10 +254,6 @@
 //            });
         }
     }
-}
-
--(NSIndexPath *)indexPathForEditCell{
-    return [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{

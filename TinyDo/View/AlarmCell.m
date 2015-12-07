@@ -22,6 +22,9 @@
 - (void)awakeFromNib {
     self.selectionStyle=UITableViewCellSelectionStyleNone;
 }
++(NSInteger)cellHeight{
+    return 204;
+}
 
 -(void)layoutSubviews{
     [super layoutSubviews];

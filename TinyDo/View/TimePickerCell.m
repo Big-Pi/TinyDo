@@ -19,4 +19,7 @@
         [self.delegate timePickerCell:self didTimeChanged:sender.date];
     }
 }
++(NSInteger)cellHeight{
+    return 264;
+}
 @end

@@ -18,4 +18,5 @@
 @property (strong,nonatomic) NSMutableSet *selectedRepeatedWeek;
 -(void)setTimeMsg:(NSString*)timeMsg;
 -(void)setRepeatMsg:(NSString*)repeatMsg;
++(NSInteger)cellHeight;
 @end

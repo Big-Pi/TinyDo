@@ -18,4 +18,5 @@
 @interface TimePickerCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property(nonatomic,weak) id<TimePickerCellDelegate> delegate;
++(NSInteger)cellHeight;
 @end

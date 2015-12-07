@@ -18,6 +18,19 @@
 		0E132D641BD94FA2006C99EC /* TinyDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D631BD94FA2006C99EC /* TinyDoTests.m */; };
 		0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D721BD955A7006C99EC /* ToDoListViewController.m */; };
 		0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D751BD955B7006C99EC /* AboutViewController.m */; };
+		0E2942B51C14530D00F268E2 /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E29429C1C14530D00F268E2 /* Chameleon_.m */; };
+		0E2942B61C14530D00F268E2 /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E29429E1C14530D00F268E2 /* ChameleonConstants.m */; };
+		0E2942B71C14530D00F268E2 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942A21C14530D00F268E2 /* NSArray+Chameleon.m */; };
+		0E2942B81C14530D00F268E2 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942A41C14530D00F268E2 /* UIAppearance+Swift.m */; };
+		0E2942B91C14530D00F268E2 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942A61C14530D00F268E2 /* UIButton+Chameleon.m */; };
+		0E2942BA1C14530D00F268E2 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942A81C14530D00F268E2 /* UIColor+Chameleon.m */; };
+		0E2942BB1C14530D00F268E2 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942AA1C14530D00F268E2 /* UIColor+ChameleonPrivate.m */; };
+		0E2942BC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942AC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m */; };
+		0E2942BD1C14530D00F268E2 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942AE1C14530D00F268E2 /* UILabel+Chameleon.m */; };
+		0E2942BE1C14530D00F268E2 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942B01C14530D00F268E2 /* UINavigationController+Chameleon.m */; };
+		0E2942BF1C14530D00F268E2 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942B21C14530D00F268E2 /* UIView+ChameleonPrivate.m */; };
+		0E2942C01C14530D00F268E2 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942B41C14530D00F268E2 /* UIViewController+Chameleon.m */; };
+		0E2942C31C14542E00F268E2 /* UIColor+AllFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */; };
 		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
 		0E3046341C02ECBE00147430 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046331C02ECBE00147430 /* Helper.m */; };
 		0E3046401C030B5700147430 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463F1C030B5700147430 /* Colours.m */; };
@@ -104,6 +117,35 @@
 		0E132D721BD955A7006C99EC /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 		0E132D741BD955B7006C99EC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		0E132D751BD955B7006C99EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0E29429A1C14530D00F268E2 /* Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon.h; sourceTree = "<group>"; };
+		0E29429B1C14530D00F268E2 /* Chameleon_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chameleon_.h; sourceTree = "<group>"; };
+		0E29429C1C14530D00F268E2 /* Chameleon_.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chameleon_.m; sourceTree = "<group>"; };
+		0E29429D1C14530D00F268E2 /* ChameleonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonConstants.h; sourceTree = "<group>"; };
+		0E29429E1C14530D00F268E2 /* ChameleonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChameleonConstants.m; sourceTree = "<group>"; };
+		0E29429F1C14530D00F268E2 /* ChameleonEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonEnums.h; sourceTree = "<group>"; };
+		0E2942A01C14530D00F268E2 /* ChameleonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChameleonMacros.h; sourceTree = "<group>"; };
+		0E2942A11C14530D00F268E2 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942A21C14530D00F268E2 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942A31C14530D00F268E2 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		0E2942A41C14530D00F268E2 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAppearance+Swift.m"; sourceTree = "<group>"; };
+		0E2942A51C14530D00F268E2 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942A61C14530D00F268E2 /* UIButton+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942A71C14530D00F268E2 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942A81C14530D00F268E2 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942A91C14530D00F268E2 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		0E2942AA1C14530D00F268E2 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		0E2942AB1C14530D00F268E2 /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		0E2942AC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		0E2942AD1C14530D00F268E2 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942AE1C14530D00F268E2 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942AF1C14530D00F268E2 /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942B01C14530D00F268E2 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942B11C14530D00F268E2 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		0E2942B21C14530D00F268E2 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		0E2942B31C14530D00F268E2 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		0E2942B41C14530D00F268E2 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		0E2942C11C14542E00F268E2 /* UIColor+AllFlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllFlatColors.h"; sourceTree = "<group>"; };
+		0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllFlatColors.m"; sourceTree = "<group>"; };
 		0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
 		0E3046321C02ECBE00147430 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
@@ -325,6 +367,7 @@
 		0E132D6F1BD95034006C99EC /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0E2942991C14530D00F268E2 /* Chameleon */,
 				0E7FDC5C1C07749300B3AD2E /* Theme */,
 				0E5DC0C21C0632E200726A50 /* UIColor+PiRandomColor.h */,
 				0E5DC0C31C0632E200726A50 /* UIColor+PiRandomColor.m */,
@@ -336,8 +379,44 @@
 				0E73C99A1C048517005E339F /* NotifyUtil.m */,
 				0E0FF5C81C087FC8002F7623 /* DissmissKeyBoardWindow.h */,
 				0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */,
+				0E2942C11C14542E00F268E2 /* UIColor+AllFlatColors.h */,
+				0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		0E2942991C14530D00F268E2 /* Chameleon */ = {
+			isa = PBXGroup;
+			children = (
+				0E29429A1C14530D00F268E2 /* Chameleon.h */,
+				0E29429B1C14530D00F268E2 /* Chameleon_.h */,
+				0E29429C1C14530D00F268E2 /* Chameleon_.m */,
+				0E29429D1C14530D00F268E2 /* ChameleonConstants.h */,
+				0E29429E1C14530D00F268E2 /* ChameleonConstants.m */,
+				0E29429F1C14530D00F268E2 /* ChameleonEnums.h */,
+				0E2942A01C14530D00F268E2 /* ChameleonMacros.h */,
+				0E2942A11C14530D00F268E2 /* NSArray+Chameleon.h */,
+				0E2942A21C14530D00F268E2 /* NSArray+Chameleon.m */,
+				0E2942A31C14530D00F268E2 /* UIAppearance+Swift.h */,
+				0E2942A41C14530D00F268E2 /* UIAppearance+Swift.m */,
+				0E2942A51C14530D00F268E2 /* UIButton+Chameleon.h */,
+				0E2942A61C14530D00F268E2 /* UIButton+Chameleon.m */,
+				0E2942A71C14530D00F268E2 /* UIColor+Chameleon.h */,
+				0E2942A81C14530D00F268E2 /* UIColor+Chameleon.m */,
+				0E2942A91C14530D00F268E2 /* UIColor+ChameleonPrivate.h */,
+				0E2942AA1C14530D00F268E2 /* UIColor+ChameleonPrivate.m */,
+				0E2942AB1C14530D00F268E2 /* UIImage+ChameleonPrivate.h */,
+				0E2942AC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m */,
+				0E2942AD1C14530D00F268E2 /* UILabel+Chameleon.h */,
+				0E2942AE1C14530D00F268E2 /* UILabel+Chameleon.m */,
+				0E2942AF1C14530D00F268E2 /* UINavigationController+Chameleon.h */,
+				0E2942B01C14530D00F268E2 /* UINavigationController+Chameleon.m */,
+				0E2942B11C14530D00F268E2 /* UIView+ChameleonPrivate.h */,
+				0E2942B21C14530D00F268E2 /* UIView+ChameleonPrivate.m */,
+				0E2942B31C14530D00F268E2 /* UIViewController+Chameleon.h */,
+				0E2942B41C14530D00F268E2 /* UIViewController+Chameleon.m */,
+			);
+			path = Chameleon;
 			sourceTree = "<group>";
 		};
 		0E7C82B11C037D5400E6A96B /* SwipeCell */ = {
@@ -597,16 +676,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2942B61C14530D00F268E2 /* ChameleonConstants.m in Sources */,
 				0E132D731BD955A7006C99EC /* ToDoListViewController.m in Sources */,
 				0E132D761BD955B7006C99EC /* AboutViewController.m in Sources */,
 				0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */,
 				0E7903A81C04D9EF007C6D8D /* SettingViewController.m in Sources */,
 				0E3046441C03171A00147430 /* TimePickerCell.m in Sources */,
 				0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */,
+				0E2942BF1C14530D00F268E2 /* UIView+ChameleonPrivate.m in Sources */,
 				0E3046341C02ECBE00147430 /* Helper.m in Sources */,
+				0E2942B91C14530D00F268E2 /* UIButton+Chameleon.m in Sources */,
 				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
 				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
+				0E2942BC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
+				0E2942BB1C14530D00F268E2 /* UIColor+ChameleonPrivate.m in Sources */,
+				0E2942B51C14530D00F268E2 /* Chameleon_.m in Sources */,
 				0E0FF65D1C08D068002F7623 /* Note+CoreDataProperties.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
 				0E56D1151C063190007375BD /* ThemePickerView.m in Sources */,
@@ -618,19 +703,26 @@
 				0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */,
 				0EA492671C1317AC002FF5C8 /* NotificationUtil.m in Sources */,
 				0E56D1121C062F5A007375BD /* SyncViewController.m in Sources */,
+				0E2942C01C14530D00F268E2 /* UIViewController+Chameleon.m in Sources */,
 				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,
 				0E3E219E1BDCC200006B442B /* HelpViewController.m in Sources */,
 				0EA492661C1317AC002FF5C8 /* NightTheme.m in Sources */,
 				0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */,
+				0E2942C31C14542E00F268E2 /* UIColor+AllFlatColors.m in Sources */,
+				0E2942B71C14530D00F268E2 /* NSArray+Chameleon.m in Sources */,
+				0E2942B81C14530D00F268E2 /* UIAppearance+Swift.m in Sources */,
+				0E2942BE1C14530D00F268E2 /* UINavigationController+Chameleon.m in Sources */,
 				0E0FF5CA1C087FC8002F7623 /* DissmissKeyBoardWindow.m in Sources */,
 				0E30464D1C03270600147430 /* DateBtn.m in Sources */,
 				0E132D471BD94FA2006C99EC /* main.m in Sources */,
+				0E2942BD1C14530D00F268E2 /* UILabel+Chameleon.m in Sources */,
 				0E0FF65C1C08D068002F7623 /* Note.m in Sources */,
 				0E7C82B71C037D5400E6A96B /* DeleteLineContainerView.m in Sources */,
 				0E3E21A41BDCF6F9006B442B /* CoreDataStack.m in Sources */,
 				0E5DC0C41C0632E200726A50 /* UIColor+PiRandomColor.m in Sources */,
 				0E73C99B1C048517005E339F /* NotifyUtil.m in Sources */,
 				0EA492651C1317AC002FF5C8 /* ImageBarButtonItem.m in Sources */,
+				0E2942BA1C14530D00F268E2 /* UIColor+Chameleon.m in Sources */,
 				0EA492631C1317AC002FF5C8 /* EditableCell.m in Sources */,
 				0E56D10F1C062F2D007375BD /* RubbishBinViewController.m in Sources */,
 				0EA492621C1317AC002FF5C8 /* DefaultWhiteTheme.m in Sources */,

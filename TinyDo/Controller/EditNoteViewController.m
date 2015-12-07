@@ -18,6 +18,9 @@
 
 @interface EditNoteViewController ()<UITableViewDelegate,UITableViewDataSource,AlarmCellDelegate,TimePickerCellDelegate,EditableContentDelegate>
 @property(nonatomic)EditMode mode;
+@property (weak, nonatomic) AlarmCell *alarmCell;
+@property (weak, nonatomic,readwrite) SwipeableCell *editCell;
+@property (weak, nonatomic) TimePickerCell *timePickerCell;
 @end
 
 @implementation EditNoteViewController
@@ -46,6 +49,7 @@
     return _mode;
 }
 
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     //
@@ -54,12 +58,16 @@
     if(self.note.content&&self.note.content.length>0){
         [self.editCell.editableContent setInsertOrEdit:YES anim:YES];
     }
+    
+    [self fadeInView:self.alarmCell.contentView];
+    [self fadeInView:self.timePickerCell.contentView];
 }
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     //config alarm
+    [NotifyUtil cancelAlarm:self.note];
     if([self.note.needRemind boolValue]){
-        [NotifyUtil cancelAlarm:self.note];
         [NotifyUtil scheduleAlarm:self.note];
     }
 }
@@ -78,6 +86,7 @@
         swipeCell.editableContent.alarm.selected=[self.note.needRemind boolValue];
         swipeCell.editableContent.priority.selected=[self.note.pirority boolValue];
         //
+        self.editCell=swipeCell;
         return swipeCell;
     }
     if(indexPath.row==1){
@@ -89,6 +98,8 @@
         if(self.note.remindRepeat!=nil){
             [alarmCell setRepeatMsg:[Helper repeatMsgFromRaw:self.note.remindRepeat]];
         }
+        alarmCell.contentView.alpha=0.0;
+        self.alarmCell=alarmCell;
         return alarmCell;
     }else if(indexPath.row==2){
         TimePickerCell *timePickerCell= [tableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
@@ -98,6 +109,8 @@
         }else{
             timePickerCell.timePicker.date=[NSDate date];
         }
+        self.timePickerCell=timePickerCell;
+        timePickerCell.contentView.alpha=0.0;
         return timePickerCell;
     }
     return nil;
@@ -107,22 +120,37 @@
     return 3;
 }
 
+#warning temp way to calclate cell height for different kind of cell
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self tableView:tableView cellForRowAtIndexPath:indexPath].contentView.frame.size.height;
+    NSInteger h=0;
+    switch (indexPath.row) {
+        case 0:
+            h=[SwipeableCell cellHeight];
+            break;
+        case 1:
+            h=[AlarmCell cellHeight];
+            break;
+        case 2:
+            h=[TimePickerCell cellHeight];
+            break;
+    }
+    return h;
 }
-
-//-(UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(NSString *)identifier{
-//    NSLog(@"segueForUnwindingToViewController");
-//    return [super segueForUnwindingToViewController:toViewController fromViewController:fromViewController identifier:identifier];
-//}
-
-#pragma mark - hack method
-//i use self.editCell=editCell in cellForRowAtIndexPath but self.editCell always nil ?
--(SwipeableCell *)editCell{
-    return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+#pragma mark - private
+-(void)fadeInView:(UIView*)v{
+    [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        v.alpha=1.0;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
--(AlarmCell*)alarmCell{
-    return [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+-(void)fadeOutSelf{
+    [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.alarmCell.contentView.alpha=0.0;
+        self.timePickerCell.contentView.alpha=0.0;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 #pragma mark - AlarmCellDelegate
@@ -147,7 +175,6 @@
 -(void)editableContentDidEndEditNote:(EditableContent *)content{
     [self.view endEditing:YES];
     self.note.content=self.editCell.editableContent.textField.text;
-    [[CoreDataStack sharedStack]saveContext];
     [self.delegate editNoteViewControllerDidEndEdit:self withNote:self.note editMode:self.mode];
 }
 
@@ -155,12 +182,9 @@
     self.note.needRemind=@(isSelected);
     if(isSelected){
         self.note.remindRepeat = [self alarmCell].selectedRepeatedWeek;
-//        [NotifyUtil scheduleAlarm:self.note];
     }else{
         self.note.remindRepeat=nil;
-//        [NotifyUtil cancelAlarm:self.note];
     }
-//    [[CoreDataStack sharedStack]saveContext];
 }
 
 -(void)dealloc{

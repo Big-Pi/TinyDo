@@ -83,6 +83,12 @@
     dispatch_once(&onceToken, ^{
         [Helper checkFirstLaunch:self presentSplashVC:@"HelpViewController"];
     });
+    NSArray *visibleCells= [self.tableView visibleCells];
+    NSMutableArray *indexPaths=[NSMutableArray array];
+    for (UITableViewCell *cell in visibleCells) {
+        [indexPaths addObject:[self.tableView indexPathForCell:cell]];
+    }
+    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
 }
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -107,6 +113,7 @@
 //        [cell.seprateLine.layer addAnimation:alphaAnim forKey:nil];
 //    }
 //}
+
 
 
 -(void)viewDidAppear:(BOOL)animated{

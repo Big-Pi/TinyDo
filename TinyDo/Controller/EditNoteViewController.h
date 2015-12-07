@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @class Note;
+@class TimePickerCell;
+@class AlarmCell;
+@class SwipeableCell;
 
 typedef NS_ENUM(NSInteger, EditMode){
     Insert,
@@ -24,6 +27,9 @@ typedef NS_ENUM(NSInteger, EditMode){
 
 @interface EditNoteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic,readonly) SwipeableCell *editCell;
 @property(strong,nonatomic)Note *note; //segue时传note代表编辑note 否则 插入note
 @property(weak,nonatomic) id<EditNoteViewControllerDelegate> delegate;
+//
+-(void)fadeOutSelf;
 @end

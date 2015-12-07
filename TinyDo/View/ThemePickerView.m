@@ -7,7 +7,9 @@
 //
 
 #import "ThemePickerView.h"
-#import "UIColor+PiRandomColor.h"
+//#import "UIColor+PiRandomColor.h"
+//#import "Chameleon.h"
+#import "UIColor+AllFlatColors.h"
 
 
 @interface ThemePickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
@@ -45,7 +47,7 @@
 }
 -(NSArray *)colors{
     if(!_colors){
-        _colors=[UIColor themeColors];
+        _colors=[UIColor allFlatColors];
     }
     return _colors;
 }
