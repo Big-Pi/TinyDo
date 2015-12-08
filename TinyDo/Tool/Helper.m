@@ -70,6 +70,9 @@ NSString *const kIsFristLaunch=@"kIsFristLaunch";
 }
 
 +(NSString*)repeatMsgFromRaw:(NSArray *)rawArray{
+    rawArray=[rawArray sortedArrayUsingComparator:^NSComparisonResult(NSNumber  *obj1, NSNumber *obj2) {
+        return [obj1 compare:obj2];
+    }];
     NSMutableString *msg=[NSMutableString string];
     
     for(NSNumber *key in rawArray) {

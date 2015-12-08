@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, EditMode){
 
 @end
 
-@interface EditNoteViewController : UIViewController
+@interface EditNoteViewController : UIViewController<UIViewControllerRestoration>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic,readonly) SwipeableCell *editCell;
 @property(strong,nonatomic)Note *note; //segue时传note代表编辑note 否则 插入note

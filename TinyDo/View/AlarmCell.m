@@ -8,6 +8,8 @@
 
 #import "AlarmCell.h"
 #import "DateBtn.h"
+#import "Note.h"
+#import "Helper.h"
 
 
 @interface AlarmCell ()<DateBtnDelegate>
@@ -15,6 +17,7 @@
 @property (strong,nonatomic) NSMutableSet *dateBtnSet;
 @property (weak, nonatomic) IBOutlet UIButton *repeatLabel;
 @property (weak, nonatomic) IBOutlet UIButton *timeLabel;
+@property (strong, nonatomic) Note *note;
 @end
 
 @implementation AlarmCell
@@ -37,6 +40,12 @@
                 NSNumber *key=@(btn.tag);
                 [btn setText:[self dataDict][key]];
             }
+        }
+    }
+    NSArray *remindRepeat= self.note.remindRepeat;
+    for (DateBtn *btn in self.dateBtnSet) {
+        if([remindRepeat containsObject:@(btn.tag)]){
+            [btn setDateBtnSelected:YES];
         }
     }
 }
@@ -68,6 +77,21 @@
     }
     return dic;
 }
+
+-(id)configWithEidtableNote:(Note *)note{
+    
+    if(note.remindDate!=nil){
+        [self setTimeMsg:[Helper shortTimeStringFromDate:note.remindDate]];
+    }
+    if(note.remindRepeat!=nil){
+        [self setRepeatMsg:[Helper repeatMsgFromRaw:note.remindRepeat]];
+    }
+    
+    self.note=note;
+    self.contentView.alpha=0.0;
+    return self;
+}
+
 -(NSMutableSet *)selectedRepeatedWeek{
     _selectedRepeatedWeek=[NSMutableSet set];
     for(DateBtn *btn in self.dateBtnSet){

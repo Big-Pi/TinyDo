@@ -8,6 +8,7 @@
 
 #import "TimePickerCell.h"
 #import "NotificationUtil.h"
+#import "Note.h"
 
 @implementation TimePickerCell
 
@@ -18,6 +19,15 @@
     if(self.delegate){
         [self.delegate timePickerCell:self didTimeChanged:sender.date];
     }
+}
+-(id)configWithEditableNote:(Note *)note{
+    if(note.remindDate){
+        self.timePicker.date=note.remindDate;
+    }else{
+        self.timePicker.date=[NSDate date];
+    }
+    self.contentView.alpha=0.0;
+    return self;
 }
 +(NSInteger)cellHeight{
     return 264;

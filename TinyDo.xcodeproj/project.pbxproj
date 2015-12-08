@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E0FF5CA1C087FC8002F7623 /* DissmissKeyBoardWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */; };
 		0E0FF65C1C08D068002F7623 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF6591C08D068002F7623 /* Note.m */; };
-		0E0FF65D1C08D068002F7623 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */; };
 		0E132D471BD94FA2006C99EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D461BD94FA2006C99EC /* main.m */; };
 		0E132D4A1BD94FA2006C99EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D491BD94FA2006C99EC /* AppDelegate.m */; };
 		0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */; };
@@ -32,6 +31,7 @@
 		0E2942C01C14530D00F268E2 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942B41C14530D00F268E2 /* UIViewController+Chameleon.m */; };
 		0E2942C31C14542E00F268E2 /* UIColor+AllFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */; };
 		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
+		0E2D36681C16F468006C947B /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */; };
 		0E3046341C02ECBE00147430 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046331C02ECBE00147430 /* Helper.m */; };
 		0E3046401C030B5700147430 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463F1C030B5700147430 /* Colours.m */; };
 		0E3046441C03171A00147430 /* TimePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046421C03171A00147430 /* TimePickerCell.m */; };
@@ -100,8 +100,6 @@
 		0E0FF5C91C087FC8002F7623 /* DissmissKeyBoardWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DissmissKeyBoardWindow.m; sourceTree = "<group>"; };
 		0E0FF6581C08D068002F7623 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		0E0FF6591C08D068002F7623 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		0E0FF65A1C08D068002F7623 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E132D411BD94FA2006C99EC /* TinyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E132D451BD94FA2006C99EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E132D461BD94FA2006C99EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +146,8 @@
 		0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllFlatColors.m"; sourceTree = "<group>"; };
 		0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
+		0E2D36661C16F468006C947B /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E3046321C02ECBE00147430 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		0E3046331C02ECBE00147430 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		0E30463E1C030B5600147430 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
@@ -353,10 +353,10 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E2D36661C16F468006C947B /* Note+CoreDataProperties.h */,
+				0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */,
 				0E0FF6581C08D068002F7623 /* Note.h */,
 				0E0FF6591C08D068002F7623 /* Note.m */,
-				0E0FF65A1C08D068002F7623 /* Note+CoreDataProperties.h */,
-				0E0FF65B1C08D068002F7623 /* Note+CoreDataProperties.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
 				0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */,
 				0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */,
@@ -689,10 +689,10 @@
 				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
 				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
 				0E2942BC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m in Sources */,
+				0E2D36681C16F468006C947B /* Note+CoreDataProperties.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
 				0E2942BB1C14530D00F268E2 /* UIColor+ChameleonPrivate.m in Sources */,
 				0E2942B51C14530D00F268E2 /* Chameleon_.m in Sources */,
-				0E0FF65D1C08D068002F7623 /* Note+CoreDataProperties.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
 				0E56D1151C063190007375BD /* ThemePickerView.m in Sources */,
 				0EA492681C1317AC002FF5C8 /* ThemeManager.m in Sources */,

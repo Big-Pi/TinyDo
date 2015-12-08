@@ -9,15 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "EditableContent.h"
 #import "DeleteLineContainerView.h"
-
-//@protocol SwipeableCellDelegate <NSObject>
-//
-//@end
+@class Note;
 
 @interface SwipeableCell : UITableViewCell
-//@property(nonatomic,weak) id<SwipeableCellDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet DeleteLineContainerView *myContainerView;
 @property (weak, nonatomic) IBOutlet EditableContent *editableContent;
 -(void)setSwipeable:(BOOL)canSwipe;
+-(id)configWithEidtableNote:(Note*)note;
 +(NSInteger)cellHeight;
 @end

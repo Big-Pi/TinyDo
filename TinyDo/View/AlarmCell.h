@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class AlarmCell;
+@class Note;
 
 @protocol AlarmCellDelegate <NSObject>
 -(void)alarmCell:(AlarmCell*)cell didSelectedBtnChanged:(NSSet*)selectedIndex msgString:(NSString*)msg;
@@ -18,5 +19,6 @@
 @property (strong,nonatomic) NSMutableSet *selectedRepeatedWeek;
 -(void)setTimeMsg:(NSString*)timeMsg;
 -(void)setRepeatMsg:(NSString*)repeatMsg;
+-(id)configWithEidtableNote:(Note*)note;
 +(NSInteger)cellHeight;
 @end

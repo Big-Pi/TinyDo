@@ -25,6 +25,11 @@
 
 @implementation EditNoteViewController
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.restorationIdentifier=NSStringFromClass([EditNoteViewController class]);
+    self.restorationClass=[EditNoteViewController class];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
@@ -33,7 +38,6 @@
     
     //如果note!=nil 是编辑 否则是插入
     if(self.note!=nil){
-        self.editCell.editableContent.textField.text=self.note.content;
         self.mode=Edit;
     }else{
         self.note=[[CoreDataStack sharedStack]insertNote];
@@ -65,26 +69,22 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    //config alarm
+    
+    self.note.remindDate = self.timePickerCell.timePicker.date;
     [NotifyUtil cancelAlarm:self.note];
     if([self.note.needRemind boolValue]){
         [NotifyUtil scheduleAlarm:self.note];
     }
+    [[CoreDataStack sharedStack]saveContext];
 }
+
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row==0){
         SwipeableCell *swipeCell=[tableView dequeueReusableCellWithIdentifier:@"SwipeableCell"];
-        
+        [swipeCell configWithEidtableNote:self.note];
         swipeCell.editableContent.delegate=self;
-        [swipeCell setSwipeable:NO];
-        //
-        swipeCell.editableContent.textField.text=@"";
-        swipeCell.editableContent.textField.enabled=YES;
-        swipeCell.editableContent.textField.placeholder=@"我想。。。。";
-        swipeCell.editableContent.alarm.selected=[self.note.needRemind boolValue];
-        swipeCell.editableContent.priority.selected=[self.note.pirority boolValue];
         //
         self.editCell=swipeCell;
         return swipeCell;
@@ -92,25 +92,14 @@
     if(indexPath.row==1){
         AlarmCell *alarmCell= [tableView dequeueReusableCellWithIdentifier:@"AlarmCell"];
         alarmCell.delegate=self;
-        if(self.note.remindDate!=nil){
-            [alarmCell setTimeMsg:[Helper shortTimeStringFromDate:self.note.remindDate]];
-        }
-        if(self.note.remindRepeat!=nil){
-            [alarmCell setRepeatMsg:[Helper repeatMsgFromRaw:self.note.remindRepeat]];
-        }
-        alarmCell.contentView.alpha=0.0;
+        [alarmCell configWithEidtableNote:self.note];
         self.alarmCell=alarmCell;
         return alarmCell;
     }else if(indexPath.row==2){
         TimePickerCell *timePickerCell= [tableView dequeueReusableCellWithIdentifier:@"TimePickerCell"];
+        [timePickerCell configWithEditableNote: self.note];
         timePickerCell.delegate=self;
-        if(self.note.remindDate){
-            timePickerCell.timePicker.date=self.note.remindDate;
-        }else{
-            timePickerCell.timePicker.date=[NSDate date];
-        }
         self.timePickerCell=timePickerCell;
-        timePickerCell.contentView.alpha=0.0;
         return timePickerCell;
     }
     return nil;
@@ -152,6 +141,31 @@
         
     }];
 }
+#pragma mark - State Restoration
++(UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder{
+    UIStoryboard* sb = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];
+    if(sb){
+        EditNoteViewController *vc= [sb instantiateViewControllerWithIdentifier:NSStringFromClass([EditNoteViewController class])];
+        vc.restorationClass=[EditNoteViewController class];
+        vc.restorationIdentifier=[identifierComponents lastObject];
+        return vc;
+    }
+    return nil;
+}
+
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder{
+    [super encodeRestorableStateWithCoder:coder];
+    
+    NSString *noteID=self.note.noteID;
+    NSLog(@"%@",noteID);
+    [coder encodeObject:noteID forKey:@"noteID"];
+}
+
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder{
+    [super decodeRestorableStateWithCoder:coder];
+    NSLog(@"%@",[coder decodeObjectForKey:@"noteID"]);
+    self.note= [[CoreDataStack sharedStack]fetchNoteWithNoteID:[coder decodeObjectForKey:@"noteID"]];
+}
 
 #pragma mark - AlarmCellDelegate
 -(void)alarmCell:(AlarmCell *)cell didSelectedBtnChanged:(NSSet *)selectedIndex msgString:(NSString *)msg{
@@ -178,6 +192,10 @@
     [self.delegate editNoteViewControllerDidEndEdit:self withNote:self.note editMode:self.mode];
 }
 
+-(void)editableContentDidChangeNoteContent:(NSString *)noteContent{
+    self.note.content=noteContent;
+}
+
 -(void)editableContentDidAlarmClick:(EditableContent *)content selected:(BOOL)isSelected{
     self.note.needRemind=@(isSelected);
     if(isSelected){
@@ -188,7 +206,6 @@
 }
 
 -(void)dealloc{
-    [[CoreDataStack sharedStack]saveContext];
     NSLog(@"EditNoteViewController___dealloc");
 }
 @end

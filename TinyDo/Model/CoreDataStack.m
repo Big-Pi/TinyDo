@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataStack.h"
+@import CoreText;
 
 @interface CoreDataStack ()
 @property(nonatomic,strong)NSManagedObjectContext *context;
@@ -51,6 +52,18 @@
     return stack;
 }
 
+-(Note*)fetchNoteWithNoteID:(NSString*)noteID{
+    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"noteID=%@",noteID];
+    request.predicate=predicate;
+    NSError *error;
+    NSArray *result=[self.context executeFetchRequest:request error:&error];
+    if(!result){
+        NSLog(@"%@",[error localizedDescription]);
+    }
+    return [result lastObject];
+}
+
 -(NSArray *)fetchAllNotes{
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Note"];
     NSError *error;
@@ -64,6 +77,7 @@
 -(Note *)insertNote{
     NSEntityDescription *noteDescription= [NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.context];
     Note *note= [[Note alloc]initWithEntity:noteDescription insertIntoManagedObjectContext:self.context];
+    note.noteID=[self uuid];
     return note;
 }
 
@@ -76,9 +90,20 @@
 }
 
 -(void)saveContext{
+    NSLog(@"%@",@"saving all the note changes~~!!");
     NSError *error;
     if([self.context hasChanges] && ![self.context save:&error]){
         NSLog(@"Could not save %@",[error localizedDescription]);
     }
 }
+
+-(NSString*) uuid {
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+    NSString * result = CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+    CFRelease(puuid);
+    CFRelease(uuidString);
+    return result;
+}
+
 @end

@@ -9,7 +9,7 @@
         <!--To Do List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="ToDoListViewController" id="vXZ-lx-hvc" customClass="ToDoListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToDoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ToDoListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -54,14 +54,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <exit id="q8M-V3-RsQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="344" y="429"/>
         </scene>
         <!--Edit Note View Controller-->
         <scene sceneID="r8j-NU-Xr7">
             <objects>
-                <viewController storyboardIdentifier="EditNoteViewController" id="BeK-M5-cEu" customClass="EditNoteViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditNoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BeK-M5-cEu" customClass="EditNoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fl6-MT-9X5"/>
                         <viewControllerLayoutGuide type="bottom" id="bCz-JL-INh"/>
@@ -90,7 +89,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="a2I-ol-Yw1" id="fo1-D7-deo"/>
-                        <segue destination="q8M-V3-RsQ" kind="unwind" identifier="unwindToToDoList" unwindAction="unwindBackFromEditNoteViewController:" id="sgC-vC-JRK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcY-3L-ms1" userLabel="First Responder" sceneMemberID="firstResponder"/>

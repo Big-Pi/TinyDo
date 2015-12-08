@@ -19,4 +19,5 @@
 @property(nonatomic,weak) id<DateBtnDelegate> delegate;
 -(void)setText:(NSString*)text;
 -(BOOL)isDateBtnSelected;
+-(void)setDateBtnSelected:(BOOL)selected;
 @end

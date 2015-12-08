@@ -7,6 +7,7 @@
 //
 
 #import "SwipeableCell.h"
+#import "Note.h"
 
 
 static CGFloat const kanimDurationFactor = 600.0;
@@ -27,8 +28,23 @@ static CGFloat const kanimDurationFactor = 600.0;
     [self setSwipeable:YES];
 //    self.myContainerView.delegate=self;
 }
+
 +(NSInteger)cellHeight{
     return 66;
+}
+
+-(id)configWithEidtableNote:(Note *)note{
+    
+    [self setSwipeable:NO];
+    //
+    self.editableContent.textField.text=note.content;
+    self.editableContent.textField.enabled=YES;
+    self.editableContent.textField.placeholder=@"我想。。。。";
+    self.editableContent.alarm.selected=[note.needRemind boolValue];
+    self.editableContent.priority.selected=[note.pirority boolValue];
+    //
+    return self;
+
 }
 -(void)setSwipeable:(BOOL)canSwipe{
     if(canSwipe){

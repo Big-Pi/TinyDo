@@ -129,6 +129,10 @@
         [self setInsertOrEdit:NO anim:YES];
     }
     //    NSLog(@"%ld----%ld",textField.text.length,string.length);
+    
+    NSString *newStr= [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    [self.delegate editableContentDidChangeNoteContent:newStr];
     return YES;
 }
 

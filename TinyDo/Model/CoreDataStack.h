@@ -17,6 +17,7 @@
 @property(nonatomic,strong,readonly)NSPersistentStore *store;
 
 -(NSArray*)fetchAllNotes;
+-(Note*)fetchNoteWithNoteID:(NSString*)noteID;
 -(void)deleteNote:(Note *)note;
 -(Note*)insertNote;
 +(instancetype)sharedStack;

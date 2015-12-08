@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class TimePickerCell;
+@class Note;
 
 @protocol TimePickerCellDelegate <NSObject>
 
@@ -18,5 +19,6 @@
 @interface TimePickerCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property(nonatomic,weak) id<TimePickerCellDelegate> delegate;
+-(id)configWithEditableNote:(Note*)note;
 +(NSInteger)cellHeight;
 @end

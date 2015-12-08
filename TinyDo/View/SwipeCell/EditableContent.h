@@ -16,6 +16,7 @@
 -(void)editableContentDidAlarmClick:(EditableContent*)content selected:(BOOL)isSelected;
 -(void)editableContentDidPriorityClick:(EditableContent*)content selected:(BOOL)isSelected;
 -(void)editableContentDidEndEditNote:(EditableContent *)content;
+-(void)editableContentDidChangeNoteContent:(NSString*)noteContent;
 @end
 
 @interface EditableContent : UIView
