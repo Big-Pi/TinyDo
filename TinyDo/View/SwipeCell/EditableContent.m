@@ -8,7 +8,6 @@
 
 #import "EditableContent.h"
 #import "Note.h"
-#import "CoreDataStack.h"
 
 
 @interface EditableContent ()<UITextFieldDelegate>
@@ -81,40 +80,6 @@
     }
 }
 
-
-//-(void)setInsertOrEdit:(BOOL)insertOrEdit
-//{
-//    if(insertOrEdit){
-//        //show alarm priority button
-//        [UIView animateWithDuration:0.4 delay:0.05 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            self.alarm.alpha=1.0;
-//            self.priority.alpha=1.0;
-//            self.alarm.transform=CGAffineTransformScale(self.alarm.transform, 1.2, 1.2);
-//            self.priority.transform=CGAffineTransformScale(self.alarm.transform, 1.2, 1.2);
-//            self.seprateLine.alpha=0.3;
-//        } completion:^(BOOL finished) {
-//            //
-//            [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//                self.alarm.transform=CGAffineTransformIdentity;
-//                self.priority.transform=CGAffineTransformIdentity;
-//            } completion:nil];
-//        }];
-//    }else{
-//        //hide them
-//        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            self.alarm.alpha=0.0;
-//            self.priority.alpha=0.0;
-//            self.seprateLine.alpha=0.0;
-//            self.alarm.transform=CGAffineTransformMakeScale(0.1, 0.1);
-//            self.priority.transform=CGAffineTransformMakeScale(0.1, 0.1);
-//        } completion:^(BOOL finished) {
-//            self.alarm.transform=CGAffineTransformIdentity;
-//            self.alarm.transform=CGAffineTransformIdentity;
-//        }];
-//    }
-//
-//}
-
 #pragma mark - UITextFieldDelegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -137,10 +102,6 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if([textField.text length]>0){
-        Note *note= [[CoreDataStack sharedStack]insertNote];
-        note.content=textField.text;
-    }
     [self.delegate editableContentDidEndEditNote:self];
     return YES;
 }

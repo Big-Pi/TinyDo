@@ -17,8 +17,10 @@
 @property(nonatomic,strong,readonly)NSPersistentStore *store;
 
 -(NSArray*)fetchAllNotes;
+-(NSArray*)fetchAllDeletedNotes;
 -(Note*)fetchNoteWithNoteID:(NSString*)noteID;
 -(void)deleteNote:(Note *)note;
+-(void)destoryNote:(Note*)note;
 -(Note*)insertNote;
 +(instancetype)sharedStack;
 -(void)saveContext;

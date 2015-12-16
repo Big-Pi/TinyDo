@@ -66,6 +66,20 @@
 
 -(NSArray *)fetchAllNotes{
     NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"deleted = %@",@NO];
+    request.predicate=predicate;
+    NSError *error;
+    NSArray *result= [self.context executeFetchRequest:request error:&error];
+    if(!result){
+        NSLog(@"%@",[error localizedDescription]);
+    }
+    return result;
+}
+
+-(NSArray*)fetchAllDeletedNotes{
+    NSFetchRequest *request=[NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"deleted = %@",@YES];
+    request.predicate=predicate;
     NSError *error;
     NSArray *result= [self.context executeFetchRequest:request error:&error];
     if(!result){
@@ -82,7 +96,15 @@
 }
 
 -(void)deleteNote:(Note *)note{
+//    [self.context deleteObject:note];
+    note.deleted=@YES;
+    note.deletedDate=[NSDate date];
+    [self saveContext];
+}
+
+-(void)destoryNote:(Note *)note{
     [self.context deleteObject:note];
+    [self saveContext];
 }
 
 -(NSURL*)applicationDocumentsDirectory{

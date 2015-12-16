@@ -5,9 +5,8 @@
 //  Created by pi on 15/10/23.
 //  Copyright (c) 2015年 pi. All rights reserved.
 //
-#import "CoreDataStack.h"
 #import "EditableCell.h"
-
+#import "Note.h"
 @interface EditableCell ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *alarm;
@@ -133,7 +132,8 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if([textField.text length]>0){
-        Note *note= [[CoreDataStack sharedStack]insertNote];
+        
+        Note *note= [Note insertNote];
         note.content=textField.text;
     }
     [self.delegate editableCellDidEndEditNote:self];

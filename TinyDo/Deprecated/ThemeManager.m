@@ -90,7 +90,6 @@ static id<Theme> _theme=nil;
     [self customizeView:tableViewCell.contentView];
 }
 +(void)customizeTableView:(UITableView*)tableview{
-    id <Theme> theme = [self sharedTheme];
     [self customizeView:tableview];
 }
 @end

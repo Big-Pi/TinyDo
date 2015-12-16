@@ -8,7 +8,6 @@
 
 #import "ToDoListViewController.h"
 #import "Note.h"
-#import "CoreDataStack.h"
 #import "EditNoteViewController.h"
 #import "NoNotePlaceHolderCell.h"
 #import "MagicTransitionAnimator.h"
@@ -20,7 +19,7 @@
 
 @import CoreData;
 
-@interface ToDoListViewController ()<UITableViewDataSource,UITableViewDelegate,EditNoteViewControllerDelegate,UIViewControllerTransitioningDelegate,DrawerToolbarDelegate,DeleteLineContainerViewDelegate>
+@interface ToDoListViewController ()<UITableViewDataSource,UITableViewDelegate,EditNoteViewControllerDelegate,UIViewControllerTransitioningDelegate,DrawerToolbarDelegate,SwipeableCellDelegate>
 
 @property(nonatomic,strong)NSMutableArray *notes;
 @property (weak, nonatomic) IBOutlet DrawerToolbar *drawerToolbar;
@@ -42,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
-    NSArray *results= [[CoreDataStack sharedStack]fetchAllNotes];
+    NSArray *results= [Note fetchAllNotes];
     if([results count]>0){
         self.notes= [results mutableCopy];
     }else{
@@ -50,24 +49,13 @@
     }
     
     self.drawerToolbar.delegate=self;
-//    //drawerToolbar constraints bugFix 在storyboard设置的约束在自定义view不生效？
-//    self.drawerToolbar.delegate=self;
-//    self.drawerToolbar.translatesAutoresizingMaskIntoConstraints=NO;
-//    NSDictionary *dic=@{@"drawerToolbar":self.drawerToolbar};
-//    NSArray *constaintH=[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[drawerToolbar]|" options:0 metrics:nil views:dic];
-//    NSArray *constaintV=[NSLayoutConstraint constraintsWithVisualFormat:@"V:[drawerToolbar(==44)]-0-|" options:0 metrics:nil views:dic];
-//    
-//    //ios 8+ 用active 不用加到父view中
-//    [NSLayoutConstraint activateConstraints:constaintV];
-//    [NSLayoutConstraint activateConstraints:constaintH];
-////    [self.view addConstraints:constaintH];
-////    [self.view addConstraints:constaintV];
     //
     SwipeableCell *cell= [[[NSBundle mainBundle]loadNibNamed:@"SwipeableCell" owner:nil options:nil]lastObject];
             cell.editableContent.textField.text=@"";
             cell.editableContent.textField.enabled=YES;
             cell.editableContent.textField.placeholder=@"我想。。。。";
             cell.editableContent.seprateLine.hidden=YES;
+    cell.delegate=self;
     self.tableView.tableHeaderView=cell.contentView;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
@@ -90,31 +78,6 @@
     }
     [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if([segue.destinationViewController isKindOfClass:[EditNoteViewController class]]){
-//        EditNoteViewController *vc= segue.destinationViewController;
-//        vc.delegate=self;
-//        if([sender isKindOfClass:[Note class]]){
-//            vc.note=(Note *)sender;
-//        }
-//    }
-//}
-
-
-//-(void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    //淡入tableviewCell分割线
-//    CABasicAnimation *alphaAnim=[CABasicAnimation animationWithKeyPath:@"opacity"];
-//    alphaAnim.fromValue=@0.0;
-//    alphaAnim.toValue=@0.4;
-//    alphaAnim.duration=0.6;
-//    for(EditableCell *cell in self.tableView.visibleCells){
-//        [cell.seprateLine.layer addAnimation:alphaAnim forKey:nil];
-//    }
-//}
-
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -145,10 +108,10 @@
     cell.editableContent.textField.placeholder=@"";
     cell.editableContent.seprateLine.alpha=0.3;
     cell.editableContent.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    cell.delegate=self;
     if([note.pirority boolValue]){
         cell.editableContent.textField.textColor=self.view.tintColor ;
     }
-    cell.myContainerView.delegate=self;
     return cell;
 }
 
@@ -189,23 +152,6 @@
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return self.notes.count >0;
 }
-
-
-//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if(editingStyle==UITableViewCellEditingStyleDelete){
-//        //如果将要删除最后一个note,则notes为空 显示占位cell 提醒用户下拉创建新note
-//        if(self.notes.count==1){
-//            [[CoreDataStack sharedStack]deleteNote:[self.notes lastObject]];
-//            [self.notes removeAllObjects];
-//            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        }else{
-//            Note *note2Remove=[self.notes objectAtIndex:indexPath.row];
-//            [[CoreDataStack sharedStack]deleteNote:note2Remove];
-//            [self.notes removeObjectIdenticalTo:note2Remove];
-//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        }
-//    }
-//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.notes.count>0){
@@ -276,10 +222,9 @@
     }
 }
 
-#pragma mark - DeleteLineContainerViewDelegate
--(void)deleteLineContainerView:(DeleteLineContainerView *)contentView onStateChanged:(DeleteLineContainerViewState)state{
-    UITableViewCell *cell= (UITableViewCell*)contentView.superview.superview;
-    NSIndexPath *indexPath= [self.tableView indexPathForCell:cell];
+#pragma mark - SwipeableCellDelegate
+-(void)swipeableCell:(SwipeableCell *)cell didStateChanged:(DeleteLineContainerViewState)state{
+    NSIndexPath *indexPath=  [self.tableView indexPathForCell:cell];
     Note *note=self.notes[indexPath.row];
     
     switch (state) {
@@ -287,24 +232,26 @@
             [note setNoteState:NoteStateNormal];
             break;
         }
+            
         case DeleteLineContainerViewStateDeprecated: {
             [note setNoteState:NoteStateDeprecated];
             break;
         }
+            
         case DeleteLineContainerViewStateDeleted: {
             [note setNoteState:NoteStateDeleted];
             [self.notes removeObject:note];
-            [[CoreDataStack sharedStack]deleteNote:note];
+            
             if(self.notes.count==0){
-                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
             }else{
-                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             }
+            [note deleteNote];
             break;
         }
     }
 }
-
 -(void)dealloc{
     NSLog(@"%@ ___dealloc",[self class]);
 }

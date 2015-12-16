@@ -36,15 +36,6 @@
     }
 }
 
-//- (IBAction)toggleNightTheme:(UISwitch *)sender {
-//    if(sender.on){
-//        [ThemeManager setSharedTheme:[[NightTheme alloc]init]];
-//    }else{
-//        [ThemeManager setSharedTheme:[[DefaultWhiteTheme alloc]init]];
-//    }
-//    [ThemeManager customizeView:self.view];
-//}
-
 #pragma mark - CustomIOSAlertViewDelegate
 -(void)customIOS7dialogButtonTouchUpInside:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     [alertView close];

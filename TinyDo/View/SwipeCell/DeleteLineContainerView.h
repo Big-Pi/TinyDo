@@ -16,18 +16,15 @@ typedef NS_ENUM(NSInteger, DeleteLineContainerViewState) {
     DeleteLineContainerViewStateDeleted
 };
 
-
-@protocol DeleteLineContainerViewDelegate <NSObject>
-
-//-(void)deleteLineContentViewOnDeprecated:(DeleteLineContentView*)contentView;
-//-(void)deleteLineContentViewOnDeleted:(DeleteLineContentView*)contentView;
-//-(void)deleteLineContentViewOnNormalState:(DeleteLineContentView *)contentView;
--(void)deleteLineContainerView:(DeleteLineContainerView*)contentView onStateChanged:(DeleteLineContainerViewState)state;
-@end
+//@protocol DeleteLineContainerViewDelegate <NSObject>
+//-(void)deleteLineContainerView:(DeleteLineContainerView*)contentView onStateChanged:(DeleteLineContainerViewState)state toLeft:(BOOL)toLeft;
+//@end
 
 @interface DeleteLineContainerView : UIView
 @property(nonatomic)BOOL isDeprecated;
-@property(nonatomic,weak) id<DeleteLineContainerViewDelegate> delegate;
--(void)animateToResetTransformWithDuration:(NSTimeInterval)duration;
+@property(nonatomic,readonly)DeleteLineContainerViewState currentState;
+//@property(nonatomic,weak) id<DeleteLineContainerViewDelegate> delegate;
+-(void)toggleDeleteImage;
+-(void)updateState;
 
 @end

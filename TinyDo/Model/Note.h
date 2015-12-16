@@ -16,9 +16,16 @@ typedef NS_ENUM(NSInteger, NoteState) {
     NoteStateDeleted
 };
 @interface Note : NSManagedObject
-
-// Insert code here to declare functionality of your managed object subclass
++(NSArray*)fetchAllNotes;
++(NSArray*)fetchAllDeletedNotes;
++(Note*)fetchNoteWithNoteID:(NSString*)noteID;
+-(void)deleteNote;
+-(void)destoryNote;
++(Note*)insertNote;
++(void)syncNotes;
+//
 -(void)setNoteState:(NoteState)noteState;
+
 @end
 
 NS_ASSUME_NONNULL_END

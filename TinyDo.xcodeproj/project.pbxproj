@@ -31,7 +31,6 @@
 		0E2942C01C14530D00F268E2 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942B41C14530D00F268E2 /* UIViewController+Chameleon.m */; };
 		0E2942C31C14542E00F268E2 /* UIColor+AllFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */; };
 		0E2A46F31BE08CDF008E50B8 /* EditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */; };
-		0E2D36681C16F468006C947B /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */; };
 		0E3046341C02ECBE00147430 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046331C02ECBE00147430 /* Helper.m */; };
 		0E3046401C030B5700147430 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E30463F1C030B5700147430 /* Colours.m */; };
 		0E3046441C03171A00147430 /* TimePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3046421C03171A00147430 /* TimePickerCell.m */; };
@@ -54,6 +53,7 @@
 		0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B51C037D5400E6A96B /* SwipeableCell.m */; };
 		0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */; };
 		0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82BB1C03845500E6A96B /* EditableContent.m */; };
+		0E91F33D1C212ADD0069E4E6 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */; };
 		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
 		0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D279B1C0977E9002DCF21 /* UmengInit.m */; };
 		0EA492621C1317AC002FF5C8 /* DefaultWhiteTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA492541C1317AC002FF5C8 /* DefaultWhiteTheme.m */; };
@@ -146,8 +146,6 @@
 		0E2942C21C14542E00F268E2 /* UIColor+AllFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllFlatColors.m"; sourceTree = "<group>"; };
 		0E2A46F11BE08CDF008E50B8 /* EditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNoteViewController.h; sourceTree = "<group>"; };
 		0E2A46F21BE08CDF008E50B8 /* EditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNoteViewController.m; sourceTree = "<group>"; };
-		0E2D36661C16F468006C947B /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E3046321C02ECBE00147430 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		0E3046331C02ECBE00147430 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		0E30463E1C030B5600147430 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeableCell.xib; sourceTree = "<group>"; };
 		0E7C82BA1C03845500E6A96B /* EditableContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableContent.h; sourceTree = "<group>"; };
 		0E7C82BB1C03845500E6A96B /* EditableContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableContent.m; sourceTree = "<group>"; };
+		0E91F33B1C212ADD0069E4E6 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
 		0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerToolbar.m; sourceTree = "<group>"; };
 		0E9D279A1C0977E9002DCF21 /* UmengInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmengInit.h; sourceTree = "<group>"; };
@@ -353,8 +353,8 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E2D36661C16F468006C947B /* Note+CoreDataProperties.h */,
-				0E2D36671C16F468006C947B /* Note+CoreDataProperties.m */,
+				0E91F33B1C212ADD0069E4E6 /* Note+CoreDataProperties.h */,
+				0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */,
 				0E0FF6581C08D068002F7623 /* Note.h */,
 				0E0FF6591C08D068002F7623 /* Note.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
@@ -689,7 +689,7 @@
 				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
 				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
 				0E2942BC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m in Sources */,
-				0E2D36681C16F468006C947B /* Note+CoreDataProperties.m in Sources */,
+				0E91F33D1C212ADD0069E4E6 /* Note+CoreDataProperties.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
 				0E2942BB1C14530D00F268E2 /* UIColor+ChameleonPrivate.m in Sources */,
 				0E2942B51C14530D00F268E2 /* Chameleon_.m in Sources */,

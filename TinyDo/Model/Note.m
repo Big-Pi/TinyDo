@@ -7,10 +7,50 @@
 //
 
 #import "Note.h"
+#import "CoreDataStack.h"
+
+@interface Note ()
+
+@end
 
 @implementation Note
 
-// Insert code here to add functionality to your managed object subclass
++(CoreDataStack *)db{
+    static id db;
+    if(!db){
+        db=[CoreDataStack sharedStack];
+    }
+    return db;
+}
+
++(NSArray*)fetchAllNotes{
+    return [[Note db]fetchAllNotes];
+}
+
++(NSArray*)fetchAllDeletedNotes{
+    return [[Note db]fetchAllDeletedNotes];
+}
+
++(Note*)fetchNoteWithNoteID:(NSString*)noteID{
+    return [[Note db]fetchNoteWithNoteID:noteID];
+}
+
+-(void)deleteNote{
+    return [[CoreDataStack sharedStack]deleteNote:self];
+}
+
+-(void)destoryNote{
+    return [[CoreDataStack sharedStack]destoryNote:self];
+}
+
++(Note*)insertNote{
+    return [[self db]insertNote];
+}
+
++(void)syncNotes{
+    [[self db]saveContext];
+}
+
 -(void)setNoteState:(NoteState)noteState{
     switch (noteState) {
         case NoteStateNormal:
@@ -27,4 +67,5 @@
             break;
     }
 }
+
 @end

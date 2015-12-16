@@ -8,7 +8,6 @@
 
 #import "EditNoteViewController.h"
 #import "SwipeableCell.h"
-#import "CoreDataStack.h"
 #import "AlarmCell.h"
 #import "TimePickerCell.h"
 #import "Note.h"
@@ -40,7 +39,7 @@
     if(self.note!=nil){
         self.mode=Edit;
     }else{
-        self.note=[[CoreDataStack sharedStack]insertNote];
+        self.note=[Note insertNote];
         self.note.remindDate=[NSDate date];
     }
 }
@@ -75,7 +74,7 @@
     if([self.note.needRemind boolValue]){
         [NotifyUtil scheduleAlarm:self.note];
     }
-    [[CoreDataStack sharedStack]saveContext];
+    [Note syncNotes];
 }
 
 
@@ -164,7 +163,7 @@
 -(void)decodeRestorableStateWithCoder:(NSCoder *)coder{
     [super decodeRestorableStateWithCoder:coder];
     NSLog(@"%@",[coder decodeObjectForKey:@"noteID"]);
-    self.note= [[CoreDataStack sharedStack]fetchNoteWithNoteID:[coder decodeObjectForKey:@"noteID"]];
+    self.note=[Note fetchNoteWithNoteID:[coder decodeObjectForKey:@"noteID"]];
 }
 
 #pragma mark - AlarmCellDelegate

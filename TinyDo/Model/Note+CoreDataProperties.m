@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.m
 //  TinyDo
 //
-//  Created by pi on 15/12/8.
+//  Created by pi on 15/12/16.
 //  Copyright © 2015年 pi. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,9 +18,10 @@
 @dynamic deleted;
 @dynamic deperacted;
 @dynamic needRemind;
+@dynamic noteID;
 @dynamic pirority;
 @dynamic remindDate;
 @dynamic remindRepeat;
-@dynamic noteID;
+@dynamic deletedDate;
 
 @end

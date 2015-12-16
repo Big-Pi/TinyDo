@@ -17,7 +17,8 @@ static CGFloat const kDeleteLineFactor=1.35;
 @property(nonatomic,strong)UIBezierPath *path;
 @property(weak,nonatomic)IBOutlet UIImageView *leftDeleteImage;
 @property(weak,nonatomic)IBOutlet UIImageView *rightDeleteImage;
-@property(nonatomic)DeleteLineContainerViewState currentState;
+@property(nonatomic,readwrite)DeleteLineContainerViewState currentState;
+
 @end
 
 @implementation DeleteLineContainerView
@@ -31,6 +32,11 @@ static CGFloat const kDeleteLineFactor=1.35;
 
 -(CGFloat)deleteLineStartOffsetX{
     return 20.0;
+}
+
+-(void)setTransform:(CGAffineTransform)transform{
+    [super setTransform:transform];
+    [self setNeedsDisplay];
 }
 
 -(UIBezierPath *)path{
@@ -103,16 +109,8 @@ static CGFloat const kDeleteLineFactor=1.35;
     return self.path;
 }
 
-/**
- *  @author pi, 15-11-13 22:11:24
- *
- *  重置contentview的transform为identity
- *
- *  @param duration 动画持续时间
- */
--(void)animateToResetTransformWithDuration:(NSTimeInterval)duration{
+-(void)updateState{
     //根据pan手势结束时此view的transform决定当前的状态
-    
     if(self.transform.tx>[self screenWidth_2]){
         //右滑到一定距离
         if(self.isDeprecated){
@@ -130,15 +128,6 @@ static CGFloat const kDeleteLineFactor=1.35;
             self.currentState=DeleteLineContainerViewStateDeleted;
         }
     }
-    
-    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.transform=CGAffineTransformIdentity;
-        self.userInteractionEnabled=NO;
-    } completion:^(BOOL finished) {
-        self.userInteractionEnabled=YES;
-        [self toggleDeleteImage];
-        [self.delegate deleteLineContainerView:self onStateChanged:self.currentState];
-    }];
 }
 
 /**
@@ -152,12 +141,10 @@ static CGFloat const kDeleteLineFactor=1.35;
 }
 
 -(CGFloat)screenWidth_2{
-    return [UIScreen mainScreen].bounds.size.width/2.5;
+    return [self screenWidth] / 2.5;
 }
-
--(void)setTransform:(CGAffineTransform)transform{
-    [super setTransform:transform];
-    [self setNeedsDisplay];
+-(CGFloat)screenWidth{
+    return [UIScreen mainScreen].bounds.size.width;
 }
 
 -(void)setIsDeprecated:(BOOL)isDeprecated{

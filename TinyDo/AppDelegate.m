@@ -7,22 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "Note.h"
 #import "ToDoListViewController.h"
-#import "CoreDataStack.h"
 #import "UMSocial.h"
 #import "EasyThemer.h"
 #import "DissmissKeyBoardWindow.h"
 
 
 @interface AppDelegate ()
-@property(nonatomic,strong,readonly)CoreDataStack *stack;
 @end
 
 @implementation AppDelegate
-
--(CoreDataStack *)stack{
-    return [CoreDataStack sharedStack];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self registNotifySetting];
@@ -74,7 +69,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [self.stack saveContext];
+    [Note syncNotes];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -89,6 +84,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self.stack saveContext];
+    [Note syncNotes];
 }
 @end
