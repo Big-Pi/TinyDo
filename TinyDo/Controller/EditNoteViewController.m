@@ -13,6 +13,7 @@
 #import "Note.h"
 #import "Helper.h"
 #import "NotifyUtil.h"
+#import "DoneButtonCell.h"
 
 
 @interface EditNoteViewController ()<UITableViewDelegate,UITableViewDataSource,AlarmCellDelegate,TimePickerCellDelegate,EditableContentDelegate>
@@ -29,6 +30,7 @@
     self.restorationIdentifier=NSStringFromClass([EditNoteViewController class]);
     self.restorationClass=[EditNoteViewController class];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
@@ -43,6 +45,7 @@
         self.note.remindDate=[NSDate date];
     }
 }
+
 #pragma mark - Getter Setter
 
 -(EditMode)mode{
@@ -114,6 +117,23 @@
     return 3;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    DoneButtonCell *cell= [tableView dequeueReusableCellWithIdentifier:@"DoneButtonCell"];
+    [cell onDone:^{
+        [self editableContentDidEndEditNote:self.editCell.editableContent];
+    }];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    CGFloat H= CGRectGetHeight(self.tableView.bounds);
+    H=H-[SwipeableCell cellHeight]-[AlarmCell cellHeight]-[TimePickerCell cellHeight];
+    if(H<44){
+        return 44;
+    }
+    return H;
+}
+
 #warning temp way to calclate cell height for different kind of cell
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger h=0;
@@ -130,14 +150,15 @@
     }
     return h;
 }
+
 #pragma mark - private
 -(void)fadeInView:(UIView*)v{
     [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         v.alpha=1.0;
     } completion:^(BOOL finished) {
-        
     }];
 }
+
 -(void)fadeOutSelf{
     [UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.alarmCell.contentView.alpha=0.0;
@@ -146,6 +167,7 @@
         
     }];
 }
+
 #pragma mark - State Restoration
 +(UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder{
     UIStoryboard* sb = [coder decodeObjectForKey:UIStateRestorationViewControllerStoryboardKey];

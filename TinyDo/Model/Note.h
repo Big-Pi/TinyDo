@@ -25,7 +25,8 @@ typedef NS_ENUM(NSInteger, NoteState) {
 +(void)syncNotes;
 //
 -(void)setNoteState:(NoteState)noteState;
-
+//
+-(NSComparisonResult)sortByCreateDate:(Note*)otherNote;
 @end
 
 NS_ASSUME_NONNULL_END

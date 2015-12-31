@@ -96,7 +96,6 @@
 }
 
 -(void)deleteNote:(Note *)note{
-//    [self.context deleteObject:note];
     note.deleted=@YES;
     note.deletedDate=[NSDate date];
     [self saveContext];

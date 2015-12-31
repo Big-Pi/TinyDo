@@ -51,7 +51,6 @@
 		0E7C82B81C037D5400E6A96B /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82B51C037D5400E6A96B /* SwipeableCell.m */; };
 		0E7C82B91C037D5400E6A96B /* SwipeableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */; };
 		0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7C82BB1C03845500E6A96B /* EditableContent.m */; };
-		0E91F33D1C212ADD0069E4E6 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */; };
 		0E96AFFD1BF64F50007FE61C /* DrawerToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */; };
 		0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D279B1C0977E9002DCF21 /* UmengInit.m */; };
 		0EA492621C1317AC002FF5C8 /* DefaultWhiteTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA492541C1317AC002FF5C8 /* DefaultWhiteTheme.m */; };
@@ -82,6 +81,8 @@
 		0ECF5FE41C06FD440051E871 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECF5FE31C06FD440051E871 /* SystemConfiguration.framework */; };
 		0ED13FE71BF05E77007E9A97 /* MagicTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */; };
 		0EE7340A1C34E01300A9A7D1 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE734091C34E01300A9A7D1 /* Colours.m */; };
+		0EEA54C11C35271100AAF769 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA54C01C35271100AAF769 /* Note+CoreDataProperties.m */; };
+		0EEA54C41C352A1F00AAF769 /* DoneButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA54C31C352A1F00AAF769 /* DoneButtonCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,8 +180,6 @@
 		0E7C82B61C037D5400E6A96B /* SwipeableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeableCell.xib; sourceTree = "<group>"; };
 		0E7C82BA1C03845500E6A96B /* EditableContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableContent.h; sourceTree = "<group>"; };
 		0E7C82BB1C03845500E6A96B /* EditableContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableContent.m; sourceTree = "<group>"; };
-		0E91F33B1C212ADD0069E4E6 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
-		0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0E96AFFB1BF64F50007FE61C /* DrawerToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerToolbar.h; sourceTree = "<group>"; };
 		0E96AFFC1BF64F50007FE61C /* DrawerToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerToolbar.m; sourceTree = "<group>"; };
 		0E9D279A1C0977E9002DCF21 /* UmengInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmengInit.h; sourceTree = "<group>"; };
@@ -238,6 +237,10 @@
 		0ED13FE61BF05E77007E9A97 /* MagicTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicTransitionAnimator.m; sourceTree = "<group>"; };
 		0EE734081C34E01300A9A7D1 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		0EE734091C34E01300A9A7D1 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		0EEA54BF1C35271100AAF769 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0EEA54C01C35271100AAF769 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0EEA54C21C352A1F00AAF769 /* DoneButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneButtonCell.h; sourceTree = "<group>"; };
+		0EEA54C31C352A1F00AAF769 /* DoneButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneButtonCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,10 +351,10 @@
 		0E132D6E1BD95034006C99EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E91F33B1C212ADD0069E4E6 /* Note+CoreDataProperties.h */,
-				0E91F33C1C212ADD0069E4E6 /* Note+CoreDataProperties.m */,
 				0E0FF6581C08D068002F7623 /* Note.h */,
 				0E0FF6591C08D068002F7623 /* Note.m */,
+				0EEA54BF1C35271100AAF769 /* Note+CoreDataProperties.h */,
+				0EEA54C01C35271100AAF769 /* Note+CoreDataProperties.m */,
 				0E132D4B1BD94FA2006C99EC /* TinyDo.xcdatamodeld */,
 				0E3E21A21BDCF6F9006B442B /* CoreDataStack.h */,
 				0E3E21A31BDCF6F9006B442B /* CoreDataStack.m */,
@@ -480,6 +483,8 @@
 				0E30464B1C03270600147430 /* DateBtn.h */,
 				0E30464C1C03270600147430 /* DateBtn.m */,
 				0E30464E1C0328AD00147430 /* DateBtn.xib */,
+				0EEA54C21C352A1F00AAF769 /* DoneButtonCell.h */,
+				0EEA54C31C352A1F00AAF769 /* DoneButtonCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,8 +689,8 @@
 				0ECF5FB61C06EF3C0051E871 /* CustomIOSAlertView.m in Sources */,
 				0ECF5FB91C06F53F0051E871 /* ThemePickerViewAlert.m in Sources */,
 				0E2942BC1C14530D00F268E2 /* UIImage+ChameleonPrivate.m in Sources */,
-				0E91F33D1C212ADD0069E4E6 /* Note+CoreDataProperties.m in Sources */,
 				0E3046491C0317E800147430 /* AlarmCell.m in Sources */,
+				0EEA54C11C35271100AAF769 /* Note+CoreDataProperties.m in Sources */,
 				0E2942BB1C14530D00F268E2 /* UIColor+ChameleonPrivate.m in Sources */,
 				0E2942B51C14530D00F268E2 /* Chameleon_.m in Sources */,
 				0E132D4D1BD94FA2006C99EC /* TinyDo.xcdatamodeld in Sources */,
@@ -696,6 +701,7 @@
 				0E7C82BC1C03845500E6A96B /* EditableContent.m in Sources */,
 				0EA492691C1317AC002FF5C8 /* UIViewController+Theme.m in Sources */,
 				0E9D279C1C0977E9002DCF21 /* UmengInit.m in Sources */,
+				0EEA54C41C352A1F00AAF769 /* DoneButtonCell.m in Sources */,
 				0EA492671C1317AC002FF5C8 /* NotificationUtil.m in Sources */,
 				0E2942C01C14530D00F268E2 /* UIViewController+Chameleon.m in Sources */,
 				0EBD6FAA1BEB2BCA00000C99 /* NoNotePlaceHolderCell.m in Sources */,

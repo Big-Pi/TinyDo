@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, EditMode){
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic,readonly) SwipeableCell *editCell;
 @property(strong,nonatomic)Note *note; //segue时传note代表编辑note 否则 插入note
-@property(weak,nonatomic) id<EditNoteViewControllerDelegate> delegate;
+@property(strong,nonatomic) id<EditNoteViewControllerDelegate> delegate;
 //
 -(void)fadeOutSelf;
 @end

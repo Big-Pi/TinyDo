@@ -44,7 +44,9 @@
 }
 
 +(Note*)insertNote{
-    return [[self db]insertNote];
+    Note *note=[[self db]insertNote];
+    note.createDate=[NSDate date];
+    return note;
 }
 
 +(void)syncNotes{
@@ -66,6 +68,10 @@
             self.deperacted=@YES;
             break;
     }
+}
+
+-(NSComparisonResult)sortByCreateDate:(Note*)otherNote{
+    return [otherNote.createDate compare:self.createDate];
 }
 
 @end

@@ -66,12 +66,8 @@
     dispatch_once(&onceToken, ^{
         [Helper checkFirstLaunch:self presentSplashVC:@"HelpViewController"];
     });
-    NSArray *visibleCells= [self.tableView visibleCells];
-    NSMutableArray *indexPaths=[NSMutableArray array];
-    for (UITableViewCell *cell in visibleCells) {
-        [indexPaths addObject:[self.tableView indexPathForCell:cell]];
-    }
-    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    [self.notes sortUsingSelector:@selector(sortByCreateDate:)];
+    [self.tableView reloadData];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
