@@ -82,7 +82,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row==0){
         SwipeableCell *swipeCell=[tableView dequeueReusableCellWithIdentifier:@"SwipeableCell"];
-        [swipeCell configWithEidtableNote:self.note];
+        [swipeCell setSwipeable:NO];
+        //
+        swipeCell.editableContent.textField.text=self.note.content;
+        swipeCell.editableContent.textField.enabled=YES;
+        swipeCell.editableContent.textField.placeholder=@"我想。。。。";
+        swipeCell.editableContent.alarm.selected=[self.note.needRemind boolValue];
+        swipeCell.editableContent.priority.selected=[self.note.pirority boolValue];
         swipeCell.editableContent.delegate=self;
         //
         self.editCell=swipeCell;

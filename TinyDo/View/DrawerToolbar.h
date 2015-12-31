@@ -23,5 +23,5 @@ typedef NS_ENUM(NSInteger, ImageBarButtonItemType) {
 @end
 
 @interface DrawerToolbar : UIView
-@property(nonatomic,weak) id<DrawerToolbarDelegate> delegate;
+@property(nonatomic,weak) IBOutlet id<DrawerToolbarDelegate> delegate;
 @end

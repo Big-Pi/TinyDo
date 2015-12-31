@@ -48,19 +48,14 @@
         self.notes=[[NSMutableArray alloc]initWithCapacity:10];
     }
     
-    self.drawerToolbar.delegate=self;
     //
     SwipeableCell *cell= [[[NSBundle mainBundle]loadNibNamed:@"SwipeableCell" owner:nil options:nil]lastObject];
-            cell.editableContent.textField.text=@"";
-            cell.editableContent.textField.enabled=YES;
-            cell.editableContent.textField.placeholder=@"我想。。。。";
-            cell.editableContent.seprateLine.hidden=YES;
+    [cell configPlaceHolderCell];
     cell.delegate=self;
     self.tableView.tableHeaderView=cell.contentView;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SwipeableCell" bundle:nil] forCellReuseIdentifier:@"SwipeableCell"];
     self.tableView.contentInset=UIEdgeInsetsMake(-66+20, 0, 0, 0);
-    
     
 }
 
@@ -105,13 +100,8 @@
     }
     Note *note=self.notes[indexPath.row];
     SwipeableCell *cell= [self.tableView dequeueReusableCellWithIdentifier:@"SwipeableCell"];
-    cell.editableContent.textField.placeholder=@"";
-    cell.editableContent.seprateLine.alpha=0.3;
-    cell.editableContent.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    [cell configWithEidtableNote:note];
     cell.delegate=self;
-    if([note.pirority boolValue]){
-        cell.editableContent.textField.textColor=self.view.tintColor ;
-    }
     return cell;
 }
 
@@ -199,7 +189,6 @@
 
 #pragma mark - DrawerToolbarDelegate
 -(void)onDrawerToolbar:(DrawerToolbar *)toolbar barButtonItemClick:(ImageBarButtonItemType)type{
-//    NSLog(@"%ld",type);
     switch (type) {
         case ImageBarButtonItemTypePin: {
             
@@ -239,14 +228,13 @@
         }
             
         case DeleteLineContainerViewStateDeleted: {
-            [note setNoteState:NoteStateDeleted];
             [self.notes removeObject:note];
-            
             if(self.notes.count==0){
                 [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
             }else{
                 [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             }
+            [note setNoteState:NoteStateDeleted];
             [note deleteNote];
             break;
         }

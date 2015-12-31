@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet EditableContent *editableContent;
 @property(nonatomic,weak) id<SwipeableCellDelegate> delegate;
 -(void)setSwipeable:(BOOL)canSwipe;
--(id)configWithEidtableNote:(Note*)note;
+-(void)configWithEidtableNote:(Note*)note;
+-(void)configPlaceHolderCell;
 +(NSInteger)cellHeight;
 @end

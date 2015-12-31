@@ -13,7 +13,6 @@
 static CGFloat const kanimDurationFactor = 450.0;
 
 @interface SwipeableCell ()<UIGestureRecognizerDelegate>
-//
 
 @property(nonatomic,strong)UIPanGestureRecognizer *pan;
 @property(nonatomic)CGPoint panStartPoint;
@@ -31,18 +30,25 @@ static CGFloat const kanimDurationFactor = 450.0;
     return 66;
 }
 
--(id)configWithEidtableNote:(Note *)note{
+-(void)configWithEidtableNote:(Note *)note{
     
-    [self setSwipeable:NO];
-    //
-    self.editableContent.textField.text=note.content;
+    self.editableContent.textField.placeholder=@"";
+    self.editableContent.seprateLine.alpha=0.3;
+    self.editableContent.textField.text=[NSString stringWithFormat:@"%@",note.content];
+    if(note.deperacted){
+        self.myContainerView.isDeprecated=YES;
+        [self.myContainerView toggleDeleteImage];
+    }
+    if([note.pirority boolValue]){
+        self.editableContent.textField.textColor=self.tintColor ;
+    }
+}
+
+-(void)configPlaceHolderCell{
+    self.editableContent.textField.text=@"";
     self.editableContent.textField.enabled=YES;
     self.editableContent.textField.placeholder=@"我想。。。。";
-    self.editableContent.alarm.selected=[note.needRemind boolValue];
-    self.editableContent.priority.selected=[note.pirority boolValue];
-    //
-    return self;
-
+    self.editableContent.seprateLine.hidden=YES;
 }
 
 -(void)setSwipeable:(BOOL)canSwipe{
@@ -94,11 +100,16 @@ static CGFloat const kanimDurationFactor = 450.0;
 - (void)prepareForReuse {
     [super prepareForReuse];
     self.editableContent.textField.textColor=nil;
+    self.myContainerView.isDeprecated=NO;
+    self.transform=CGAffineTransformIdentity;
+    self.myContainerView.transform=CGAffineTransformIdentity;
+    self.contentView.alpha=1.0;
 }
 
 -(void)animCellWithState:(DeleteLineContainerViewState)state duration:(NSTimeInterval)duration toLeft:(BOOL)toLeft completion:(void (^)())completion{
     
     void(^completionBlock)() = ^() {
+        completion();
         [self.delegate swipeableCell:self didStateChanged:state];
     };
     
@@ -127,26 +138,22 @@ static CGFloat const kanimDurationFactor = 450.0;
 }
 
 -(void)animDeleteCell:(BOOL)toLeft duration:(NSTimeInterval)duration completion:(void (^)())completion{
+    CGFloat width= CGRectGetWidth(self.bounds);
     CGFloat delta;
     if(toLeft){
-        delta=[self screenWidth]+self.myContainerView.transform.tx;
+        delta=width+self.myContainerView.transform.tx;
         delta*=-1;
         delta-=80;
     }else{
-        delta=[self screenWidth]-self.myContainerView.transform.tx;
+        delta=width-self.myContainerView.transform.tx;
     }
     
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.transform=CGAffineTransformMakeTranslation(delta, 0);
     } completion:^(BOOL finished) {
-        self.transform=CGAffineTransformIdentity;
-        self.myContainerView.transform=CGAffineTransformIdentity;
+        self.contentView.alpha=0.0;
         completion();
     }];
-}
-
--(CGFloat)screenWidth{
-    return [UIScreen mainScreen].bounds.size.width;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

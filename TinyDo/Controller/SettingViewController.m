@@ -9,7 +9,6 @@
 #import "SettingViewController.h"
 #import "ThemePickerViewAlert.h"
 #import "EasyThemer.h"
-#import "Colours.h"
 
 
 @interface SettingViewController ()<CustomIOSAlertViewDelegate>

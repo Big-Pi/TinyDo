@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,20 +17,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-Fy-mIF" customClass="DeleteLineContainerView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-ty-uNx" userLabel="RightDeleteImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-ty-uNx" userLabel="RightDeleteImage">
                                 <rect key="frame" x="340" y="0.0" width="26" height="65"/>
-                                <animations/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-R3-R99" userLabel="LeftDeleteImage">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-R3-R99" userLabel="LeftDeleteImage">
                                 <rect key="frame" x="-46" y="0.0" width="26" height="65"/>
-                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L99-3J-vY8" customClass="EditableContent">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU1-Og-rQa">
                                         <rect key="frame" x="0.0" y="64" width="320" height="1"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="ITq-sN-xxb"/>
@@ -39,13 +35,11 @@
                                     </view>
                                     <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="我想。。。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-QN-yDl">
                                         <rect key="frame" x="0.0" y="0.0" width="216" height="65"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEJ-lH-GWp">
                                         <rect key="frame" x="272" y="13" width="40" height="40"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ATH-R5-66Y"/>
                                             <constraint firstAttribute="width" constant="40" id="Fdm-A2-0Qf"/>
@@ -57,7 +51,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79b-9Q-F1S">
                                         <rect key="frame" x="224" y="13" width="40" height="40"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="S2f-sD-9oG"/>
                                             <constraint firstAttribute="height" constant="40" id="nd5-at-763"/>
@@ -68,7 +61,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="79b-9Q-F1S" firstAttribute="leading" secondItem="PJ3-QN-yDl" secondAttribute="trailing" constant="8" id="1qS-ml-lYN"/>
@@ -91,7 +83,6 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Jdz-ty-uNx" secondAttribute="bottom" id="11t-Et-ziG"/>
@@ -111,21 +102,13 @@
                         </connections>
                     </view>
                 </subviews>
-                <animations/>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="tgc-Fy-mIF" secondAttribute="trailing" id="EaM-Cz-GZ8"/>
                     <constraint firstItem="tgc-Fy-mIF" firstAttribute="top" secondItem="Ghi-EL-WAE" secondAttribute="top" id="QQL-BI-FXz"/>
                     <constraint firstItem="tgc-Fy-mIF" firstAttribute="leading" secondItem="Ghi-EL-WAE" secondAttribute="leading" id="ja5-Lq-JXg"/>
                     <constraint firstAttribute="trailing" secondItem="tgc-Fy-mIF" secondAttribute="trailing" id="osR-qc-qbq"/>
                     <constraint firstAttribute="bottom" secondItem="tgc-Fy-mIF" secondAttribute="bottom" id="t37-yQ-Ee5"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="EaM-Cz-GZ8"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
-            <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="editableContent" destination="L99-3J-vY8" id="wdf-74-By9"/>

@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--To Do List View Controller-->
+        <!--Delegate-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="ToDoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ToDoListViewController" sceneMemberID="viewController">
@@ -32,6 +32,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="bd9-ww-o4C"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="DYX-8V-8id"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -90,24 +93,6 @@
             </objects>
             <point key="canvasLocation" x="1066" y="429"/>
         </scene>
-        <!--Sync View Controller-->
-        <scene sceneID="2ih-ZO-HYo">
-            <objects>
-                <viewController id="II1-Bw-oIu" customClass="SyncViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zjg-HC-5mG"/>
-                        <viewControllerLayoutGuide type="bottom" id="5mi-wY-7hC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1k3-0L-Jox">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h4Q-8I-6yH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2340" y="2465"/>
-        </scene>
         <!--设置-->
         <scene sceneID="Ahv-Wl-sb4">
             <objects>
@@ -154,25 +139,6 @@
                                             <segue destination="1DY-Ir-Zf7" kind="show" id="be0-5H-kKj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Pkr-GB-Is4">
-                                        <rect key="frame" x="0.0" y="152" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pkr-GB-Is4" id="lyO-59-otb">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="同步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3M-FD-zty">
-                                                    <rect key="frame" x="63" y="11" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="II1-Bw-oIu" kind="show" id="k1G-cB-aja"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -191,7 +157,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLy-FX-MVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="1791"/>
+            <point key="canvasLocation" x="1066" y="1791"/>
         </scene>
         <!--Rubbish Bin View Controller-->
         <scene sceneID="t4g-Mg-bb9">
@@ -236,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYd-lR-Sc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340" y="1791"/>
+            <point key="canvasLocation" x="1748" y="1791"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="azi-Vb-Avj">
@@ -433,7 +399,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKc-94-rTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="1791"/>
+            <point key="canvasLocation" x="344" y="1797"/>
         </scene>
     </scenes>
     <resources>

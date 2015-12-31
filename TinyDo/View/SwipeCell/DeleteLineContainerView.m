@@ -10,28 +10,19 @@
 #import "EditableContent.h"
 
 
-static CGFloat const kDeleteLineFactor=1.35;
+static CGFloat const kDeleteLineFactor=1.5;
 
 
 @interface DeleteLineContainerView ()
 @property(nonatomic,strong)UIBezierPath *path;
 @property(weak,nonatomic)IBOutlet UIImageView *leftDeleteImage;
 @property(weak,nonatomic)IBOutlet UIImageView *rightDeleteImage;
-@property(nonatomic,readwrite)DeleteLineContainerViewState currentState;
-
 @end
 
 @implementation DeleteLineContainerView
 
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if(self=[super initWithCoder:aDecoder]){
-        self.currentState=DeleteLineContainerViewStateNormal;
-    }
-    return self;
-}
-
 -(CGFloat)deleteLineStartOffsetX{
-    return 20.0;
+    return 10.0;
 }
 
 -(void)setTransform:(CGAffineTransform)transform{
@@ -55,14 +46,15 @@ static CGFloat const kDeleteLineFactor=1.35;
             //从头到尾画删除线
             deltaX=[self maxDeleteLineLengthInRect:rect];
         }else{
-            //据手指滑动的距离画删除线
+            //据手指滑动的距离的几倍画删除线
             deltaX=fabs(self.transform.tx);
+            deltaX*=kDeleteLineFactor;
         }
     }else if(self.transform.tx<0){//手指向左滑动
         if(self.isDeprecated){
             //根据手指滑动距离减少删除线的长度
             CGFloat maxDeleteLineLength=[self maxDeleteLineLengthInRect:rect];
-            deltaX = (maxDeleteLineLength + self.transform.tx)/kDeleteLineFactor;
+            deltaX = maxDeleteLineLength + (self.transform.tx*kDeleteLineFactor);
         }else{
             //没动画吖..
         }
@@ -79,7 +71,7 @@ static CGFloat const kDeleteLineFactor=1.35;
 }
 
 -(CGFloat)maxDeleteLineLengthInRect:(CGRect)rect{
-    return rect.size.width-2 * [self deleteLineStartOffsetX];
+    return self.bounds.size.width-2*[self deleteLineStartOffsetX];
 }
 
 /**
@@ -99,7 +91,6 @@ static CGFloat const kDeleteLineFactor=1.35;
     CGFloat lineStartX=startX;
     CGPoint lineStartPoint=CGPointMake(lineStartX, lineStartY);
     
-    deltaX=deltaX*kDeleteLineFactor;
     CGPoint lineEndPoint=CGPointMake(lineStartPoint.x + deltaX, lineStartPoint.y);
     
     [self.path moveToPoint:lineStartPoint];
@@ -143,12 +134,14 @@ static CGFloat const kDeleteLineFactor=1.35;
 -(CGFloat)screenWidth_2{
     return [self screenWidth] / 2.5;
 }
+
 -(CGFloat)screenWidth{
     return [UIScreen mainScreen].bounds.size.width;
 }
 
 -(void)setIsDeprecated:(BOOL)isDeprecated{
     _isDeprecated=isDeprecated;
+    _currentState=DeleteLineContainerViewStateDeprecated;
     [self setNeedsDisplay];
 }
 @end
