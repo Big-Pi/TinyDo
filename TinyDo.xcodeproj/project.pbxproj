@@ -601,7 +601,7 @@
 		0E132D391BD94FA2006C99EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = pi;
 				TargetAttributes = {
 					0E132D401BD94FA2006C99EC = {
@@ -791,6 +791,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -861,6 +862,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TinyDo/UMSocial_Sdk_4.3",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -876,6 +878,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TinyDo/UMSocial_Sdk_4.3",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -894,6 +897,7 @@
 				);
 				INFOPLIST_FILE = TinyDoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinyDo.app/TinyDo";
 			};
@@ -909,6 +913,7 @@
 				);
 				INFOPLIST_FILE = TinyDoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinyDo.app/TinyDo";
 			};
