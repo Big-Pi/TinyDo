@@ -7,8 +7,6 @@
 //
 
 #import "ThemePickerView.h"
-//#import "UIColor+PiRandomColor.h"
-//#import "Chameleon.h"
 #import "UIColor+AllFlatColors.h"
 
 
@@ -37,7 +35,6 @@
 
 -(void)addSubviewPrivate{
     self.v= [[[NSBundle mainBundle]loadNibNamed:@"ThemePickerView" owner:self options:nil] firstObject];
-//    self.v.backgroundColor=[UIColor blackColor];
     [self addSubview:self.v];
 }
 
@@ -45,6 +42,7 @@
     [super layoutSubviews];
     self.v.frame=self.bounds;
 }
+
 -(NSArray *)colors{
     if(!_colors){
         _colors=[UIColor allFlatColors];
@@ -60,12 +58,15 @@
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
+
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return self.colors.count;
 }
+
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 44;
 }
+
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     UIView *v=view;
     if(!v){

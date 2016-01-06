@@ -92,14 +92,4 @@
     }
 }
 
-//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    CGFloat dismissOffset= [UIScreen mainScreen].bounds.size.width *(self.imageNames.count-1);
-////    NSLog(@"%@------%f",NSStringFromCGPoint(scrollView.contentOffset),dismissOffset );
-//    if(scrollView.contentOffset.x>=dismissOffset){
-//        if(self.presentingViewController){
-//            NSLog(@"baba");
-//        }
-//    }
-//}
-
 @end

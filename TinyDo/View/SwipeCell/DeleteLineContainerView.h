@@ -22,5 +22,4 @@ typedef NS_ENUM(NSInteger, DeleteLineContainerViewState) {
 @property(nonatomic)DeleteLineContainerViewState currentState;
 -(void)toggleDeleteImage;
 -(void)updateState;
-//-(void)setInitialState:(DeleteLineContainerViewState)initialState;
 @end

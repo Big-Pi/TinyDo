@@ -206,6 +206,8 @@
     AlarmCell *alarmCell =[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     [alarmCell setTimeMsg:[Helper shortTimeStringFromDate:date]];
     self.note.remindDate=date;
+    self.note.needRemind=@YES;
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - EditableContentDelegate

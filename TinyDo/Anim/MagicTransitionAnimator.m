@@ -15,8 +15,6 @@
 #import "Note.h"
 
 
-
-
 @interface MagicTransitionAnimator ()
 @end
 
@@ -153,11 +151,14 @@
             
             [containerView addSubview:editVC.view];
             [editVC.view layoutIfNeeded];
-            
+            UITableViewCell *selectedCell= [toDoVC.tableView cellForRowAtIndexPath:[toDoVC.tableView indexPathForSelectedRow]];
             for (UITableViewCell *cell in toDoVC.tableView.visibleCells) {
                 //snapshotViewAfterScreenUpdates:NO
                 //Snapshotting a view that has not been rendered results in an empty snapshot. Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates.
                 //
+                if([cell isEqual:selectedCell]){
+                    continue;
+                }
                 UIView *snapShot= [cell snapshotViewAfterScreenUpdates:NO];
                 snapShot.frame=CGRectMake(cell.frame.origin.x, cell.frame.origin.y-toDoVC.tableView.contentOffset.y, cell.frame.size.width, cell.frame.size.height);
                 [containerView addSubview:snapShot];
@@ -171,8 +172,9 @@
             SwipeableCell *cell2Anim=editVC.editCell;
             cell2Anim.editableContent.textField.text=editVC.note.content;
             
-            UITableViewCell *selectedCell= [toDoVC.tableView cellForRowAtIndexPath:[toDoVC.tableView indexPathForSelectedRow]];
+            
             CGRect fromFrame=[containerView convertRect:selectedCell.frame fromView:selectedCell.superview];
+             fromFrame=CGRectMake(fromFrame.origin.x, fromFrame.origin.y, fromFrame.size.width, fromFrame.size.height);
             
             CGRect toFrame=cell2Anim.frame;
             

@@ -72,7 +72,11 @@
         Note *note= self.deletedNotes[indexPath.row];
         [note deleteNote];
         [self.deletedNotes removeObject:note];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if(self.deletedNotes.count==0){
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }else{
+           [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     }
 }
 
