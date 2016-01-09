@@ -89,7 +89,8 @@
         //
         swipeCell.editableContent.textField.text=self.note.content;
         swipeCell.editableContent.textField.enabled=YES;
-        swipeCell.editableContent.textField.placeholder=@"我想。。。。";
+        
+        swipeCell.editableContent.textField.placeholder=NSLocalizedString(@"我想。。。。", @"我想。。。。");
         swipeCell.editableContent.alarm.selected=[self.note.needRemind boolValue];
         swipeCell.editableContent.priority.selected=[self.note.pirority boolValue];
         swipeCell.editableContent.delegate=self;

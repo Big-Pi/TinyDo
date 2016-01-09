@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "重复"; ObjectID = "UxU-nP-bkY"; */
+"UxU-nP-bkY.text" = "Repeat";
+
+/* Class = "UIButton"; normalTitle = "时间"; ObjectID = "ZQH-ij-hRU"; */
+"ZQH-ij-hRU.normalTitle" = "Time";
+
+/* Class = "UIButton"; normalTitle = "仅一次"; ObjectID = "aPU-V4-cSl"; */
+"aPU-V4-cSl.normalTitle" = "Once";

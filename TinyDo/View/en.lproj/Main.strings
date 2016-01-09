@@ -1,0 +1,56 @@
+
+/* Class = "UILabel"; text = "｜"; ObjectID = "MVD-Yo-wtE"; */
+"MVD-Yo-wtE.text" = "｜";
+
+/* Class = "UILabel"; text = "CopyRight (C) "; ObjectID = "WYP-xn-iKz"; */
+"WYP-xn-iKz.text" = "CopyRight (C) ";
+
+/* Class = "UILabel"; text = " Pi 工作室"; ObjectID = "ZZd-jh-D07"; */
+"ZZd-jh-D07.text" = " Pi 工作室";
+
+/* Class = "UILabel"; text = "版本"; ObjectID = "ce1-wv-Xcn"; */
+"ce1-wv-Xcn.text" = "版本";
+
+/* Class = "UILabel"; text = "｜"; ObjectID = "mCK-M5-A8u"; */
+"mCK-M5-A8u.text" = "｜";
+
+/* Class = "UILabel"; text = "0.0.1"; ObjectID = "ydg-iB-COR"; */
+"ydg-iB-COR.text" = "0.0.1";
+
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Bd8-Wj-alu"; */
+"Bd8-Wj-alu.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "TinyDO 将协助您更有效地搞定日常事务"; ObjectID = "Jbo-Lv-ywd"; */
+"Jbo-Lv-ywd.text" = "TinyDO will assist you with routine work～";
+
+/* Class = "UINavigationItem"; title = "关于"; ObjectID = "MA1-OA-hYS"; */
+"MA1-OA-hYS.title" = "About";
+
+/* Class = "UIButton"; normalTitle = "         邮件反馈"; ObjectID = "WpO-xt-UNo"; */
+"WpO-xt-UNo.normalTitle" = "         Email Feedback";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "Xjx-O8-F34"; */
+"Xjx-O8-F34.title" = "Setting";
+
+/* Class = "UILabel"; text = "废纸篓"; ObjectID = "kLG-zr-DOo"; */
+"kLG-zr-DOo.text" = "RubbishBin";
+
+/* Class = "UIButton"; normalTitle = "开始体验"; ObjectID = "l5U-B9-bRG"; */
+"l5U-B9-bRG.normalTitle" = "Explore";
+
+/* Class = "UIButton"; normalTitle = "    分享TinyDO"; ObjectID = "qzu-x5-c87"; */
+"qzu-x5-c87.normalTitle" = "    Share TinyDO";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "tpL-un-LH5"; */
+"tpL-un-LH5.text" = "Title";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "vrc-Cp-Pig"; */
+"vrc-Cp-Pig.text" = "Detail";
+
+/* Class = "UILabel"; text = "主题"; ObjectID = "wQL-pA-zke"; */
+"wQL-pA-zke.text" = "Theme";
+
+/* Class = "UIButton"; normalTitle = "         打开帮助"; ObjectID = "y5S-ob-fpO"; */
+"y5S-ob-fpO.normalTitle" = "         Quick Help";
+

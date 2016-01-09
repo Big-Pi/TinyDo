@@ -18,5 +18,5 @@ extern NSString *const kIsFristLaunch;
 //
 +(void)checkFirstLaunch:(UIViewController *)controller presentSplashVC:(NSString *)storyBoardIdentifier;
 +(void)checkFirstLaunch:(UIViewController *)controller storyboardName:(NSString *)storyboardName presentSplashVC:(NSString *)storyBoardIdentifier;
-
++(NSDictionary*)dataDict;
 @end

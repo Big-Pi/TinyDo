@@ -64,9 +64,10 @@
 //not work on simulator
 - (IBAction)email:(id)sender {
     // Email Subject
-    NSString *emailTitle = @"TinyDo 反馈";
+    
+    NSString *emailTitle = NSLocalizedString(@"TinyDo 反馈", @"TinyDo 反馈");
     // Email Content
-    NSString *messageBody = @"TinyDo 协助您更有效的搞定日常事务～";
+    NSString *messageBody = NSLocalizedString(@"TinyDo 协助您更有效的搞定日常事务～", @"TinyDo 协助您更有效的搞定日常事务～");
     // To address
     NSArray *toRecipents = [NSArray arrayWithObject:@"wangdapishuai@163.com"];
     
@@ -83,7 +84,7 @@
 - (IBAction)share:(id)sender {
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"5656c533e0f55a07d8000330"
-                                      shareText:@"TinyDo 协助您更有效的搞定日常事务～"
+                                      shareText:NSLocalizedString(@"TinyDo 协助您更有效的搞定日常事务～", @"TinyDo 协助您更有效的搞定日常事务～")
                                      shareImage:[UIImage imageNamed:@"ApplicationIcon"]
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,nil]
                                        delegate:self];

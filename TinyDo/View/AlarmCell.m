@@ -38,7 +38,7 @@
             [self.dateBtnSet addObject:btn];
             if(btn.tag){
                 NSNumber *key=@(btn.tag);
-                [btn setText:[self dataDict][key]];
+                [btn setText:[Helper dataDict][key]];
             }
         }
     }
@@ -62,20 +62,6 @@
 
 -(void)setRepeatMsg:(NSString*)repeatMsg{
     [self.repeatLabel setTitle:repeatMsg forState:UIControlStateNormal];
-}
-
--(NSDictionary*)dataDict{
-    static NSDictionary *dic;
-    if(!dic){
-        dic=@{@1:@"星期一",
-              @2:@"星期二",
-              @3:@"星期三",
-              @4:@"星期四",
-              @5:@"星期五",
-              @6:@"星期六",
-              @7:@"星期日"};
-    }
-    return dic;
 }
 
 -(id)configWithEidtableNote:(Note *)note{
@@ -107,16 +93,17 @@
     NSMutableString *msg=[NSMutableString string];
     NSMutableSet *selectedRepeatedWeek=[self selectedRepeatedWeek];
     if(selectedRepeatedWeek.count==0){
-        [msg appendString:@"仅一次"];
-    }else if(selectedRepeatedWeek.count==[self dataDict].count){
-        [msg appendString:@"每天"];
+        
+        [msg appendString:NSLocalizedString(@"仅一次", @"仅一次")];
+    }else if(selectedRepeatedWeek.count==[Helper dataDict].count){
+        [msg appendString:NSLocalizedString(@"每天", @"每天")];
     }else{
         NSArray *sortedBtns=[self.dateBtnSet sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"tag" ascending:YES]]];
         
         for (DateBtn *btn in sortedBtns) {
             if(btn.isDateBtnSelected){
                 NSNumber *key=@(btn.tag);
-                [msg appendString:[self dataDict][key]];
+                [msg appendString:[Helper dataDict][key]];
                 [msg appendString:@", "];
             }
         }

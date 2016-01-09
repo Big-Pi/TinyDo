@@ -28,7 +28,9 @@
 
 -(NSArray *)imageMessage{
     if(!_imageMessage){
-        _imageMessage=@[@"下拉创建新事项",@"右滑完成事项",@"长按以重新排序"];
+        _imageMessage=@[NSLocalizedString(@"下拉创建新事项", @"下拉创建新事项"),
+                        NSLocalizedString(@"右滑完成事项", @"右滑完成事项"),
+                        NSLocalizedString(@"长按以重新排序", @"长按以重新排序")];
     }
     return _imageMessage;
 }

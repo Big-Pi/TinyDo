@@ -39,6 +39,7 @@
     static NSDateFormatter *formatter;
     if(!formatter){
         formatter=[[NSDateFormatter alloc]init];
+        formatter.locale=[NSLocale currentLocale];
         formatter.timeStyle=NSDateFormatterMediumStyle;
         formatter.dateStyle=NSDateFormatterMediumStyle;
     }
@@ -55,11 +56,13 @@
     return self.deletedNotes.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Note *note=self.deletedNotes[indexPath.row];
     cell.textLabel.text=note.content;
     cell.detailTextLabel.text=[self dateStringFromDate:note.deletedDate];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 

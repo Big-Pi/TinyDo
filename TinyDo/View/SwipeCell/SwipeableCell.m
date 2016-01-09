@@ -47,7 +47,7 @@ static CGFloat const kanimDurationFactor = 450.0;
 -(void)configPlaceHolderCell{
     self.editableContent.textField.text=@"";
     self.editableContent.textField.enabled=YES;
-    self.editableContent.textField.placeholder=@"我想。。。。";
+    self.editableContent.textField.placeholder=NSLocalizedString(@"我想。。。。", @"我想。。。。");
     self.editableContent.seprateLine.hidden=YES;
 }
 
