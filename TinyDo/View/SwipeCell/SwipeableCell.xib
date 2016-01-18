@@ -17,10 +17,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-Fy-mIF" customClass="DeleteLineContainerView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-ty-uNx" userLabel="RightDeleteImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-ty-uNx" userLabel="RightDeleteImage">
                                 <rect key="frame" x="340" y="0.0" width="26" height="65"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-R3-R99" userLabel="LeftDeleteImage">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-R3-R99" userLabel="LeftDeleteImage">
                                 <rect key="frame" x="-46" y="0.0" width="26" height="65"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L99-3J-vY8" customClass="EditableContent">
@@ -35,8 +35,8 @@
                                     </view>
                                     <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="我想。。。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-QN-yDl">
                                         <rect key="frame" x="0.0" y="0.0" width="216" height="65"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEJ-lH-GWp">
                                         <rect key="frame" x="272" y="13" width="40" height="40"/>

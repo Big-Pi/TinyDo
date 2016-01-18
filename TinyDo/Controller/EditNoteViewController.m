@@ -43,18 +43,11 @@
     }else{
         self.note=[Note insertNote];
         self.note.remindDate=[NSDate date];
+        self.mode=Insert;
     }
 }
 
 #pragma mark - Getter Setter
-
--(EditMode)mode{
-    if (!_mode) {
-        _mode=Insert;
-    }
-    return _mode;
-}
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -135,7 +128,7 @@
     return H;
 }
 
-#warning temp way to calclate cell height for different kind of cell
+//TODO temp way to calclate cell height for different kind of cell
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger h=0;
     switch (indexPath.row) {
@@ -185,14 +178,16 @@
     [super encodeRestorableStateWithCoder:coder];
     
     NSString *noteID=self.note.noteID;
-    NSLog(@"%@",noteID);
+//    NSLog(@"%@",noteID);
+    [coder encodeObject:self.delegate forKey:@"delegate"];
     [coder encodeObject:noteID forKey:@"noteID"];
 }
 
 -(void)decodeRestorableStateWithCoder:(NSCoder *)coder{
     [super decodeRestorableStateWithCoder:coder];
-    NSLog(@"%@",[coder decodeObjectForKey:@"noteID"]);
+//    NSLog(@"%@",[coder decodeObjectForKey:@"noteID"]);
     self.note=[Note fetchNoteWithNoteID:[coder decodeObjectForKey:@"noteID"]];
+    self.delegate=[coder decodeObjectForKey:@"delegate"];
 }
 
 #pragma mark - AlarmCellDelegate
@@ -218,6 +213,10 @@
 
 -(void)editableContentDidEndEditNote:(EditableContent *)content{
     [self.view endEditing:YES];
+    NSString *noteContent= [self.editCell.editableContent.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if(!noteContent||noteContent.length==0){
+        self.mode=Nothing;
+    }
     self.note.content=self.editCell.editableContent.textField.text;
     [self.delegate editNoteViewControllerDidEndEdit:self withNote:self.note editMode:self.mode];
 }

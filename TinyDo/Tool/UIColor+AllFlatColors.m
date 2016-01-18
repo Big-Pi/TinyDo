@@ -11,29 +11,18 @@
 
 @implementation UIColor (AllFlatColors)
 +(NSArray*)allFlatColors{
-    return @[[UIColor flatBlackColor],
+    return @[
       [UIColor flatBlueColor],
-      [UIColor flatBrownColor],
       [UIColor flatCoffeeColor],
-      [UIColor flatForestGreenColor],
       [UIColor flatGrayColor],
-      [UIColor flatGreenColor],
       [UIColor flatLimeColor],
       [UIColor flatMagentaColor],
       [UIColor flatMaroonColor],
       [UIColor flatMintColor],
-      [UIColor flatNavyBlueColor],
       [UIColor flatOrangeColor],
       [UIColor flatPinkColor],
-      [UIColor flatPlumColor],
-      [UIColor flatPowderBlueColor],
       [UIColor flatPurpleColor],
-      [UIColor flatRedColor],
-      [UIColor flatSandColor],
-      [UIColor flatSkyBlueColor],
-      [UIColor flatTealColor],
       [UIColor flatWatermelonColor],
-      [UIColor flatWhiteColor],
       [UIColor flatYellowColor]];
 }
 @end

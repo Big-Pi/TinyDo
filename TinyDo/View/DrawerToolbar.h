@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ImageBarButtonItem.h"
-
 
 typedef NS_ENUM(NSInteger, ImageBarButtonItemType) {
     ImageBarButtonItemTypePin=100,

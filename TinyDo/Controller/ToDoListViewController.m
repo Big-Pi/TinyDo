@@ -167,6 +167,8 @@
             [self.notes insertObject:note atIndex:0];
             [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
         }
+    }else if (mode==Nothing){
+        
     }
 }
 

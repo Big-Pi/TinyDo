@@ -14,7 +14,8 @@
 
 typedef NS_ENUM(NSInteger, EditMode){
     Insert,
-    Edit
+    Edit,
+    Nothing
 };
 
 @class EditNoteViewController;

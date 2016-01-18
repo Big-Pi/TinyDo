@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataStack.h"
+#import "NotifyUtil.h"
 @import CoreText;
 
 @interface CoreDataStack ()
@@ -73,6 +74,11 @@
     if(!result){
         NSLog(@"%@",[error localizedDescription]);
     }
+    for (Note *note in result) {
+        if (!note.content||note.content.length==0) {
+            [self destoryNote:note];
+        }
+    }
     return result;
 }
 
@@ -98,11 +104,13 @@
 -(void)deleteNote:(Note *)note{
     note.deleted=@YES;
     note.deletedDate=[NSDate date];
+    [NotifyUtil cancelAlarm:note];
     [self saveContext];
 }
 
 -(void)destoryNote:(Note *)note{
     [self.context deleteObject:note];
+    [NotifyUtil cancelAlarm:note];
     [self saveContext];
 }
 
