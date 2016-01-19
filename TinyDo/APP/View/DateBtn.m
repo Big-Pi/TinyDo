@@ -41,7 +41,9 @@
 
 -(void)configForSelectionChange{
     self.indicator.backgroundColor= self.dateBtn.selected ? self.tintColor : [UIColor clearColor];
+    
 }
+
 - (IBAction)click:(UIButton *)sender {
     sender.selected=!sender.selected;
     self.indicator.backgroundColor= sender.selected ? self.tintColor : [UIColor clearColor];

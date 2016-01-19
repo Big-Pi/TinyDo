@@ -21,12 +21,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self registNotifySetting];
+    [EasyThemer applyTheme];
     UILocalNotification *localNotif =
     [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotif) {
         NSLog(@"didFinishLaunchingWithOptions : %@",localNotif);
     }
-    [EasyThemer applyTheme];
+    
     return YES;
 }
 

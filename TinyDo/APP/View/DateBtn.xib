@@ -13,10 +13,13 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6c-rs-guX">
-            <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="76" height="48"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK9-69-fop">
-                    <rect key="frame" x="0.0" y="9" width="66" height="30"/>
+                    <rect key="frame" x="0.0" y="9" width="76" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="76" id="uQN-r1-I1F"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="周一"/>
                     <state key="selected">
@@ -27,9 +30,8 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-4n-prp">
-                    <rect key="frame" x="10" y="0.0" width="46" height="6"/>
+                    <rect key="frame" x="10" y="0.0" width="56" height="6"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="6" id="9mg-tr-YKz"/>
                         <constraint firstAttribute="height" constant="6" id="pcS-Ks-J4f"/>
                     </constraints>
                 </view>
@@ -46,7 +48,12 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-34" y="224.5"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="sgo-zx-dRU"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-29" y="228"/>
         </view>
     </objects>
 </document>

@@ -16,6 +16,7 @@
 #import "HelpViewController.h"
 #import "SwipeableCell.h"
 #import "NotifyUtil.h"
+#import "MBProgressHUD.h"
 
 @import CoreData;
 
@@ -189,11 +190,12 @@
 -(void)onDrawerToolbar:(DrawerToolbar *)toolbar barButtonItemClick:(ImageBarButtonItemType)type{
     switch (type) {
         case ImageBarButtonItemTypePin: {
-            
+            [self showHud];
             break;
+            
         }
         case ImageBarButtonItemTypeLike: {
-            
+            [self showHud];
             break;
         }
         case ImageBarButtonItemTypeSetting: {
@@ -207,6 +209,16 @@
             break;
         }
     }
+}
+
+-(void)showHud{
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText=@"not implement yet~";
+    hud.mode=MBProgressHUDModeText;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 #pragma mark - SwipeableCellDelegate
