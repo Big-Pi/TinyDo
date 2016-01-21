@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{ea0f699d-f6c0-4008-a228-8d9d1974c2c6}" Title="TinyDO" RuntimeType="Silverlight" Version="4.2.0.0" Genre="apps.normal" Author="vivmotion" Description="Sample description" Publisher="vivmotion" BitsPerPixel="32" IsBeta="false">
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <Capabilities xmlns="">
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="TinyDoToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>TinyDO</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

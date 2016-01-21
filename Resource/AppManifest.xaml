@@ -1,0 +1,23 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="TinyDo" EntryPointType="TinyDo.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="TinyDo" Source="TinyDo.dll" />
+    <AssemblyPart x:Name="Microsoft.Live.Controls" Source="Microsoft.Live.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Live" Source="Microsoft.Live.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks" Source="Microsoft.Threading.Tasks.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions" Source="Microsoft.Threading.Tasks.Extensions.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions.Phone" Source="Microsoft.Threading.Tasks.Extensions.Phone.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="ShakeGestures" Source="ShakeGestures.dll" />
+    <AssemblyPart x:Name="System.Runtime" Source="System.Runtime.dll" />
+    <AssemblyPart x:Name="System.Threading.Tasks" Source="System.Threading.Tasks.dll" />
+    <AssemblyPart x:Name="UmengClassLibrary" Source="UmengClassLibrary.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart Source="zh-CN/TinyDo.resources.dll" />
+    <AssemblyPart Source="zh-TW/TinyDo.resources.dll" />
+    <AssemblyPart Source="zh-cn/Microsoft.Live.Controls.resources.dll" />
+    <AssemblyPart Source="zh-tw/Microsoft.Live.Controls.resources.dll" />
+    <AssemblyPart Source="zh-CN/Microsoft.Phone.Controls.Toolkit.resources.dll" />
+    <AssemblyPart Source="zh-TW/Microsoft.Phone.Controls.Toolkit.resources.dll" />
+  </Deployment.Parts>
+</Deployment>
