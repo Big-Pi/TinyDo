@@ -29,7 +29,6 @@
     [self addNibView];
 }
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
-//    NSLog(@"tap");
     [self toogleDrawer];
 }
 
@@ -37,12 +36,7 @@
 
 -(void)addNibView{
      self.content= [[[NSBundle mainBundle]loadNibNamed:@"DrawerToolbar" owner:self options:nil]firstObject];
-//    view.frame=CGRectMake(view.frame.origin.x, view.frame.origin.y,[UIScreen mainScreen].bounds.size.width , view.frame.size.height);
-//    NSLog(@"%@",NSStringFromCGRect(self.frame));
-//    self.view.frame=self.frame;
     [self addSubview:self.content];
-//    self.content.backgroundColor=[UIColor redColor];
-    
 }
 
 - (IBAction)barButtonClick:(UIButton *)sender {
@@ -94,10 +88,8 @@
         NSArray *constraints= self.superview.constraints;
         for(int i=0;i<constraints.count;i++){
             NSLayoutConstraint *constraint= constraints[i];
-            //                    NSLog(@"%@",constraint);
             if(  [constraint.secondItem isMemberOfClass:[DrawerToolbar class]] && [constraint.firstItem conformsToProtocol:@protocol(UILayoutSupport)]){
                 self.bottomSpaceConstraint=constraint;
-                //                        NSLog(@"%@",constraint);
             }
         }
     }
